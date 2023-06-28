@@ -1,11 +1,10 @@
 # Die ersten Schritte mit R und R Studio
 
-In diesem Model werden wir mit *R* arbeiten. 
-*R* ist eine Software um relativ einfach mit dem Computer Statistik zu machen. Es ist eine Programmiersprache zum Lösen statistischer Probleme. Es ist eine von vielen auf diesem Gebiet, aber eine sehr einfache, schnell zu erlernende und auch sehr gebräuchliche Sprache.
+In diesem Modul werden wir mit ***R*** arbeiten. ***R*** ist eine Software um relativ einfach mit dem Computer Statistik zu machen. ***R*** ist eine Programmiersprache zum Lösen statistischer Probleme. Sie ist eine von vielen auf diesem Gebiet, aber eine sehr einfache, schnell zu erlernende und auch sehr gebräuchliche Sprache.
 
 Wie aber alle Programmiersprachen muss mensch sich aber erst daran gewöhnen. Und reinen *R* ist dafür vielleicht für den Anfang etwas zu kryptisch.
 
-Darum werden wir *R* vor allem mit der integrierten Entwicklungsumgeben (IDE) *R Studio* bzw. *posit.cloud* nutzen. 
+Darum werden wir *R* vor allem mit der integrierten Entwicklungsumgeben (IDE) *R Studio* bzw. *posit.cloud* nutzen.
 
 Dafür müssen Sie eine Entscheidung treffen. Entweder sie installieren *R* und *RStudio* auf ihrem Rechner oder sie nutzen die Cloud-Version von *R* und *RStudio*, welche sich *posit.cloud* nennt.
 

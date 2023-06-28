@@ -2,12 +2,13 @@ project:
   type: book
 
 book:
-  title: "QuantitativeMethoden der Informatik"
+  title: "Quantitative Methoden der Informatik"
   author: "Norman Markgraf"
   date: "7/01/2023"
   chapters:
     - index.qmd
     - Kapitel-1.qmd
+    - Kapitel-2.qmd
     - summary.qmd
     - references.qmd
 
