@@ -8,14 +8,21 @@ book:
   chapters:
     - index.qmd
     - Kapitel-1.qmd
+<<<<<<< HEAD
     - Kapitel-2.qmd
+=======
+    - Kapitel-3.qmd
+>>>>>>> d49d0e6 (Kleinere Updates)
     - summary.qmd
     - references.qmd
+
+lang: de
 
 bibliography: references.bib
 
 format:
   html:
+    html-math-method: katex
     grid:
       margin-width: 350px
   pdf:
@@ -26,4 +33,5 @@ format:
 reference-location: margin
 citation-location: margin
 editor: visual
-
+#crossref:
+#  fig-prefix: Abbildung   # (default is "Figure")
