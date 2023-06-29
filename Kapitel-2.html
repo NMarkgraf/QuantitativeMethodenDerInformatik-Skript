@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.361">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Quantitative Methoden der Informatik - 2&nbsp; Hinweise zu R und quarto</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Kapitel-3.html" rel="next">
+<link href="./Kapitel-1.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Kapitel-2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hinweise zu R und quarto</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Quantitative Methoden der Informatik</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Suchen"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vorwort</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Kapitel-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Die ersten Schritte mit R und R Studio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Kapitel-2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hinweise zu R und quarto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Kapitel-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Wissenschaftliche Grundlagen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#warum-r" id="toc-warum-r" class="nav-link active" data-scroll-target="#warum-r"><span class="header-section-number">2.1</span> Warum R</a></li>
+  <li><a href="#einrichtung-von-rstudio-posit-cloud" id="toc-einrichtung-von-rstudio-posit-cloud" class="nav-link" data-scroll-target="#einrichtung-von-rstudio-posit-cloud"><span class="header-section-number">2.2</span> Einrichtung von RStudio (posit Cloud)</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hinweise zu R und quarto</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="Lernergebnisse callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lernergebnisse dieses Kapitels
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Nach erfolgreichem Abschluss dieses Kapitels sind Sie in der Lage,</p>
+<ul>
+<li>Gründe für den Einsatz von R zu nennen;</li>
+<li>die Unterschiede zwischen R, RStudio und mosaic aufzuführen;</li>
+<li>eine R- oder eine RMarkdown-Datei anzulegen;</li>
+<li>die Unterschiede zwischen diesen zu beschreiben;</li>
+<li>Datensätze zu laden, einfache Befehle einzugeben und manche wichtigen Grundbefehle in R auszuführen.</li>
+<li>RMarkdown-Dokumente zu erstellen und zu bearbeiten;</li>
+<li>die wichtigsten Formatierungen in RMarkdown durchführen und Symbole einfügen zu können;</li>
+<li>R-Code in RMarkdown einfügen und ausführen zu können.</li>
+</ul>
+</div>
+</div>
+<section id="warum-r" class="level2 page-columns page-full" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="warum-r"><span class="header-section-number">2.1</span> Warum R</h2>
+<div class="page-columns page-full"><p><em>[…] she was also following a wider trend: for many academics […] R is the data-analysis tool of choice.</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Tippmann (2015), „Programming tools: Adventures with R“</p></li></div></div>
+<p><strong>R</strong> ist ein weitverbreitetes und frei verfügbares Statistikprogramm, was viele Vorteile bietet:</p>
+<ul>
+<li>Methoden- und Anwendungsvielfalt (Finance, Marketing, HR, Psychologie, …)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>;</li>
+<li>neue Methoden der Datenanalyse werden häufig in R entwickelt (auch Big Data, KI, etc. );</li>
+<li>frei und offen, kostenlos;</li>
+<li>Sie können R im Studium nutzen, zu Hause oder auch am Arbeitsplatz;</li>
+<li>Schnittstellen zu sehr vielen Datenquellen/ -banken (auch Social-Media etc.);</li>
+<li>Erweiterungen u.a. für Microsoft, Oracle, SAP-Produkte, aber auch SPSS, SAS;</li>
+<li>unzählige Nutzer:innen weltweit in Unternehmen und Wissenschaft; <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></li>
+<li>Möglichkeiten für Reporting, Apps, etc.;</li>
+<li>numerische Stabilität und Genauigkeit;</li>
+<li>große Entwickler:innen-Gemeinde mit langerG eschichte (seit 1993): R Konsortium, u. a. IBM, Microsoft, TIPCO, Google, …</li>
+</ul>
+<div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;Siehe z. B. <a href="https://cran.r-project.org/web/views/" class="uri">https://cran.r-project.org/web/views/</a></p></li><li id="fn3"><p><sup>3</sup>&nbsp;Verbreitung siehe z. B.: <a href="http://r4stats.com/articles/popularity/" class="uri">http://r4stats.com/articles/popularity/</a></p></li><div class="">
+<p><a href="https://www.causeweb.org/cause/sites/default/files/caption_contest/2018/Caption-Contest_05-2018.png"><img src="causeweb-images/cartoon0518.png" class="img-fluid"></a> Auch wenn die Zeit für das „Einsetzen von Zahlen in Formeln“ und das „Abbildungen zeichnen per Hand“ gekommen ist: Die Ideen und Konzepte leben weiter -– in unseren Computerprogrammen.<br>
+<a href="https://www.causeweb.org/cause/sites/default/files/caption_contest/may/2018/results">https://www.CAUSEweb.org</a>, © J. B. Landers, Bildunterschrift K. Lübke</p>
+</div></div>
+<p>Das sind Gründe, warum wir uns für die Nutzung von <strong>R</strong> entschieden haben.</p>
+<div class="Aufgabe callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Welchen Vorteil hat <strong>R</strong> in Bezug auf die Gütekriterien für Forschung?</p>
+</div>
+</div>
+</section>
+<section id="einrichtung-von-rstudio-posit-cloud" class="level2 page-columns page-full" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="einrichtung-von-rstudio-posit-cloud"><span class="header-section-number">2.2</span> Einrichtung von RStudio (posit Cloud)</h2>
+<p>In Verbindung mit <strong>R</strong> (das eigentliche Statistikprogramm) wird <strong>RStudio</strong> (bzw. in der Cloud-Version <strong>posit</strong>), ein ebenfalls frei verfügbarer Editor/Integrierte Entwicklungsumgebung (IDE) genutzt. Innerhalb <strong>R</strong> wird noch <code>mosaic</code> eingesetzt, ein sogenanntes Paket <em>package</em>).</p>
+<p>Bildlich gesprochen können Sie sich das so vorstellen:</p>
+<ul>
+<li>Statistik ist das Auto, mit dem der Weg von der Forschungsfrage zur vorläufigen Antwort bestritten werden kann.</li>
+<li><strong>R</strong> ist ein Motor, der das Auto antreiben kann.</li>
+<li><strong>RStudio Desktop</strong> bzw. <strong>posit</strong> (Cloud-Version) ist das Cockpit, mit dem der Motor gesteuert werden kann.</li>
+<li><code>mosaic</code> ist eine Zusatzausstattung, um die Motorsteuerung zu vereinfachen</li>
+</ul>
+<div class="Tipp callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Spätestens jetzt sollten Sie <strong>R</strong> und die Zusatzprogramme installiert haben<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> oder den Zugang über die <strong>posit</strong>-Cloud eingerichtet haben.</p>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;Eine Installationsanleitung finden Sie hier: <a href="https://rawgit.com/luebby/Datenanalyse-mit-R/master/Installation/Install.html" class="uri">https://rawgit.com/luebby/Datenanalyse-mit-R/master/Installation/Install.html</a></p></li></div><p>Innerhalb von <strong>RStudio</strong> bzw. <strong>posit</strong> in der Cloud-Version arbeiten wir mit einem sogenannten Projekt. Damit ist sichergestellt, dass wir alle das gleiche sehen und die gleichen Dateien etc. zur Verfügung haben. Für die Übungsaufgaben in diesen Unterlagen und das Mitmachen gibt es ein eigenes Projekt: QDmR, in der Veranstaltung ist es dann ein anderes – Ihre Dozent:in teilt Ihnen mit, wie Sie es nutzen können.</p>
+<p>Alles installiert? Oder posit-Cloud-Zugang eingerichtet? Dann können wir loslegen.</p>
+<p>Hier gibt es zwei Möglichkeiten:</p>
+<p><strong>Sie arbeiten lokal</strong><br>
+</p>
+<div class="page-columns page-full"><p>Laden Sie das Projekt (hier <em>QDmR</em><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>&gt;) herunter und entzippen Sie es, in dem Sie das gezippte Verzeichnis in ein Verzeichnis Ihrer Wahl ziehen (<span class="quarto-unresolved-ref">?fig-XXX</span>).</p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;Download des Beispielprojekts: &lt;https://www.dropbox.com/s/io0612okaez3dnb/QDmR.zip?dl=0</p></li></div></div>
+<p>Wechseln Sie in das entzippte Verzeichnis, hier <em>QDmR</em> (<span class="quarto-unresolved-ref">?fig-XXY</span>), und doppelklicken Sie auf die gleichnamige Projektdatei (in <span class="quarto-unresolved-ref">?fig-XXZ</span> markiert).</p>
+<p>Wenn Sie <strong>RStudio</strong> schließen und das nächste Mal starten, wird das Projekt automatisch wieder geladen. Sie erkennen das in RStudio oben rechts (in <span class="quarto-unresolved-ref">?fig-XYY</span> markiert).</p>
+<p><strong>Sie arbeiten in der Cloud</strong></p>
+<p>In der <strong>posit</strong>-Cloud-Version startet das Projekt automatisch durch Aufruf auf dem Link, denn sie in der Veranstaltung bekommen haben. Wichtig, Sie müssen das Projekt noch als permanente Kopie in Ihrem eigenen Workspace ablegen. Klicken Sie dazu hier auf <em>Save a Permanent Copy</em> (<span class="quarto-unresolved-ref">?fig-XYX</span>)</p>
+<p>Sonst fehlen Ihnen beim nächsten Mal die Sachen, die Sie gemacht haben.</p>
+<p>Beim nächsten Login in <strong>posit</strong>-Cloud wird das Projekt automatisch aufgerufen bzw. Sie bekommen eine Liste, aus der Sie das Projekt wieder aufrufen können (<span class="quarto-unresolved-ref">?fig-XYZ</span>).</p>
+<div class="Hisweis callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Denken Sie daran, das Verzeichnis, der Projektname und der dazugehörige Link in posit-Cloud, auf die hier im Text verwiesen wurde, variieren in der Umsetzung in Ihrer Vorlesung.</p>
+</div>
+</div>
+<p><strong>Verzweigung Ende – jetzt geht es wieder für alle gemeinsam weiter</strong><br>
+</p>
+<p>Sobald Sie RStudio oder posit** gestartet haben, erscheinen drei oder vier Fenster, ähnlich wie in <span class="quarto-unresolved-ref">?fig-YYY</span>. Hier wird der Aufbau von <strong>RStudio</strong> bzw. <strong>posit</strong> gezeigt, dem Editor, mit dem wir in der nächsten Zeit viel arbeiten werden.</p>
+<p>Links oben finden Sie das Fenster, in dem die <strong>R</strong>- oder <strong>quarto</strong>-Skripte geöffnet und bearbeitet werden. Rechts oben werden die Umgebungsvariablen (<em>Environment</em>, dazu später mehr) und die Befehlshistorie (<em>History</em>) angezeigt. Links unten ist die R-Console, dort werden die R-Befehle ausgeführt und die Ergebnisse angezeigt. Rechts unten sehen Sie die Dateien (<em>Files</em>), also ähnlich wie ein Datei-Explorer. Auch werden hier die Grafiken (<em>Plots</em>) angezeigt, die mit <strong>R</strong> erzeugt werden. Weiterhin finden Sie unter Packages die installierten Pakete und bei <em>Help</em> wird die Hilfe angezeigt.</p>
+<p>Bei den Dateien finden Sie <em>Beispiel.R</em> und <em>Beispiel.qmd</em>. Öffnen Sie mit einem Klick zunächste die <em>R</em>-Datei.</p>
+<p>In Abbildung 2.8 sehen Sie in der ersten Zeile # Das ist ein <em>Beispiel-R</em>-Skript. Das ist ein Kommentar.</p>
+<div class="Tipp callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Kommentare in <strong>R</strong> beginnen immer mit dem Doppelkreuz #.</p>
+</div>
+</div>
+<p>Der erste Befehl kommt in Zeile vier `library(mosaic)``</p>
+<div class="Tipp callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sie sehen unterschiedliche Farben. Kommentare werden mit # eingeleitet und in grün angezeigt. Der eigentliche Befehl wird in blau angezeigt.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;Sie können das Farbschema auch ändern.</p></li></div><p>Sobald Sie etwas geändert haben, wird hinter dem Dateinamen ein Sternchen angezeigt und die kleine Diskette ausgegraut und in blau dargestellt (<span class="quarto-unresolved-ref">?fig-2_9</span>). Durch Drücken darauf können Sie Datei speichern. Aber das kennen Sie ja bestimmt so oder so ähnlich aus anderen Programmen.</p>
+<p>Sie können die Datei mit <em>File – Save As</em> auch unter einem anderen Namen speichern. Wie Sie die Datei nennen, ist eigentlich egal. Aber achten Sie darauf, keinen Punkt im Dateinamen zu haben, dann wäre es kein <strong>R</strong>-Skript mehr.</p>
+<p>Beim erstmaligen Speichern kann passieren, dass ein Dialog, wie in <span class="quarto-unresolved-ref">?fig-2_10</span> gezeigt, erscheint.</p>
+<p>Wählen Sie Ihr System default aus (beim Mac ist das UTF-8) und machen das Häkchen bei <em>Set as default encoding for source files</em> an. Wenn Sie OK drücken, kommt später dieses Fenster nicht mehr.</p>
+
+
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Kopiert");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Kopiert");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Kapitel-1.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Die ersten Schritte mit R und R Studio</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Kapitel-3.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Wissenschaftliche Grundlagen</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

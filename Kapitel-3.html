@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.361">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Quantitative Methoden der Informatik - 3&nbsp; Wissenschaftliche Grundlagen</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./summary.html" rel="next">
+<link href="./Kapitel-2.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Kapitel-3.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Wissenschaftliche Grundlagen</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Quantitative Methoden der Informatik</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Suchen"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vorwort</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Kapitel-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Die ersten Schritte mit R und R Studio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Kapitel-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hinweise zu R und quarto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Kapitel-3.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Wissenschaftliche Grundlagen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#einführungsbeispiel" id="toc-einführungsbeispiel" class="nav-link active" data-scroll-target="#einführungsbeispiel"><span class="header-section-number">3.1</span> Einführungsbeispiel</a></li>
+  <li><a href="#grundbegriffe" id="toc-grundbegriffe" class="nav-link" data-scroll-target="#grundbegriffe"><span class="header-section-number">3.2</span> Grundbegriffe</a></li>
+  <li><a href="#lösungshinweise" id="toc-lösungshinweise" class="nav-link" data-scroll-target="#lösungshinweise"><span class="header-section-number">3.3</span> Lösungshinweise</a>
+  <ul class="collapse">
+  <li><a href="#aufgabe-xxx" id="toc-aufgabe-xxx" class="nav-link" data-scroll-target="#aufgabe-xxx"><span class="header-section-number">3.3.1</span> Aufgabe XXX</a></li>
+  <li><a href="#aufgabe-xxx-1" id="toc-aufgabe-xxx-1" class="nav-link" data-scroll-target="#aufgabe-xxx-1"><span class="header-section-number">3.3.2</span> Aufgabe XXX</a></li>
+  <li><a href="#aufgabe-xxx-2" id="toc-aufgabe-xxx-2" class="nav-link" data-scroll-target="#aufgabe-xxx-2"><span class="header-section-number">3.3.3</span> Aufgabe XXX</a></li>
+  <li><a href="#aufgabe-xxx-3" id="toc-aufgabe-xxx-3" class="nav-link" data-scroll-target="#aufgabe-xxx-3"><span class="header-section-number">3.3.4</span> Aufgabe XXX</a></li>
+  <li><a href="#aufgabe-xxx-4" id="toc-aufgabe-xxx-4" class="nav-link" data-scroll-target="#aufgabe-xxx-4"><span class="header-section-number">3.3.5</span> Aufgabe XXX</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Wissenschaftliche Grundlagen</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="einführungsbeispiel" class="level2 page-columns page-full" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="einführungsbeispiel"><span class="header-section-number">3.1</span> Einführungsbeispiel</h2>
+<div class="page-columns page-full"><p>In einer Studie von Mednick u. a. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> wird untersucht, ob mehrWörter nach einem Nickerchen oder nach Einnahme einerKoffeintablette erinnert werden können.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Mednick u. a. (2008), „Comparing the benefits of caffeine, naps and placebo on verbal, motor and perceptual memory”</p></li></div></div>
+<p>In der Stichprobe konnten diejenigen, die ein Nickerchen gemacht hatten, im Mittel <span class="math inline">15{,}25</span> Wörter erinnern, die, welche eine Koffeintabelle genommen hatten, <span class="math inline">12{,}25</span>. Die Schlafgruppe konnte also drei Wörter mehr erinnern, wie auch das Streudiagramm in <a href="#fig-Mednick_JitterPlot">Abbildung&nbsp;<span>3.1</span></a> zeigt.</p>
+<div class="cell page-columns page-full" data-layout-align="center">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-Mednick_JitterPlot" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="Kapitel-3_files/figure-html/fig-Mednick_JitterPlot-1.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption margin-caption">Abbildung&nbsp;3.1: Streudiagramm erinnerte Anzahl Wörter nach Koffeintablette (links) vs.&nbsp;Nickerchen (rechts)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Ist das immer so? Ist der beobachtete Unterschied ungewöhnlich? Diese Fragen müssen wir uns stellen.</p>
+<p>Um das herauszufinden, wurde simuliert, wie es wäre, wenn es keinen Unterschied gäbe. Das Histogramm in <a href="#fig-Mednick_SimPlot">Abbildung&nbsp;<span>3.2</span></a> zeigt das Ergebnis.</p>
+<div class="cell page-columns page-full" data-layout-align="center">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-Mednick_SimPlot" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="Kapitel-3_files/figure-html/fig-Mednick_SimPlot-1.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption margin-caption">Abbildung&nbsp;3.2: Histogramm der Differenz der Mittelwerte von 10.000 Simulation unter der Annahme, dass es keinen Unterschied gibt</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Dies sind die Daten von <span class="math inline">10\,000</span> Zufalls-Simulationen, in denen simuliert wird, dass es eigentlich keinen Unterschied gibt zwischen der Anzahl der Wörter, die nach Kaffeegenuss und nach einem Nickerchen gemerkt werden können. Wir werden später selbst Simulationen durchführen. Ein Histogramm stellt die Ergebnisse (hier: Differenz der Anzahl der gemerkten Wörter) in bestimmten Gruppen dar (z. B. in den Intervallen <span class="math inline">(3;4]</span>, <span class="math inline">(4;5]</span>, …).</p>
+<p>Mehr zum Histogramm im Kapitel <em>Explorative Datenanalyse</em>.</p>
+<div class="Aufgabe callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Den Artikel zu der oben genannten Studie finden Sie unter <a href="https://doi.org/10.1016/j.bbr.2008.04.028" class="uri">https://doi.org/10.1016/j.bbr.2008.04.028</a>. Lesen Sie den Abstract! Was sind die Kernaussagen?</p>
+</div>
+</div>
+<div class="Tipp callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sie finden die Antwort zu dieser Aufgabe wie zu vielen anderen auch in den Lösungshinweisen im Abschnitt XXX in diesem Kapitel. – Versuchen Sie stets, eine Aufgabe zunächst selbst zu lösen, bevor Sie nachschlagen. Die aktive Auseinandersetzung ist Ihr Schlüssel zum Lernerfolg!</p>
+</div>
+</div>
+<p>Betrachten Sie noch einmal das Histogramm in <a href="#fig-Mednick_SimPlot">Abbildung&nbsp;<span>3.2</span></a>. Ist der beobachtete Unterschied von drei Wörtern eher selten? Ja, denn das kommt in weniger als 5% der simulierten Fälle vor. Das spricht dafür, dass es tatsächlich einen Unterschied gibt. Diese Herangehensweise an die Ergebnisse quantitativer Untersuchungen werden wir im Laufe dieser Veranstaltung häufiger nutzen.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><a href="https://www.causeweb.org/cause/sites/default/files/caption_contest/2019/Caption-Contest_03-2019.jpg"><img src="causeweb-images/cartoon0319.jpg" class="img-fluid"></a> Viele Generationen von Data Science.&nbsp;<a href="https://www.causeweb.org/cause/caption-contest/march/2019/results">https://www.CAUSEweb.org/</a> © J.B. Landers, Überschrift L. Poisson</p>
+</div></div><p>Wie sind Sie zu Ihrer Einschätzung gekommen? Wie ordnen Sie die Erkenntnisse der Studie ein? Liefert die Studie Erkenntnisse, die Ihre Einschätzung bestätigen oder eher dagegen sprechen? Sie merken schon, es ist wichtig, sich ein Bild über den aktuellen Stand der Forschung zu machen, um die Ergebnisse einer Analyse einordnen zu können. Daher ist Literaturrecherche ein wichtiger Schritt.</p>
+</section>
+<section id="grundbegriffe" class="level2 page-columns page-full" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="grundbegriffe"><span class="header-section-number">3.2</span> Grundbegriffe</h2>
+<p>Lassen Sie uns mit ein paar wichtigen Grundbegriffen derWissenschaftstheorie weitermachen.Wissensschaftlicher Realismus und Konstruktivismus sind unterschiedliche Zugänge zur Realität. Sie lernen die Begriffe Hypothese, Induktionsschluss und Deduktionsschluss kennen sowie die Gütekriterien für die Forschun g. In den empirischen Methoden verwenden wir unterschiedliche Zugänge zu Realität. Laut dem wissenschaftlichen Realismus existiert eine reale Welt unabhängig von der Sicht des Betrachtenden. Dies kommt häufig in den quantitative Methoden zur Anwendung. Im Konstruktivismus wird angenommen, dassWissen über die Wirklichkeit erst durchWahrnehmung erschaffen wird. Qualitative Methoden verfahren häufig nach diesem Ansatz.</p>
+<p>Weitere Erkenntnistheorien sind u. a.Empirismus, die Quelle desWissens ist (vorrangig) die Sinneserfahrung, und Rationalismus, die Quelle des Wissens ist (vorrangig) reines Denken.</p>
+<p>In der quantitativen Datenanalyse arbeiten wir mit <strong>Modellen</strong>, i. d.&nbsp;R. mit mathematisch-statistische Modellen. Allgemein formuliert sind Modelle vereinfachte Darstellungen relevanter Teile der Realität. Modelle können u. a. graphisch, verbal oder mathematisch-statistisch dargestellt werden. Durch die Modellbildung und damit einhergehende Formalisierung können Fragestellungen einfacher untersucht werden.</p>
+<p>In der quantitativen Datenanalyse müssen häufig <strong>Hypothesen</strong> formuliert und überprüft werden.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><strong>Beispiel für eine Hypothese:</strong><br>
+</p>
+<p>Alle Schwäne sind weiß. Um sie zu beweisen, müssten Sie alle Gewässer besuchen und alle Schwäne anschauen. Sie können sich aber nicht sicher sein, ob Sie nicht vielleicht einen Schwan übersehen haben. Um diese Hypothese zu widerlegen, reicht es, einen schwarzen Schwan zu finden.</p>
+</div></div><p>Hypothesen werden aus Theorie oder Beobachtungen abgeleitet und stellen Vermutungen über einen bestimmten Sachverhalt an. Sie geben damit eine provisorische Antwort auf ein wissenschaftliches Problem und gehen dabei über den Einzelfall hinaus. Hypothesen sind überprüfbar und falsifizierbar, sind aber nicht beweisbar (<em>Falsifikationsprinzip</em> nach Karl Popper).</p>
+<div class="Aufgabe callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Wie könnte die Hypothese zu unserem Einführungsbeispiel lauten?</p>
+</div>
+</div>
+<p>Theorien wiederum sind Sammlungen von Hypothesen und schlagen eine (vorläufige) Antwort auf eine offene Frage vor. Eine Theorie lässt sich aber kaum im vollen Umfang überprüfen.</p>
+<div class="Aufgabe callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Welche Theorien kennen Sie?</p>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><strong>Beispiel für Schlusstechniken</strong>:</p>
+<p><em>Induktion:</em> Hm, ich habe schon 30 Bohnen aus dem Sack gezogen . . . , alle weiß. Noch 30 Bohnen . . . , schon wieder alle weiß. Ich hab’s: Die Bohnen müssen alle weiß sein!<br>
+</p>
+<p><em>Deduktion:</em> Ich habe die Bohnen in den Sack gefüllt. Sie waren alle weiß. Jetzt nehme ich eine Bohne aus dem Sack: Sie ist weiß!<br>
+</p>
+<p><em>Abduktion:</em> Vor mir steht ein Sack; ich sehe, dass weiße Bohnen darin sind. Ich finde eine weiße Bohne irgendwo im Raum auf dem Boden. Daraus schließe ich: Die Bohne muss aus dem Sack sein!</p>
+</div></div><div class="page-columns page-full"><p>In der Wissenschaft gibt es verschiedene Schlusstechniken: [<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, Quelle Beispiel]</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;Stillfried u. a. (2013), Psychologie. Wissenschaftstheorie, philosophische Grundlagen und Geschichte : ein Lehrbuch.</p></li></div></div>
+<ul>
+<li><p><strong>Induktion:</strong> Sie beobachten in der Realität Regelmäßigkeiten und schließen daraus auf eine allgemeine Vermutung (Generalisierung— vom Speziellen zum Allgemeinen).</p></li>
+<li><p><strong>Deduktion:</strong> Sie leiten mit Hilfe logischer Regeln aus anderen, i. d.&nbsp;R. allgemeineren Aussagen neue Aussagen ab (vom Allgemeinen ins Spezielle).</p></li>
+<li><p><strong>Abduktion:</strong> Sie verknüpfen verschiedene einzelne Beobachtungen (nicht regelmäßig auftretend) und entwickeln daraus Vermutungen über den Sachverhalt (ebenfalls vom Speziellen zum Allgemeinen).</p></li>
+</ul>
+<div class="Aufgabe callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Eine Dozentin hat mehrfach beobachtet, dass ihre Studierenden interessiert am Fach Statistik sind. Nun schließt sie, dass alle Studierenden interessiert am Fach Statistik sind. Welche Schlussart liegt vor: Induktion, Deduktion oder Abduktion?</p>
+</div>
+</div>
+<p>Bezüglich der Induktion müssen Sie sich der damit verbundenen Induktionsproblematik bewusst werden. Selbst häufige regelmäßige Beobachtungen lassen nicht sicher auf ein allgemeines Gesetz schließen. Ein widersprechender Fall reicht, um zu zeigen, dass das allgemeine Gesetz nicht für alle Fälle gilt. Daher versuchen wir in der quantitativen Datenanalyse nicht Hypothesen zu beweisen, sondern gehen umgekehrt vor und widerlegen eine Hypothese oder zeigen zumindest, dass sie sehr unwahrscheinlich ist.</p>
+<p>Induktion und Abduktion werden häufig zur Bildung von Hypothesen verwendet, während Deduktion zur Überprüfung von Hypothesen eingesetzt wird.</p>
+<div class="Aufgabe callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Karl Popper hat sich umfänglich mit diesem Thema beschäftigt. Wer war Karl Popper?</p>
+</div>
+</div>
+<p>Abschließendwerfen wir einen Blick auf die Gütekriterien der Forschung. Neben <strong>ethischen Aspekten</strong> wie Diskriminierungsfreiheit und Datenschutz sind folgende Dinge wichtig: <strong>Transparenz</strong> (das Vorgehen ist dokumentiert und damit reproduzierbar), <strong>Objektivität</strong> und <strong>Validität</strong>.</p>
+<p>Letztere kann noch unterschieden werden in <strong>interne</strong> (Gibt es keine anderen Erklärungen für den behaupteten Zusammenhang?) und <strong>externe Validität</strong> (Können die Ergebnisse auf andere Situationen übertragen werden?).</p>
+<p>Empirische Forschungsprojekte können mit quantitativen und qualitativen Methoden durchgeführt werden:</p>
+<p><strong>Quantitative Methoden</strong></p>
+<ul>
+<li><p>Messung und numerische Beschreibung der Wirklichkeit (vgl. wissenschaftlichen Realismus).</p></li>
+<li><p>Allgemeingültige Gesetze für die Grundgesamtheit.</p></li>
+<li><p>Ein Ausschnitt der beobachteten sozialen Vielfalt wird auf Skalen abgebildet, und es wird mit Häufigkeiten, Mittelwerten, Wahrscheinlichkeiten des Auftretens von Merkmalsausprägungen operiert.<br>
+</p></li>
+</ul>
+<p><strong>Qualitative Methoden</strong></p>
+<ul>
+<li><p>Verbalisierung der Erfahrungswirklichkeit (vgl. Konstruktivismus).</p></li>
+<li><p>Wirklichkeitsinterpretationen sind durch spezifische soziale Handlungsweisen geprägt und strukturieren gleichzeitig das soziale Handeln der Einzelperson vor.</p></li>
+<li><p>Der Untersuchungsgegenstand soll möglichst in seinem natürlichen Umfeld detailliert, ganzheitlich und umfassend erfasst werden.</p></li>
+</ul>
+<p>Wir beschränken uns in diesen Unterlagen auf die quantitativen Methoden. Dazu werden Sie im folgenden Kapitel die Grundlagen kennenlernen.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lernpfad <strong>Wissenschaftliche Grundlagen</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>Bearbeiten Sie die Übungen, falls Sie diese noch nicht absolviert haben. — Die Lösungen finden Sie am Ende des Kapitels.</p></li>
+<li><p>Klären Sie erforderlichenfalls Ihnen noch unbekannte Begriffe und Sachverhalte eigenständig.</p></li>
+<li><p>Schauen Sie sich noch folgenden Screencast zu den wissenschaftlichen Schlusstechniken (<a href="https://vimeo.com/459321513" class="uri">https://vimeo.com/459321513</a>) und den wissenschaftlichen Gütekriterien (<a href="https://vimeo.com/459322250" class="uri">https://vimeo.com/459322250</a>) an. Das Passwort ist jeweils <em>FOMtest</em>.</p></li>
+<li><p>Zur Überprüfung Ihres Lernstands bearbeiten Sie bitte die ersten drei Wiederholungsfragen unter folgenden Link: <a href="https://fomshinyapps.shinyapps.io/Lernfortschrittskontrolle_01/" class="uri">https://fomshinyapps.shinyapps.io/Lernfortschrittskontrolle_01/</a></p></li>
+</ul>
+</div>
+</div>
+<div class="Zusammenfassung callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Zusammenfassung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Halten wir fest, was Sie in diesem Kapitel gelernt haben:</p>
+<ul>
+<li><p>Sie können die Gütekriterien der Forschung benennen.</p></li>
+<li><p>Sie haben gelernt, dass die Literaturrecherche in wissenschaftlichen Fragestellungen sehr wichtig ist.</p></li>
+<li><p>Sie können feststellen, ob es sich bei Sätzen um Hypothesen handelt, und wissen, dass diese nicht bewiesen, sondern nur falsifiziert werden können.</p></li>
+<li><p>Sie können zwischen Induktion, Deduktion und Abduktion unterscheiden.</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="lösungshinweise" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="lösungshinweise"><span class="header-section-number">3.3</span> Lösungshinweise</h2>
+<section id="aufgabe-xxx" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="aufgabe-xxx"><span class="header-section-number">3.3.1</span> Aufgabe XXX</h3>
+<p>Vergleich von drei Gruppen (Koffeinaufnahme, Kurzschlaf, Placebo) im Erinnern von Wörtern, motorischen Fähigkeiten, Wahrnehmungen. Kurzschlaf verbesserte die Worterinnerung; Koffein beeinträchtigte das motorische Erinnern;Kurzschlaf und Koffein verbesserten die Erinnerung von Wahrnehmungen. Insgesamt zeigt sich der eingeschränkte Nutzen von Koffein deutlich.</p>
+</section>
+<section id="aufgabe-xxx-1" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="aufgabe-xxx-1"><span class="header-section-number">3.3.2</span> Aufgabe XXX</h3>
+<p>Die Anzahl der Wörter, die nach Einnahme einer Koffeintabelle oder nach einem Nickerchen erinnert werden können, unterscheidet sich. Oder: Nach einem Nickerchen können mehr Wörter erinnert werden als nach Einnahme einer Koffeintablette. Oder:Wenn ein Nickerchen gemacht wurde, können mehrWörter erinnert werden als nach Einnahme einer Koffeintablette.</p>
+<div class="callout.tip Tipp">
+<p><strong>Tipp</strong></p>
+<p>Vielleicht ist Ihnen aufgefallen, dass die erste Hypothese nur einen Unterschied postuliert, während die beiden anderen eine Richtung („mehr“) vorgeben. Im ersten Fall ist es eine ungerichtete oder zweiseitige Hypothese, die beiden anderen sind gerichtete bzw. einseitige Hypothesen. Mehr dazu erfahren Sie in Kapitel XXX (<em>Inferenzstatistik</em>).</p>
+</div>
+</section>
+<section id="aufgabe-xxx-2" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="aufgabe-xxx-2"><span class="header-section-number">3.3.3</span> Aufgabe XXX</h3>
+<p>Aus Ihren Studium kennen Sie vielleicht die Prinzipal-Agenten-Theorie. Oder aus dem Allgemeinen die Relativitätstheorie. Und und und …</p>
+</section>
+<section id="aufgabe-xxx-3" class="level3" data-number="3.3.4">
+<h3 data-number="3.3.4" class="anchored" data-anchor-id="aufgabe-xxx-3"><span class="header-section-number">3.3.4</span> Aufgabe XXX</h3>
+<p>Wiederholte Beboachtung desselben Phänomens und Schluss auf das Allgemeine: Induktion.</p>
+</section>
+<section id="aufgabe-xxx-4" class="level3" data-number="3.3.5">
+<h3 data-number="3.3.5" class="anchored" data-anchor-id="aufgabe-xxx-4"><span class="header-section-number">3.3.5</span> Aufgabe XXX</h3>
+<p>Sir Karl Raimund Popper, 1902–1994, war ein österreichisch-britischer Philosoph. Er hat im Rahmen seiner wissenschaftstheoretischen Arbeiten das empirische Falsifikationsprinzip aufgestellt.</p>
+
+
+</section>
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Kopiert");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Kopiert");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Kapitel-2.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hinweise zu R und quarto</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
