@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# Vorwort {.unnumbered}
-=======
 ```{r setup}
 #| echo: false
 #| include: false
@@ -18,4 +15,3 @@ All models are wrong, but some are useful ...
 Diese Unterlagen unterstützen Sie bei Ihrer Vor- und Nacharbeit der Präsenztermine. In den Präsenzterminen arbeiten wir gemeinsam und interaktiv an Fallstudien. Viele Studien zeigen: *Regelmäßige Vor-, Nach- und Mitarbeit ist ein sehr guter Prädiktor für den Erfolg in diesem Modul.* Nutzen Sie die Chance, die diese Unterlagen bieten!
 
 Bitte melden Sie Unklarheiten und Fehler an [mailto:norman.markgraf\@fom-net.de](norman.markgraf@fom-net.de).
->>>>>>> d49d0e6 (Kleinere Updates)

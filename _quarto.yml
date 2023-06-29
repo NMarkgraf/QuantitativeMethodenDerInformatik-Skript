@@ -8,11 +8,8 @@ book:
   chapters:
     - index.qmd
     - Kapitel-1.qmd
-<<<<<<< HEAD
     - Kapitel-2.qmd
-=======
     - Kapitel-3.qmd
->>>>>>> d49d0e6 (Kleinere Updates)
     - summary.qmd
     - references.qmd
 
