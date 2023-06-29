@@ -104,7 +104,7 @@ Betrachten Sie noch einmal das Histogramm in @fig-Mednick_SimPlot.
 Ist der beobachtete Unterschied von drei Wörtern eher selten? 
 Ja, denn das kommt in weniger als 5% der simulierten Fälle vor. 
 Das spricht dafür, dass es tatsächlich einen Unterschied gibt. 
-Diese Herangehensweise an die Ergebnisse quantitativer Untersuchungenwerden wir im Laufe dieser Veranstaltung häufiger nutzen.
+Diese Herangehensweise an die Ergebnisse quantitativer Untersuchungen werden wir im Laufe dieser Veranstaltung häufiger nutzen.
 
 ::: column-margin
 [![](causeweb-images/cartoon0319.jpg)](https://www.causeweb.org/cause/sites/default/files/caption_contest/2019/Caption-Contest_03-2019.jpg)
