@@ -52,3 +52,6 @@ rsconnect/
 /_book/
 *_files/
 *.html
+.DS_Store
+_book*.zip
+site_libs/
