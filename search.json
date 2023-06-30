@@ -4,21 +4,42 @@
     "href": "index.html",
     "title": "Quantitative Methoden der Informatik",
     "section": "",
-    "text": "All models are wrong, but some are useful …\n– George Box\n\n\nVorwort\nDiese Unterlagen unterstützen Sie bei Ihrer Vor- und Nacharbeit der Präsenztermine. In den Präsenzterminen arbeiten wir gemeinsam und interaktiv an Fallstudien. Viele Studien zeigen: Regelmäßige Vor-, Nach- und Mitarbeit ist ein sehr guter Prädiktor für den Erfolg in diesem Modul. Nutzen Sie die Chance, die diese Unterlagen bieten!\nBitte melden Sie Unklarheiten und Fehler an norman.markgraf@fom-net.de."
+    "text": "All models are wrong, but some are useful …\n\n\n– George Box\n\n\n\n\n\nVorwort\nDiese Unterlagen unterstützen Sie bei Ihrer Vor- und Nacharbeit der Präsenztermine. In den Präsenzterminen arbeiten wir gemeinsam und interaktiv an Fallstudien. Viele Studien zeigen: Regelmäßige Vor-, Nach- und Mitarbeit ist ein sehr guter Prädiktor für den Erfolg in diesem Modul. Nutzen Sie die Chance, die diese Unterlagen bieten!\nBitte melden Sie Unklarheiten und Fehler an norman.markgraf@fom-net.de.\nCopyright\n\nDiese Unterlagen wurden von Prof. Dr. Matthias Gehrke auf Basis des Studienbrief-Konzepts von Roswitha Grassl (beide FOM, https://www.fom.de) entwickelt und stehen unter einer Creative Commons Namensnennung – Nicht-kommerziell – Weitergabe unter gleichen Bedingungen cbea 3.0 Lizenz (https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode.de).\nColophon\n\nDieses Dokument wurde mit Hilfe von quarto aus einer Vorlage eines mit Hilfe von KOMA-Script und LaTeX unter Nutzung der kaobook Klasse gesetzt Dokumentes erstellt."
   },
   {
-    "objectID": "Kapitel-1.html#r-und-r-studio",
-    "href": "Kapitel-1.html#r-und-r-studio",
-    "title": "1  Die ersten Schritte mit R und R Studio",
-    "section": "1.1 R und R Studio",
-    "text": "1.1 R und R Studio\n…"
+    "objectID": "Kapitel-1.html#dieses-dokument",
+    "href": "Kapitel-1.html#dieses-dokument",
+    "title": "1  Einleitung",
+    "section": "1.1 Dieses Dokument",
+    "text": "1.1 Dieses Dokument\nBegleitend zu den einzelnen Abschnitten der Veranstaltung finden Sie hier die passenden Kapitel. Diese können Sie von vorne nach hinten durcharbeiten. Es finden sich Erklärungen und Ergänzungen, erweitert um kurze Verständnisfragen oder Arbeitsaufträge. Am Ende eines Abschnitts gibt es einen Lernpfad, in dem auf weiteres Zusatzmaterial verwiesen wird, mit dem Sie die Inhalte zusätzlich vertiefen können. Dazu gibt es Lehrvideos (Screencasts), ergänzende Kurz- oder Langtutorials, Lernfortschrittskontrollen sowie interaktive Übungs-Apps."
   },
   {
-    "objectID": "Kapitel-1.html#posit.cloud",
-    "href": "Kapitel-1.html#posit.cloud",
-    "title": "1  Die ersten Schritte mit R und R Studio",
-    "section": "1.2 posit.cloud",
-    "text": "1.2 posit.cloud\n…"
+    "objectID": "Kapitel-1.html#screencasts",
+    "href": "Kapitel-1.html#screencasts",
+    "title": "1  Einleitung",
+    "section": "1.2 Screencasts",
+    "text": "1.2 Screencasts\nSie lernen lieber mit Videos? Zu verschiedenen Themen finden Sie Lehrvideos, in denen Sie die Inhalte auf einem anderen Weg vermittelt bekommen."
+  },
+  {
+    "objectID": "Kapitel-1.html#kurz--oder-langtutorials",
+    "href": "Kapitel-1.html#kurz--oder-langtutorials",
+    "title": "1  Einleitung",
+    "section": "1.3 Kurz- oder Langtutorials",
+    "text": "1.3 Kurz- oder Langtutorials\nZu einigen Themenbereichen gibt es Learnr-Tutorials. Kurze Einheiten zeigen die Kernpunkte des Themas auf und stellen anhand von Multiple-Choice-Fragen oder kurzen Coding-Aufgaben den Zusammenhang her. In längeren und ausführlicheren Tutorials können Sie die Inhalte nochmals durchgehen und sich erklären lassen."
+  },
+  {
+    "objectID": "Kapitel-1.html#lernfortschrittskontrolle",
+    "href": "Kapitel-1.html#lernfortschrittskontrolle",
+    "title": "1  Einleitung",
+    "section": "1.4 Lernfortschrittskontrolle",
+    "text": "1.4 Lernfortschrittskontrolle\nDas sind kleine Learnr-Einheiten mit Wiederholungsfragen zu den Inhalten der Veranstaltung bzw. dieses Dokuments. Hiermit können Sie überprüfen, inwieweit Sie sich die Inhalte der Veranstaltung gemerkt haben (oder im Eigenstudium vorgearbeitet oder nachgeholt haben). Sie können damit identifizieren, wo eventuell noch Verständnisfragen offen sind. So können Sie an den entsprechenden Stellen in diesem Dokument noch einmal nachschauen, Zusatzinformationen aus der angegebenen Literatur hinzuziehen oder den Screencast anschauen."
+  },
+  {
+    "objectID": "Kapitel-1.html#übungs-apps",
+    "href": "Kapitel-1.html#übungs-apps",
+    "title": "1  Einleitung",
+    "section": "1.5 Übungs-Apps",
+    "text": "1.5 Übungs-Apps\nIn interaktiven Shiny-Apps (bzw. LearnR-Apps) können Sie Ihr Wissen auffrischen und anwenden. Hierzu wird die Theorie in Grundzügen zunächst wiederholt und anschließend in verschiedenen Übungen angewendet. Es gibt sowohl Quizfragen als auch Code-Fenster, in denen Sie direkt R-Code für Berechnungen und Analysen eingeben und testen können.\nDie Apps führen Sie schrittweise durch die einzelnen Themen und Übungen.\nIn einem Code-Fenster können Sie Ihren R-Code eingeben. Manchmal sind Teile des R-Codes auch schon vorgegeben und Sie müssen lediglich eine paar Stellen ergänzen.\nTODO: Abbildung 1.2.: Code-Fenster in den Shiny-Übungs-Apps\nWenn Sie auf Ausführen klicken, schicken Sie den R-Code ab (analog zum Abschicken des R-Codes in RStudio über Run Code – Details folgen im nächsten Kapitel) und es wird das Ergebnis ausgegeben. Sollten Sie nicht weiterkommen, können Sie sich über den Hinweise- Button Tipps holen, manchmal enthält dieser auch direkt die Lösung, dann heißt der Button auch entsprechend Lösung. Wenn Sie die Übung nochmal neu beginnen möchten, klicken Sie auf Neustart. Aktuell ist es (noch) nicht möglich in den Hinweisen zurückzugehen. Sollten Sie also einen vorigen Tipp nochmals nachschauen wollen, müssten Sie die Übung über den Neustart- Button neu beginnen.\nMeist finden Sie unter den Übungen noch einen Button Interpretation oder Lösung. Wenn Sie diesen anklicken, bekommen Sie weitere Informationen oder die Lösung mit Erklärungen angezeigt.\nTODO: Abbildung 1.3.: Button Interpretation in der Shiny-App\nEine kapitelweise Liste zu den Lernmaterialien finden Sie Anhang A Kapitel A."
   },
   {
     "objectID": "Kapitel-2.html#warum-r",
@@ -58,7 +79,7 @@
   {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "4  Summary",
+    "title": "10  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
   }
