@@ -6,12 +6,27 @@ library(mosaic)
 
 #  {.unnumbered}
 
+::: {.Zitat}
+::: center
 All models are wrong, but some are useful ...
-
+:::
+::: align-right
 -- George Box
+:::
+:::
+
+{{< pagebreak >}}
 
 # Vorwort {.unnumbered}
 
 Diese Unterlagen unterstützen Sie bei Ihrer Vor- und Nacharbeit der Präsenztermine. In den Präsenzterminen arbeiten wir gemeinsam und interaktiv an Fallstudien. Viele Studien zeigen: *Regelmäßige Vor-, Nach- und Mitarbeit ist ein sehr guter Prädiktor für den Erfolg in diesem Modul.* Nutzen Sie die Chance, die diese Unterlagen bieten!
 
 Bitte melden Sie Unklarheiten und Fehler an [norman.markgraf\@fom-net.de](mailto:norman.markgraf@fom-net.de).
+
+**Copyright**\
+
+Diese Unterlagen wurden von Prof. Dr. Matthias Gehrke auf Basis des Studienbrief-Konzepts von Roswitha Grassl (beide FOM, <https://www.fom.de>) entwickelt und stehen unter einer Creative Commons Namensnennung -- Nicht-kommerziell -- Weitergabe unter gleichen Bedingungen cbea 3.0 Lizenz (<https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode.de>).
+
+**Colophon**\
+
+Dieses Dokument wurde mit Hilfe von **quarto** aus einer Vorlage eines mit Hilfe von **KOMA**-Script und **LaTeX** unter Nutzung der **kaobook** Klasse gesetzt Dokumentes erstellt.

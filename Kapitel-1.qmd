@@ -27,11 +27,13 @@ Lernfortschrittskontrollen sowie interaktive Übungs-Apps.
 Sie lernen lieber mit Videos? 
 Zu verschiedenen Themen finden Sie Lehrvideos, in denen Sie die Inhalte auf einem anderen Weg vermittelt bekommen.
 
+
 ## Kurz- oder Langtutorials
 
 Zu einigen Themenbereichen gibt es Learnr-Tutorials. 
 Kurze Einheiten zeigen die Kernpunkte des Themas auf und stellen anhand von Multiple-Choice-Fragen oder kurzen Coding-Aufgaben den Zusammenhang her. 
 In längeren und ausführlicheren Tutorials können Sie die Inhalte nochmals durchgehen und sich erklären lassen.
+
 
 ## Lernfortschrittskontrolle
 
@@ -39,6 +41,7 @@ Das sind kleine Learnr-Einheiten mit Wiederholungsfragen zu den Inhalten der Ver
 Hiermit können Sie überprüfen, inwieweit Sie sich die Inhalte der Veranstaltung gemerkt haben (oder im Eigenstudium vorgearbeitet oder nachgeholt haben). 
 Sie können damit identifizieren, wo eventuell noch Verständnisfragen offen sind. 
 So können Sie an den entsprechenden Stellen in diesem Dokument noch einmal nachschauen, Zusatzinformationen aus der angegebenen Literatur hinzuziehen oder den Screencast anschauen.
+
 
 ## Übungs-Apps
 
@@ -52,7 +55,8 @@ In einem Code-Fenster können Sie Ihren R-Code eingeben.
 Manchmal sind Teile des R-Codes auch schon vorgegeben und Sie müssen lediglich
 eine paar Stellen ergänzen.
 
-***TODO:*** fig-abb-1-2
+***TODO:*** Abbildung 1.2.: Code-Fenster in den
+Shiny-Übungs-Apps
 
 Wenn Sie auf Ausführen klicken, schicken Sie den R-Code ab (analog zum Abschicken des R-Codes in RStudio über Run Code – Details folgen im nächsten Kapitel) und es wird das Ergebnis ausgegeben.
 Sollten Sie nicht weiterkommen, können Sie sich über den Hinweise- Button Tipps holen, manchmal enthält dieser auch direkt die Lösung, dann heißt der Button auch entsprechend Lösung.
@@ -63,8 +67,7 @@ Sollten Sie also einen vorigen Tipp nochmals nachschauen wollen, müssten Sie di
 Meist finden Sie unter den Übungen noch einen Button Interpretation oder Lösung. 
 Wenn Sie diesen anklicken, bekommen Sie weitere Informationen oder die Lösung mit Erklärungen angezeigt.
 
-***TODO:***Abbildung 1.3.: Button Interpretation in
-der Shiny-App
+***TODO:*** Abbildung 1.3.: Button Interpretation in der Shiny-App
 
 Eine kapitelweise Liste zu den Lernmaterialien finden Sie Anhang A
 Kapitel A.
