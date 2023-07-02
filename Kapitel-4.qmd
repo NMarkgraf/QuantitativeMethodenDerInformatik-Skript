@@ -1,1 +1,100 @@
 # Grundlagen der qualtitativen Datenanalyse
+
+::: {.callout-tip .Lernergebnisse}
+## Lernergebnisse dieses Kapitels
+
+Nach erfolgreichem Abschluss dieses Kapitels sind Sie in der Lage,
+
+- eine Messung zu definieren und verschiedene Typen von Skalenniveaus sicher zu unterscheiden;
+- Grundbegriffe der quantitativen Datenanalyse (wie Unabhängige Variable, Abhängige Variable) und Probleme erklären, die aufgrund der Nichtberücksichtigung von Drittvariablen auftreten können;
+- zentrale Begriffe um Stichproben(arten) und Populationen zu erläutern;
+- die Unterschiede hinsichtlich Zufall und Kausalität bei Beobachtungs- vs. Experimentalstudien zu erkennen;
+- die Phasen des PPDAC-Zyklus zu nennen und anhand von Beispielen zu illustrieren.
+
+:::
+
+
+## Grundbegriffe
+
+Um Daten zu erheben, müssen Messungen durchgeführt werden. 
+Der Eigenschaft eines Objektes wird dabei ein Wert zugewiesen. 
+Dazu muss nicht immer ein Messgerät verwendet werden, auch das Nachschlagen des Umsatzes in einem Geschäftsbericht führt zu Daten.
+Das, was gemessen wird, bezeichnen wir als Variable. 
+Es gibt zwei Typen von Variablen:
+
+- **Manifeste Variablen:** Der Wert kann direkt gemessen werden, z. B. Größe, Gewicht, Umsatz.
+- **Latente Variablen:** Diese können nicht direkt gemessen werden, sie müssen erst durch ein Konstrukt operationalisiert werden, z. B. Intelligenz, Leichtigkeit beim Verständnis von Statistik, Innovationsstärke eines Unternehmens.
+
+Eine Operationalisierung erfolgt im Zusammenhang mit Umfragen häufig mittels einer Multi-Item-Likert-Skala. 
+Dabei werden auf einer Skala z. B. von eins (trifft überhaupt nicht zu) bis sieben (trifft voll oder ganz zu) Aussagen bewertet, die im Zusammenhang mit der betreffenden latenten Variablen stehen.
+
+::: column-margin
+*Beispiel für eine Multi-Item Likert-Skala:* \
+
+Leichtigkeit beim Verständnis von Statistik Bewertung der Aussagen auf einer Skala von 1 (trifft überhaupt nicht zu) über 4 (weder zutreffend, noch unzutreffend) bis 7 (trifft voll und ganz zu) [* inverse Items]
+
+- Statistische Formeln sind leicht zu verstehen.
+- Statistik ist ein kompliziertes Fach.*
+- Statistik ist ein Fach, das die meisten Menschen schnell lernen.
+- Das Lernen von Statistik erfordert sehr viel Disziplin.*
+- Statistik beinhaltet sehr umfangreiche Rechnungen.*
+- Statistik ist eine sehr technische Materie.*
+- Die meisten Menschen müssen lernen anders zu denken, um Statistik
+anwenden zu können.*
+:::
+
+Ein Beispiel für eine solche Multi-Item-Likert-Skala ist die Operationalisierung des Verständnisses von Statistik [^[Schau (), Survey of Attitudes Toward Statistics, SATS-36]]. Manche der Items sind sogenannte inverse Items (im Beispiel mit \* markiert), die Zustimmung geht also in die umgekehrte Richtung. 
+Aus allen Werten wird dann der Mittelwert gebildet, dazu müssen die inversen Items zunächst umgedreht werden (auf einer siebenstufigen Skala wird so z. B. aus einer zwei eine sechs). 
+Der sich ergebende Mittelwert ist dann der Wert, der der betreffenden Variablen für diese Beobachtung zugewiesen wird.
+
+Auch hier kehren die Gütekriterien wieder, jetzt bezogen auf die Messung.
+Im Einzelnen sind dies Genauigkeit, Objektivität, Reliabilität (Zuverlässigkeit einer Messung, wiederholte Messungen ergeben ein vergleichbares Ergebnis) und Validität (es wird das gemessen,was gemessen werden soll).
+
+::: {.callout-note .Aufgabe}
+Vergleichen Sie die Gütekriterien der Messung mit denen der Forschung. 
+Wo gibt es Gemeinsamkeiten, wo Unterschiede?
+:::
+
+@fig_Abb-4-1 zeigt exemplarisch, was bei einer Messung schief gehen
+kann. Entweder streut das Messergebnis (Varianz) oder die Messung hat
+eine Abweichung (Verzerrung oder Bias), beispielsweise eine Waage, die
+verstellt ist.
+
+***TODO Abb4-1***
+
+Eine hohe Varianz bedeutet eine geringe Reliabilität, eine große Verzerrung
+führt zu einer geringen Validität. Das Thema wird uns auch in
+späteren Kapiteln beschäftigen – wirwerden lernen,was wir beeinflussen,
+was wir kontrollieren können.
+
+::: {.callout-note .Aufgabe}
+Ist es bei 20 Grad Celsius doppelt so warm wie bei 10
+Grad Celsius? Begründen Sie Ihre Antwort.
+:::
+
+::: {.callout-tip .Tipp}
+## Tipp
+
+Beantworten Sie die Frage, bevor Sie weiterlesen. Versuchen Sie erst
+selbst die Lösung zu finden. Das ist der Schlüssel für Ihren Lernerfolg!
+:::
+
+Daten können auf unterschiedlichen Skalen gemessen werden. 
+Um das Skalenniveau von Daten, d. h. um den Informationsgehalt. 
+Zwei grundsätzliche Eigenschaften gibt es dabei: **kategorial** und **metrisch**.
+
+Die kategoriale Skale wird auch als qualitative Skala bezeichnet, es geht um Eigenschaften. 
+Wenn Sie eine Eigenschaft nur zuordnen können, heißt die Skala **nominal**, z. B. Industriesektoren oder Länder. 
+
+Können Sie die Eigenschaften ordnen? 
+Dann liegen sie auf einer **Ordinalskala** vor.
+Beispiele dafür sind Bildungsabschlüsse oder Gütesterne von Hotels.
+
+Die metrische Skala wird auch als quantitative Skala bezeichnet.
+Wenn Sie nur die die Abstände inhaltlich sinnvoll interpretiert können, liegen die Daten auf einer Intervallskala vor, ein Beispiel wäre die Temperatur in °C. 
+Können auch die Quotienten sinnvoll interpretiert werden, liegen die Daten auf einer Verhältnisskala vor, z. B. Größe in cm, Umsatz in Euro.
+
+Beispiele: 2 m ist doppelt so lang wie 1 m, aber 20 °C ist nicht doppelt so warm wie 10 °C – inhaltlich ist die zweite Aussage nicht sinnvoll.
+Im Fall der Intervallskala ist der Nullpunkt gesetzt, während es bei der Verhältnisskala einen natürlichen Nullpunkt gibt. 
+Daten auf der Intervallskala können Sie mit Faktor und Offset umrechnen (z. B. von der Celsius- zur Fahrenheitskala), während Sie Daten auf der Verhältnisskala nur mit einem Faktor umrechnen können (z. B. Meter in Inch).
+

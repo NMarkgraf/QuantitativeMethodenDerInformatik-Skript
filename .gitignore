@@ -55,3 +55,5 @@ rsconnect/
 .DS_Store
 _book*.zip
 site_libs/
+
+*.rmarkdown

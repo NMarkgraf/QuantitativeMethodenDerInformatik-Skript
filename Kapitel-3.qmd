@@ -144,7 +144,7 @@ Welche Theorien kennen Sie?
 ::: column-margin
 **Beispiel für Schlusstechniken**:
 
-*Induktion:* Hm, ich habe schon 30 Bohnen aus dem Sack gezogen . . . , alle weiß. Noch 30 Bohnen . . . , schon wieder alle weiß. Ich hab's: Die Bohnen müssen alle weiß sein!\
+*Induktion:* Hm, ich habe schon 30 Bohnen aus dem Sack gezogen ... , alle weiß. Noch 30 Bohnen ..s. , schon wieder alle weiß. Ich hab's: Die Bohnen müssen alle weiß sein!\
 
 *Deduktion:* Ich habe die Bohnen in den Sack gefüllt. Sie waren alle weiß. Jetzt nehme ich eine Bohne aus dem Sack: Sie ist weiß!\
 
