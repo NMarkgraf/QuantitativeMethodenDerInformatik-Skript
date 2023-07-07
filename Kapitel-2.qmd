@@ -80,18 +80,18 @@ Hier gibt es zwei Möglichkeiten:
 Laden Sie das Projekt (hier *QDmR*^[Download des Beispielprojekts:
 <https://bit.ly/QDmR-Projekt]>) herunter und entzippen Sie es, in dem Sie das gezippte Verzeichnis in ein Verzeichnis Ihrer Wahl ziehen (@fig-ExpZip).
 
-![Zip-Datei und Zielverzeichnis \n Rechts: Heruntergeladenes Archiv (Zip), links: Zielverzeichnis](own-images/ExplorerZip.png){#fig-ExpZip width=9cm}
+![Zip-Datei und Zielverzeichnis \\ Rechts: Heruntergeladenes Archiv (Zip), links: Zielverzeichnis](own-images/ExplorerZip.png){#fig-ExpZip width=9cm}
 
 Wechseln Sie in das entzippte Verzeichnis, hier *QDmR* (@fig-ExpEntzippt), und doppelklicken Sie auf die gleichnamige Projektdatei (in @fig-ExpProjekt markiert).
 
 ![Projektverzeichnis](own-images/ExplorerEntzippt.png){#fig-ExpEntzippt width=9cm}
 
-![Geöffnetes Projektverzeichnis \n Geöffnetes Projektverzeichnis, Sie können das Projekt (markiert) durch Doppelklick starten.\\$\qquad$](own-images/ExplorerProjekt.png){#fig-ExpProjekt width=7cm}
+![Geöffnetes Projektverzeichnis \\ Geöffnetes Projektverzeichnis, Sie können das Projekt (markiert) durch Doppelklick starten.\\$\qquad$](own-images/ExplorerProjekt.png){#fig-ExpProjekt width=7cm}
 
 Wenn Sie **RStudio** schließen und das nächste Mal starten, wird das Projekt automatisch wieder geladen. Sie erkennen das in RStudio oben rechts (in @fig-RStudioProjekt markiert).
 
 ::: column-margin
-![Ausschnitt aus RStudio \n Ausschnitt aus RStudio: Das geöffnete Projekt wird oben rechts gezeigt. Weitere Projekte können ggf. über die Dropdown-Liste ausgewählt werden.](own-images/RStudioProjekt.png){#fig-RStudioProjekt}
+![Ausschnitt aus RStudio \\ Ausschnitt aus RStudio: Das geöffnete Projekt wird oben rechts gezeigt. Weitere Projekte können ggf. über die Dropdown-Liste ausgewählt werden.](own-images/RStudioProjekt.png){#fig-RStudioProjekt}
 :::
 
 Falls dort nicht *QDmR* stehen sollte, wählen Sie das Projekt aus der Dropdown-Liste aus, die geöffnet wird, wenn Sie auf den Pfeil rechts drücken.
@@ -163,7 +163,7 @@ Sobald Sie etwas geändert haben, wird hinter dem Dateinamen ein Sternchen angez
 Durch Drücken darauf können Sie Datei speichern. 
 Aber das kennen Sie ja bestimmt so oder so ähnlich aus anderen Programmen.
 
-![Geänderte Beispieldatei \n Geänderte Beispieldatei, der Button zum Speichern (kleine blaue Diskette) erscheint](own-images/RStudioSpeichern.png){#fig-RStudioSpeichern}
+![Geänderte Beispieldatei \\ Geänderte Beispieldatei, der Button zum Speichern (kleine blaue Diskette) erscheint](own-images/RStudioSpeichern.png){#fig-RStudioSpeichern}
 
 Sie können die Datei mit *File – Save As* auch unter einem anderen Namen speichern. 
 Wie Sie die Datei nennen, ist eigentlich egal. 
@@ -171,7 +171,7 @@ Aber achten Sie darauf, keinen Punkt im Dateinamen zu haben, dann wäre es kein 
 
 Beim erstmaligen Speichern kann passieren, dass ein Dialog, wie in @fig-RStudioChooseEncoding gezeigt, erscheint.
 
-![Encoding \n Dialog zu *Choose Encoding* (Wähle Zeichen-Codierung)](own-images/RStudioChooseEncoding.png){#fig-RStudioChooseEncoding}
+![Encoding \\ Dialog zu *Choose Encoding* (Wähle Zeichen-Codierung)](own-images/RStudioChooseEncoding.png){#fig-RStudioChooseEncoding}
 
 Wählen Sie Ihr System *default* aus (beim Mac ist das UTF-8) und machen
 das Häkchen bei *Set as default encoding for source files* an. 
@@ -195,7 +195,7 @@ Encoding (Zeichen-Codierung)
 Lesen Sie z. B. einen Mac-codierten R-Skript ein, dann sieht die erste Zeile so wie in @fig-RStudioEncoding aus.
 Immer wenn so etwas passiert, können Sie die Datei mit *File – Reopen with Encoding* neu öffnen, in dem Sie die Codierung auswählen, in der R-Skript abgespeichert ist.
 
-::: {.callout-tip .Hisweis}
+::: {.callout-tip .Hinweis}
 ## Hinweis
 Die hier bereit gestellten Dateien sind immer UTF-8 codiert.
 :::
