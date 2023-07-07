@@ -57,3 +57,8 @@ _book*.zip
 site_libs/
 
 *.rmarkdown
+*.aux
+*.log
+*.toc
+index.tex
+index.pdf
