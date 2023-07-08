@@ -80,7 +80,7 @@ Eigenschaften werden in *Kategorien* angegeben, daher *kategoriale* Daten.
 Wenn Sie etwas *messen* können (quasi mit dem Maßband oder dem Zollstock), sind es *metrische* Daten.
 :::
 
-::: {.Aufgabe}
+::: {.callout-note .Aufgabe}
 Welches Skalenniveau hat die Variable Telefonvorwahl?
 :::
 
@@ -91,7 +91,7 @@ Ein Beispiel dafür ist die Anzahl Studierender in einer Veranstaltung.
 Manchmal gibt es auch Daten, die z. B. auf zwei Nachkommastellen diskret sind wie Geldbeträge in Euro. 
 Da es dann aber sehr viele Stufen gibt, werden sie als **quasi-stetig** bezeichnet und wie stetige Werte behandelt.
 
-::: {.Aufgabe}
+::: {.callout-note .Aufgabe}
 Hören Sie zur Entspannung folgenden Song: Levels of Measurement © Larry Lesser und Dominic Dousa, [www.causeweb.org](https://www.causeweb.org/cause/resources/fun/songs/levels-measurement).
 :::
 
@@ -102,7 +102,7 @@ Wenn Sie Spaß daran haben, hören oder schauen Sie sich diese an.
 Es lockert den Ablauf auf und bewirkt eine zusätzliche Verfestigung des Lernstoffes.
 :::
 
-::: {margin}
+::: column-margin
 ...
 :::
 
@@ -112,7 +112,7 @@ Daten werden häufig auch in Formaten abgespeichert, die von Tabellenkalkulation
 Die Spalten entsprechen in der Regel einer Variablen, hier Name, Geschlecht und Alter, eine Zeile zeigt eine Beobachtung. 
 Häufig ist die erste Zeile in einem Datensatz die Kopfzeile, gibt also die Namen der Variablen aus.
 
-::: {.Aufgabe}
+::: {.callout-note .Aufgabe}
 Lesen Sie Kapitel 1 aus dem Buch *Introduction to Modern Statistics* [6]. 
 Sie können es hier herunterladen: <https://openintro-ims.netlify.app/index.html>
 :::
@@ -130,7 +130,7 @@ Ziel in der quantitativen Datenanalyse ist häufig, beobachtete Daten zu modelli
 Daten = Modell + Rest
 :::
 
-::: {.Aufgabe}
+::: {.callout-note .Aufgabe}
 Überlegen Sie sich, warum Punkte einer Klausur variieren.
 :::
 
@@ -159,7 +159,7 @@ Erst die Aufteilung nach der Kovariable Department (Abbildung 4.3) zeigt, dass F
 
 XXX Abbildung XXX
 
-::: {.Aufgabe}
+::: {.callout-note .Aufgabe}
 Recherchieren Sie, wer Simpson war und warum das Paradox nach ihm benannt wurde.
 :::
 
@@ -185,7 +185,7 @@ Besser wäre es hier z. B. eine geschichtete Stichprobe (nach Studiengängen, Ze
 In anderen Fragestellungen mag die Gelegenheitsstichprobe **Ihr Kurs** nicht verzerrt sein, z. B. wenn ich mich für die Körpergröße interessiere. 
 Es hängt also immer auch von der Fragestellung ab, ob eine Gelegenheitsstichprobe geeignet ist.
 
-::: {.Aufgabe}
+::: {.callout-note .Aufgabe}
 Verzerrungen
 
 a) Was glauben Sie: Welche der nachfolgend aufgeführten Gruppen hat eine höhere Wahrscheinlichkeit, an einer freiwilligen Umfrage der Dozentin teilzunehmen? Die Gruppe der nicht besonders gewissenhaft Studierenden, die Gruppe der besonders gewissenhaft Studierenden oder beide gleich Gruppen gleich.
@@ -193,7 +193,8 @@ a) Was glauben Sie: Welche der nachfolgend aufgeführten Gruppen hat eine höher
 b) Was glauben Sie: Welche Gruppe verwendet durchschnittlich mehr Zeit zur Vor- und Nacharbeit der Vorlesungsinhalte oder verwenden beide etwa gleich viel Zeit?
 :::
 
-::: margin
+::: column-margin
+...
 :::
 
 Ein fiktives Beispiel:
@@ -222,17 +223,21 @@ Durch die Zufallsstichprobe wird der Weg von Gewissenhaftigkeit (gewissenhaftere
 
 ::: {.Hinweis}
 Die Abbildung zeigt einen sogenannten Directed Acyclic Graph, kurz DAG. 
-Damit können kausale Zusammenhänge dargestellt werden. Mehr dazu im Kapitel 9 (Einführung in die kausale Modellierung).
+Damit können kausale Zusammenhänge dargestellt werden. 
+Mehr dazu im Kapitel 9 (Einführung in die kausale Modellierung).
 :::
 
-Der Wert in der Population, der von Interesse ist, wird als Parameter bezeichnet. Ein Parameter wird i. d. R. mit griechischen Buchstaben bezeichnet, z. B. 𝜇 für den Erwartungswert der Population (also der Mittelwert über die gesamte Population) oder 𝜋 für den Anteil in der Population. Den Wert, den ich stattdessen aus der Stichprobe messe, ist die (Stichproben-)Statistik oder der Schätzwert. Diese werden häufig mit lateinischen Buchstaben bezeichnet, z. B. ¯𝑥 für den Mittelwert der Stichprobe.
+Der Wert in der Population, der von Interesse ist, wird als Parameter bezeichnet. 
+Ein Parameter wird i. d. R. mit griechischen Buchstaben bezeichnet, z. B. $\mu$ für den Erwartungswert der Population (also der Mittelwert über die gesamte Population) oder $\pi$ für den Anteil in der Population. 
+Den Wert, den ich stattdessen aus der Stichprobe messe, ist die (Stichproben-)Statistik oder der Schätzwert. 
+Diese werden häufig mit lateinischen Buchstaben bezeichnet, z. B. $\bar{x}$ für den Mittelwert der Stichprobe.
 
 Tabelle 4.2 zeigt einige griechische Buchstaben, die in der quantitativen Datenanalyse häufiger verwendet werden.
 
 ::: Tabelle
 :::
 
-::: {.Tipp}
+::: {.callout-tip .Tipp}
 ## Tipp
 
 Schon mal merken: 
@@ -275,27 +280,29 @@ Im letzteren weist die Dozentin den Studierenden **zufällig** eine Lernzeit zu.
 
 XXX Abbildung XXX
 
-Das Vorwissen würde die Lernzeit und die Klausurpunkte beeinflussen. Durch das Experiment wird der Pfad zwischen Vorwissen und Lernzeit gekappt, so dass der Einfluss der Lernzeit isoliert werden kann.
+Das Vorwissen würde die Lernzeit und die Klausurpunkte beeinflussen. 
+Durch das Experiment wird der Pfad zwischen Vorwissen und Lernzeit gekappt, so dass der Einfluss der Lernzeit isoliert werden kann.
 
-Zum Abschluss dieses Kapitels sehen Sie in Abbildung 4.7 den idealisierten Ablauf eines Forschungsprozesses, den Problem-Plan-Data-AnalysisConclusion-Zyklus (PPDAC-Zyklus).
+Zum Abschluss dieses Kapitels sehen Sie in Abbildung 4.7 den idealisierten Ablauf eines Forschungsprozesses, den Problem-Plan-Data-Analysis-Conclusion-Zyklus (PPDAC-Zyklus).
 
 Welches Problem soll untersucht werden (P), welche Variablen sind dafür notwendig und müssen diese ggf. operationalisiert werden (P), wie kommen Sie an die Daten (D). Mit der Analyse (A) und der Schlussfolgerung (Conclusion, C) befassen wir uns in den folgenden Kapiteln.
 
-::: {.Lernpfad}
-## Lernpfad 4.1 
-Grundlagen der quantitativen Datenanalyse
+::: {.callout-caution .Lernpfad}
+## Lernpfad **Grundlagen der quantitativen Datenanalyse**
 
-- Bearbeiten Sie die Übungen, falls Sie diese noch nicht absolviert haben. – Die Lösungen finden Sie am Ende des Kapitels.
+- Bearbeiten Sie die Übungen, falls Sie diese noch nicht absolviert haben. -- Die Lösungen finden Sie am Ende des Kapitels.
 
 - Klären Sie erforderlichenfalls Ihnen noch unbekannte Begriffe und Sachverhalte eigenständig.
 
-- Zur Unterstützung gibt es drei Screencasts: Messen <https://vimeo.com/459322423>, Datenerhebung <https://vimeo. com/459322742> und Grundlagen <https://vimeo.com/398512087>. Die Videos erfordern ein Passwort: FOMtest. 
-- Lesen Sie zur Vertiefung Kapitel 1 (falls noch nicht geschehen) sowie das Kapitel 2 aus dem Buch Introduction to Modern Statistics [6]. Sie können es hier herunterladen: <https://openintro-ims>. netlify.app/index.html. 
-- Zur Überprüfung Ihres Lernstands bearbeiten Sie bitte die restlichen Wiederholungsfragen unter folgenden Link: <https:// fomshinyapps.shinyapps.io/Lernfortschrittskontrolle _ 01/> sowie fongende Wiederholungsfragen: <https://fomshinyapps. shinyapps.io/Lernfortschrittskontrolle _ 02/>
+- Zur Unterstützung gibt es drei Screencasts: Messen <https://vimeo.com/459322423>, Datenerhebung <https://vimeo.com/459322742> und Grundlagen <https://vimeo.com/398512087>. Die Videos erfordern ein Passwort: FOMtest. 
+
+- Lesen Sie zur Vertiefung Kapitel 1 (falls noch nicht geschehen) sowie das Kapitel 2 aus dem Buch Introduction to Modern Statistics [6]. Sie können es hier herunterladen: <https://openintro-ims.netlify.app/index.html>.
+
+- Zur Überprüfung Ihres Lernstands bearbeiten Sie bitte die restlichen Wiederholungsfragen unter folgenden Link: <https://fomshinyapps.shinyapps.io/Lernfortschrittskontrolle_01/> sowie fongende Wiederholungsfragen: <https://fomshinyapps.shinyapps.io/Lernfortschrittskontrolle_02/>
 
 :::
 
-::: {.Zusammenfassung}
+::: {.callout-tip .Zusammenfassung}
 ## Zusammenfassung
 
 Halten wir fest, was Sie in diesem Kapitel gelernt haben:

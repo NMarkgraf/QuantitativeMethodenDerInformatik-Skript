@@ -12,8 +12,7 @@ In einer Studie von Mednick u. a. [^kapitel-3-1] wird untersucht, ob mehrWörter
 
 [^kapitel-3-1]: Mednick u. a. (2008), „Comparing the benefits of caffeine, naps and placebo on verbal, motor and perceptual memory"
 
-In der Stichprobe konnten diejenigen, die ein Nickerchen gemacht hatten, im Mittel $15{,}25$ Wörter erinnern, die, welche eine Koffeintabelle genommen hatten, $12{,}25$.
-Die Schlafgruppe konnte also drei Wörter mehr erinnern, wie auch das Streudiagramm in @fig-Mednick_JitterPlot zeigt.
+In der Stichprobe konnten diejenigen, die ein Nickerchen gemacht hatten, im Mittel $15{,}25$ Wörter erinnern, die, welche eine Koffeintabelle genommen hatten, $12{,}25$. Die Schlafgruppe konnte also drei Wörter mehr erinnern, wie auch das Streudiagramm in @fig-Mednick_JitterPlot zeigt.
 
 ```{r Mednick_JitterPlot}
 #| label: fig-Mednick_JitterPlot
@@ -42,12 +41,9 @@ gf_jitter(woerter ~ behandlung,
   )
 ```
 
-Ist das immer so? 
-Ist der beobachtete Unterschied ungewöhnlich? 
-Diese Fragen müssen wir uns stellen.
+Ist das immer so? Ist der beobachtete Unterschied ungewöhnlich? Diese Fragen müssen wir uns stellen.
 
-Um das herauszufinden, wurde simuliert, wie es wäre, wenn es keinen Unterschied gäbe. 
-Das Histogramm in @fig-Mednick_SimPlot zeigt das Ergebnis.
+Um das herauszufinden, wurde simuliert, wie es wäre, wenn es keinen Unterschied gäbe. Das Histogramm in @fig-Mednick_SimPlot zeigt das Ergebnis.
 
 ```{r Mednick_SimPlot}
 #| label: fig-Mednick_SimPlot
@@ -100,15 +96,10 @@ Den Artikel zu der oben genannten Studie finden Sie unter <https://doi.org/10.10
 Sie finden die Antwort zu dieser Aufgabe wie zu vielen anderen auch in den Lösungshinweisen im Abschnitt XXX in diesem Kapitel. -- Versuchen Sie stets, eine Aufgabe zunächst selbst zu lösen, bevor Sie nachschlagen. Die aktive Auseinandersetzung ist Ihr Schlüssel zum Lernerfolg!
 :::
 
-Betrachten Sie noch einmal das Histogramm in @fig-Mednick_SimPlot.
-Ist der beobachtete Unterschied von drei Wörtern eher selten? 
-Ja, denn das kommt in weniger als 5% der simulierten Fälle vor. 
-Das spricht dafür, dass es tatsächlich einen Unterschied gibt. 
-Diese Herangehensweise an die Ergebnisse quantitativer Untersuchungen werden wir im Laufe dieser Veranstaltung häufiger nutzen.
+Betrachten Sie noch einmal das Histogramm in @fig-Mednick_SimPlot. Ist der beobachtete Unterschied von drei Wörtern eher selten? Ja, denn das kommt in weniger als 5% der simulierten Fälle vor. Das spricht dafür, dass es tatsächlich einen Unterschied gibt. Diese Herangehensweise an die Ergebnisse quantitativer Untersuchungen werden wir im Laufe dieser Veranstaltung häufiger nutzen.
 
 ::: column-margin
-[![](causeweb-images/cartoon0319.jpg)](https://www.causeweb.org/cause/sites/default/files/caption_contest/2019/Caption-Contest_03-2019.jpg)
-Viele Generationen von Data Science.\ [https://www.CAUSEweb.org/](https://www.causeweb.org/cause/caption-contest/march/2019/results) &copy; J.B. Landers, Überschrift L. Poisson
+[![](causeweb-images/cartoon0319.jpg)](https://www.causeweb.org/cause/sites/default/files/caption_contest/2019/Caption-Contest_03-2019.jpg) Viele Generationen von Data Science. [https://www.CAUSEweb.org/](https://www.causeweb.org/cause/caption-contest/march/2019/results) © J.B. Landers, Überschrift L. Poisson
 :::
 
 Wie sind Sie zu Ihrer Einschätzung gekommen? Wie ordnen Sie die Erkenntnisse der Studie ein? Liefert die Studie Erkenntnisse, die Ihre Einschätzung bestätigen oder eher dagegen sprechen? Sie merken schon, es ist wichtig, sich ein Bild über den aktuellen Stand der Forschung zu machen, um die Ergebnisse einer Analyse einordnen zu können. Daher ist Literaturrecherche ein wichtiger Schritt.
@@ -197,7 +188,7 @@ Empirische Forschungsprojekte können mit quantitativen und qualitativen Methode
 
 Wir beschränken uns in diesen Unterlagen auf die quantitativen Methoden. Dazu werden Sie im folgenden Kapitel die Grundlagen kennenlernen.
 
-::: callout-caution
+:::  {.callout-caution .Lernpfad}
 ## Lernpfad **Wissenschaftliche Grundlagen**
 
 -   Bearbeiten Sie die Übungen, falls Sie diese noch nicht absolviert haben. --- Die Lösungen finden Sie am Ende des Kapitels.
@@ -227,35 +218,26 @@ Halten wir fest, was Sie in diesem Kapitel gelernt haben:
 
 ### Aufgabe XXX
 
-Vergleich von drei Gruppen (Koffeinaufnahme, Kurzschlaf, Placebo) im Erinnern von Wörtern, motorischen Fähigkeiten, Wahrnehmungen.
-Kurzschlaf verbesserte die Worterinnerung; Koffein beeinträchtigte das motorische Erinnern;Kurzschlaf und Koffein verbesserten die Erinnerung von Wahrnehmungen. 
-Insgesamt zeigt sich der eingeschränkte Nutzen von Koffein deutlich.
+Vergleich von drei Gruppen (Koffeinaufnahme, Kurzschlaf, Placebo) im Erinnern von Wörtern, motorischen Fähigkeiten, Wahrnehmungen. Kurzschlaf verbesserte die Worterinnerung; Koffein beeinträchtigte das motorische Erinnern;Kurzschlaf und Koffein verbesserten die Erinnerung von Wahrnehmungen. Insgesamt zeigt sich der eingeschränkte Nutzen von Koffein deutlich.
 
 ### Aufgabe XXX
 
-Die Anzahl der Wörter, die nach Einnahme einer Koffeintabelle oder
-nach einem Nickerchen erinnert werden können, unterscheidet sich.
-Oder: Nach einem Nickerchen können mehr Wörter erinnert werden als
-nach Einnahme einer Koffeintablette.
-Oder:Wenn ein Nickerchen gemacht wurde, können mehrWörter erinnert
-werden als nach Einnahme einer Koffeintablette.
+Die Anzahl der Wörter, die nach Einnahme einer Koffeintabelle oder nach einem Nickerchen erinnert werden können, unterscheidet sich. Oder: Nach einem Nickerchen können mehr Wörter erinnert werden als nach Einnahme einer Koffeintablette. Oder:Wenn ein Nickerchen gemacht wurde, können mehrWörter erinnert werden als nach Einnahme einer Koffeintablette.
 
 ::: {.callout.tip .Tipp}
 **Tipp**
 
-Vielleicht ist Ihnen aufgefallen, dass die erste Hypothese nur einen Unterschied postuliert, während die beiden anderen eine Richtung („mehr“) vorgeben. 
-Im ersten Fall ist es eine ungerichtete oder zweiseitige Hypothese, die beiden anderen sind gerichtete bzw. einseitige Hypothesen. 
-Mehr dazu erfahren Sie in Kapitel XXX (*Inferenzstatistik*).
+Vielleicht ist Ihnen aufgefallen, dass die erste Hypothese nur einen Unterschied postuliert, während die beiden anderen eine Richtung („mehr") vorgeben. Im ersten Fall ist es eine ungerichtete oder zweiseitige Hypothese, die beiden anderen sind gerichtete bzw. einseitige Hypothesen. Mehr dazu erfahren Sie in Kapitel XXX (*Inferenzstatistik*).
 :::
 
 ### Aufgabe XXX
-Aus Ihren Studium kennen Sie vielleicht die Prinzipal-Agenten-Theorie.
-Oder aus dem Allgemeinen die Relativitätstheorie. Und und und ...
+
+Aus Ihren Studium kennen Sie vielleicht die Prinzipal-Agenten-Theorie. Oder aus dem Allgemeinen die Relativitätstheorie. Und und und ...
 
 ### Aufgabe XXX
+
 Wiederholte Beboachtung desselben Phänomens und Schluss auf das Allgemeine: Induktion.
 
 ### Aufgabe XXX
-Sir Karl Raimund Popper, 1902–1994, war ein österreichisch-britischer Philosoph. 
-Er hat im Rahmen seiner wissenschaftstheoretischen Arbeiten das empirische Falsifikationsprinzip aufgestellt.
 
+Sir Karl Raimund Popper, 1902--1994, war ein österreichisch-britischer Philosoph. Er hat im Rahmen seiner wissenschaftstheoretischen Arbeiten das empirische Falsifikationsprinzip aufgestellt.
