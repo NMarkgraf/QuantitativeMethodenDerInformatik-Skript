@@ -5,96 +5,348 @@
 
 Nach erfolgreichem Abschluss dieses Kapitels sind Sie in der Lage,
 
-- eine Messung zu definieren und verschiedene Typen von Skalenniveaus sicher zu unterscheiden;
-- Grundbegriffe der quantitativen Datenanalyse (wie Unabhängige Variable, Abhängige Variable) und Probleme erklären, die aufgrund der Nichtberücksichtigung von Drittvariablen auftreten können;
-- zentrale Begriffe um Stichproben(arten) und Populationen zu erläutern;
-- die Unterschiede hinsichtlich Zufall und Kausalität bei Beobachtungs- vs. Experimentalstudien zu erkennen;
-- die Phasen des PPDAC-Zyklus zu nennen und anhand von Beispielen zu illustrieren.
-
+-   eine Messung zu definieren und verschiedene Typen von Skalenniveaus sicher zu unterscheiden;
+-   Grundbegriffe der quantitativen Datenanalyse (wie Unabhängige Variable, Abhängige Variable) und Probleme erklären, die aufgrund der Nichtberücksichtigung von Drittvariablen auftreten können;
+-   zentrale Begriffe um Stichproben(arten) und Populationen zu erläutern;
+-   die Unterschiede hinsichtlich Zufall und Kausalität bei Beobachtungs- vs. Experimentalstudien zu erkennen;
+-   die Phasen des PPDAC-Zyklus zu nennen und anhand von Beispielen zu illustrieren.
 :::
-
 
 ## Grundbegriffe
 
-Um Daten zu erheben, müssen Messungen durchgeführt werden. 
-Der Eigenschaft eines Objektes wird dabei ein Wert zugewiesen. 
-Dazu muss nicht immer ein Messgerät verwendet werden, auch das Nachschlagen des Umsatzes in einem Geschäftsbericht führt zu Daten.
-Das, was gemessen wird, bezeichnen wir als Variable. 
-Es gibt zwei Typen von Variablen:
+Um Daten zu erheben, müssen Messungen durchgeführt werden. Der Eigenschaft eines Objektes wird dabei ein Wert zugewiesen. Dazu muss nicht immer ein Messgerät verwendet werden, auch das Nachschlagen des Umsatzes in einem Geschäftsbericht führt zu Daten. Das, was gemessen wird, bezeichnen wir als Variable. Es gibt zwei Typen von Variablen:
 
-- **Manifeste Variablen:** Der Wert kann direkt gemessen werden, z. B. Größe, Gewicht, Umsatz.
-- **Latente Variablen:** Diese können nicht direkt gemessen werden, sie müssen erst durch ein Konstrukt operationalisiert werden, z. B. Intelligenz, Leichtigkeit beim Verständnis von Statistik, Innovationsstärke eines Unternehmens.
+-   **Manifeste Variablen:** Der Wert kann direkt gemessen werden, z. B. Größe, Gewicht, Umsatz.
+-   **Latente Variablen:** Diese können nicht direkt gemessen werden, sie müssen erst durch ein Konstrukt operationalisiert werden, z. B. Intelligenz, Leichtigkeit beim Verständnis von Statistik, Innovationsstärke eines Unternehmens.
 
-Eine Operationalisierung erfolgt im Zusammenhang mit Umfragen häufig mittels einer Multi-Item-Likert-Skala. 
-Dabei werden auf einer Skala z. B. von eins (trifft überhaupt nicht zu) bis sieben (trifft voll oder ganz zu) Aussagen bewertet, die im Zusammenhang mit der betreffenden latenten Variablen stehen.
+Eine Operationalisierung erfolgt im Zusammenhang mit Umfragen häufig mittels einer Multi-Item-Likert-Skala. Dabei werden auf einer Skala z. B. von eins (trifft überhaupt nicht zu) bis sieben (trifft voll oder ganz zu) Aussagen bewertet, die im Zusammenhang mit der betreffenden latenten Variablen stehen.
 
 ::: column-margin
-*Beispiel für eine Multi-Item Likert-Skala:* \
+*Beispiel für eine Multi-Item Likert-Skala:*\
 
-Leichtigkeit beim Verständnis von Statistik Bewertung der Aussagen auf einer Skala von 1 (trifft überhaupt nicht zu) über 4 (weder zutreffend, noch unzutreffend) bis 7 (trifft voll und ganz zu) [* inverse Items]
+Leichtigkeit beim Verständnis von Statistik Bewertung der Aussagen auf einer Skala von 1 (trifft überhaupt nicht zu) über 4 (weder zutreffend, noch unzutreffend) bis 7 (trifft voll und ganz zu) \[\* inverse Items\]
 
-- Statistische Formeln sind leicht zu verstehen.
-- Statistik ist ein kompliziertes Fach.*
-- Statistik ist ein Fach, das die meisten Menschen schnell lernen.
-- Das Lernen von Statistik erfordert sehr viel Disziplin.*
-- Statistik beinhaltet sehr umfangreiche Rechnungen.*
-- Statistik ist eine sehr technische Materie.*
-- Die meisten Menschen müssen lernen anders zu denken, um Statistik
-anwenden zu können.*
+-   Statistische Formeln sind leicht zu verstehen.
+-   Statistik ist ein kompliziertes Fach.\*
+-   Statistik ist ein Fach, das die meisten Menschen schnell lernen.
+-   Das Lernen von Statistik erfordert sehr viel Disziplin.\*
+-   Statistik beinhaltet sehr umfangreiche Rechnungen.\*
+-   Statistik ist eine sehr technische Materie.\*
+-   Die meisten Menschen müssen lernen anders zu denken, um Statistik anwenden zu können.\*
 :::
 
-Ein Beispiel für eine solche Multi-Item-Likert-Skala ist die Operationalisierung des Verständnisses von Statistik [^[Schau (), Survey of Attitudes Toward Statistics, SATS-36]]. Manche der Items sind sogenannte inverse Items (im Beispiel mit \* markiert), die Zustimmung geht also in die umgekehrte Richtung. 
-Aus allen Werten wird dann der Mittelwert gebildet, dazu müssen die inversen Items zunächst umgedreht werden (auf einer siebenstufigen Skala wird so z. B. aus einer zwei eine sechs). 
-Der sich ergebende Mittelwert ist dann der Wert, der der betreffenden Variablen für diese Beobachtung zugewiesen wird.
+Ein Beispiel für eine solche Multi-Item-Likert-Skala ist die Operationalisierung des Verständnisses von Statistik \[[^kapitel-4-1]\]. Manche der Items sind sogenannte inverse Items (im Beispiel mit \* markiert), die Zustimmung geht also in die umgekehrte Richtung. Aus allen Werten wird dann der Mittelwert gebildet, dazu müssen die inversen Items zunächst umgedreht werden (auf einer siebenstufigen Skala wird so z. B. aus einer zwei eine sechs). Der sich ergebende Mittelwert ist dann der Wert, der der betreffenden Variablen für diese Beobachtung zugewiesen wird.
 
-Auch hier kehren die Gütekriterien wieder, jetzt bezogen auf die Messung.
-Im Einzelnen sind dies Genauigkeit, Objektivität, Reliabilität (Zuverlässigkeit einer Messung, wiederholte Messungen ergeben ein vergleichbares Ergebnis) und Validität (es wird das gemessen,was gemessen werden soll).
+[^kapitel-4-1]: Schau (), Survey of Attitudes Toward Statistics, SATS-36
+
+Auch hier kehren die Gütekriterien wieder, jetzt bezogen auf die Messung. Im Einzelnen sind dies Genauigkeit, Objektivität, Reliabilität (Zuverlässigkeit einer Messung, wiederholte Messungen ergeben ein vergleichbares Ergebnis) und Validität (es wird das gemessen,was gemessen werden soll).
 
 ::: {.callout-note .Aufgabe}
-Vergleichen Sie die Gütekriterien der Messung mit denen der Forschung. 
-Wo gibt es Gemeinsamkeiten, wo Unterschiede?
+Vergleichen Sie die Gütekriterien der Messung mit denen der Forschung. Wo gibt es Gemeinsamkeiten, wo Unterschiede?
 :::
 
-@fig_Abb-4-1 zeigt exemplarisch, was bei einer Messung schief gehen
-kann. Entweder streut das Messergebnis (Varianz) oder die Messung hat
-eine Abweichung (Verzerrung oder Bias), beispielsweise eine Waage, die
-verstellt ist.
+@fig_Abb-4-1 zeigt exemplarisch, was bei einer Messung schief gehen kann. Entweder streut das Messergebnis (Varianz) oder die Messung hat eine Abweichung (Verzerrung oder Bias), beispielsweise eine Waage, die verstellt ist.
 
 ***TODO Abb4-1***
 
-Eine hohe Varianz bedeutet eine geringe Reliabilität, eine große Verzerrung
-führt zu einer geringen Validität. Das Thema wird uns auch in
-späteren Kapiteln beschäftigen – wirwerden lernen,was wir beeinflussen,
-was wir kontrollieren können.
+Eine hohe Varianz bedeutet eine geringe Reliabilität, eine große Verzerrung führt zu einer geringen Validität. Das Thema wird uns auch in späteren Kapiteln beschäftigen -- wirwerden lernen,was wir beeinflussen, was wir kontrollieren können.
 
 ::: {.callout-note .Aufgabe}
-Ist es bei 20 Grad Celsius doppelt so warm wie bei 10
-Grad Celsius? Begründen Sie Ihre Antwort.
+Ist es bei 20 Grad Celsius doppelt so warm wie bei 10 Grad Celsius? Begründen Sie Ihre Antwort.
 :::
 
 ::: {.callout-tip .Tipp}
 ## Tipp
 
-Beantworten Sie die Frage, bevor Sie weiterlesen. Versuchen Sie erst
-selbst die Lösung zu finden. Das ist der Schlüssel für Ihren Lernerfolg!
+Beantworten Sie die Frage, bevor Sie weiterlesen. Versuchen Sie erst selbst die Lösung zu finden. Das ist der Schlüssel für Ihren Lernerfolg!
 :::
 
-Daten können auf unterschiedlichen Skalen gemessen werden. 
-Um das Skalenniveau von Daten, d. h. um den Informationsgehalt. 
-Zwei grundsätzliche Eigenschaften gibt es dabei: **kategorial** und **metrisch**.
+Daten können auf unterschiedlichen Skalen gemessen werden. Um das Skalenniveau von Daten, d. h. um den Informationsgehalt. Zwei grundsätzliche Eigenschaften gibt es dabei: **kategorial** und **metrisch**.
 
-Die kategoriale Skale wird auch als qualitative Skala bezeichnet, es geht um Eigenschaften. 
-Wenn Sie eine Eigenschaft nur zuordnen können, heißt die Skala **nominal**, z. B. Industriesektoren oder Länder. 
+Die kategoriale Skale wird auch als qualitative Skala bezeichnet, es geht um Eigenschaften. Wenn Sie eine Eigenschaft nur zuordnen können, heißt die Skala **nominal**, z. B. Industriesektoren oder Länder.
 
-Können Sie die Eigenschaften ordnen? 
-Dann liegen sie auf einer **Ordinalskala** vor.
-Beispiele dafür sind Bildungsabschlüsse oder Gütesterne von Hotels.
+Können Sie die Eigenschaften ordnen? Dann liegen sie auf einer **Ordinalskala** vor. Beispiele dafür sind Bildungsabschlüsse oder Gütesterne von Hotels.
 
-Die metrische Skala wird auch als quantitative Skala bezeichnet.
-Wenn Sie nur die die Abstände inhaltlich sinnvoll interpretiert können, liegen die Daten auf einer Intervallskala vor, ein Beispiel wäre die Temperatur in °C. 
-Können auch die Quotienten sinnvoll interpretiert werden, liegen die Daten auf einer Verhältnisskala vor, z. B. Größe in cm, Umsatz in Euro.
-
-Beispiele: 2 m ist doppelt so lang wie 1 m, aber 20 °C ist nicht doppelt so warm wie 10 °C – inhaltlich ist die zweite Aussage nicht sinnvoll.
+Die metrische Skala wird auch als quantitative Skala bezeichnet. 
+Wenn Sie nur die die Abstände inhaltlich sinnvoll interpretiert können, liegen die Daten auf einer **Intervallskala** vor, ein Beispiel wäre die Temperatur in °C. 
+Können auch die Quotienten sinnvoll interpretiert werden, liegen die Daten auf einer **Verhältnisskala** vor, z. B. Größe in cm, Umsatz in Euro.
+Beispiele: 2 m ist doppelt so lang wie 1 m, aber 20 °C ist nicht doppelt so warm wie 10 °C -- inhaltlich ist die zweite Aussage nicht sinnvoll. 
 Im Fall der Intervallskala ist der Nullpunkt gesetzt, während es bei der Verhältnisskala einen natürlichen Nullpunkt gibt. 
 Daten auf der Intervallskala können Sie mit Faktor und Offset umrechnen (z. B. von der Celsius- zur Fahrenheitskala), während Sie Daten auf der Verhältnisskala nur mit einem Faktor umrechnen können (z. B. Meter in Inch).
+
+::: {.callout-tip .Tipp}
+## Tipp
+Eigenschaften werden in *Kategorien* angegeben, daher *kategoriale* Daten. 
+Wenn Sie etwas *messen* können (quasi mit dem Maßband oder dem Zollstock), sind es *metrische* Daten.
+:::
+
+::: {.Aufgabe}
+Welches Skalenniveau hat die Variable Telefonvorwahl?
+:::
+
+Metrische Daten werden zusätzlich in **stetig** und **diskret** unterteilt. 
+Stetige Daten können beliebig viele Zwischenwerte (Nachkommastellen) haben, je nach Genauigkeit des Messintruments, z. B. Länge. 
+Diskrete Daten haben abzählbar viele Zwischenwerte, meist sind sie ganzzahlig. 
+Ein Beispiel dafür ist die Anzahl Studierender in einer Veranstaltung. 
+Manchmal gibt es auch Daten, die z. B. auf zwei Nachkommastellen diskret sind wie Geldbeträge in Euro. 
+Da es dann aber sehr viele Stufen gibt, werden sie als **quasi-stetig** bezeichnet und wie stetige Werte behandelt.
+
+::: {.Aufgabe}
+Hören Sie zur Entspannung folgenden Song: Levels of Measurement © Larry Lesser und Dominic Dousa, [www.causeweb.org](https://www.causeweb.org/cause/resources/fun/songs/levels-measurement).
+:::
+
+::: {.callout-tip .Tipp}
+## Tipp
+Sie finden an vielen Stellen Verweise auf Songs und Videos. 
+Wenn Sie Spaß daran haben, hören oder schauen Sie sich diese an. 
+Es lockert den Ablauf auf und bewirkt eine zusätzliche Verfestigung des Lernstoffes.
+:::
+
+::: {margin}
+...
+:::
+
+Tabelle 4.1 zeigt einen exemplarischen Datensatz. Ein Datensatz ist meist wie ein Tabellenkalkulationsblatt aufgebaut. 
+Daten werden häufig auch in Formaten abgespeichert, die von Tabellenkalkulationsprogrammen (wie Excel, Numbers o. ä.) gelesen werden können.
+
+Die Spalten entsprechen in der Regel einer Variablen, hier Name, Geschlecht und Alter, eine Zeile zeigt eine Beobachtung. 
+Häufig ist die erste Zeile in einem Datensatz die Kopfzeile, gibt also die Namen der Variablen aus.
+
+::: {.Aufgabe}
+Lesen Sie Kapitel 1 aus dem Buch *Introduction to Modern Statistics* [6]. 
+Sie können es hier herunterladen: <https://openintro-ims.netlify.app/index.html>
+:::
+
+Puh, das ist ja auf Englisch! Ja, Sie haben Recht, aber es liest sich gut (viele englischsprachige Bücher lassen sich eigentlich besser lesen als vergleichbare deutschsprachige) und passt inhaltlich sehr gut zu unserem Thema.
+
+Und nebenbei können Sie so Ihre Kompetenzen erweitern.
+
+Messwerte einer Variablen können streuen (das hatten wir schon bei der Messung der Daten). 
+Aber Daten können auch aus anderen Gründen streuen: zufällig, aufgrund der Messung (unerwünscht), aufgrund der Stichprobe oder systematisch.
+
+Ziel in der quantitativen Datenanalyse ist häufig, beobachtete Daten zu modellieren, d. h., ein Modell zu finden, was einen Teil der systematischen Variation erklärt.
+
+::: center
+Daten = Modell + Rest
+:::
+
+::: {.Aufgabe}
+Überlegen Sie sich, warum Punkte einer Klausur variieren.
+:::
+
+Wir versuchen oft, den Zusammenhang zwischen verschieden Variablen herzustellen (z. B. Punkte in einer Klausur hängen zusammen mit dem Zeitaufwand, mit dem gelernt wurde).
+
+In Zusammenhang mit der Modellformulierung gibt es folgende Bezeichnungen:
+
+- **Abhängige Variable:** Der Wert hängt von der oder den unabhängigen Variablen ab; auch endogene oder erklärte Variable, meist mit $𝑦$ symbolisiert. 
+- **Unabhängige Variable:** Der Wert hängt (im Idealfall) von keiner anderen Variable ab; auch exogene oder erklärende Variable, meist mit $𝑥$ symbolisiert. 
+
+- **Kovariable:** eine oder mehrere weitere Variablen, die ebenfalls die abhängige Variable oder den Zusammenhang zwischen der abhängigen und den unabhängigen Variablen beeinflussen. 
+Diese werden auch als Störvariablen bezeichnet ( $𝑧$ ).
+
+Die Entscheidung darüber, was eine unabhängige Variable und was eine Kovariable ist, hängt i. d. R. von der Fragestellung ab, die untersucht wird.
+
+Die Modellformulierung in der Statistik lautet $𝑦 ∼ 𝑥$ . 
+Im Unterschied zur mathematischen Funktion $𝑦 = 𝑓 (𝑥) $ kann es in der statistischen Formulierung für ein $𝑥$ auch mehrere $𝑦$ -Werte geben.
+
+Dass Sie bei der Auswahl der Kovariablen aufpassen müssen, zeigt Abbildung 4.2, in der es um Zulassungen an der University of California Berkeley im Zusammenhang mit dem Geschlecht geht (Bickel, Hammel und O’Connell [7]).
+
+XXX Abbildung XXX
+
+Das ist ein Beispiel des sogenannten Simpson-Paradox. Das Weglassen der Kovariable Department verzerrt das Bild. Es wirkt so, als ob Frauen benachteiligt würden.
+
+Erst die Aufteilung nach der Kovariable Department (Abbildung 4.3) zeigt, dass Frauen und Männer ausgeglichen zugelassen wurden, im Department A sogar relativ mehr Frauen. Die Verzerrung im Gesamtbild ergibt sich durch die Wahl der Departments: Frauen haben sich eher dort beworben, wo die Ablehnungsquote höher ist.
+
+XXX Abbildung XXX
+
+::: {.Aufgabe}
+Recherchieren Sie, wer Simpson war und warum das Paradox nach ihm benannt wurde.
+:::
+
+Wir werden uns im Kapitel Kausale Modellierung systematisch mit der Auswahl von Kovariablen beschäftigen, so dass Verzerrungen vermieden werden können.
+
+## Datenerhebung
+
+Die Datenerhebung für unsere Untersuchungen erfolgt i. d. R. als **Stichprobe**. 
+Eine Stichprobe ist eine Teilmenge einer 
+**Population** (oder **Grundgesamtheit**). 
+Häufig können wir gar nicht die gesamte Population erheben (wir sollen wir z. B. alle Studierenden der FOM erreichen) oder es ist technisch nicht möglich (z. B. Werkstoffprüfung, in der das Untersuchungsobjekt zerstört wird).
+
+Idealerweise wird eine **Zufallsstichprobe** gezogen, in der alle Beobachtungen der Population die gleiche Wahrscheinlichkeit haben, Teil der Stichprobe zu werden. 
+Eine nicht-zufällige Stichprobe wird als **Gelegenheitsstichprobe** bezeichnet. 
+Die Population kann auch nach geeigneten Kriterien aufgeteilt werden und aus den einzelnen Gruppen werden wiederum Zufallsstichproben gezogen: eine **geschichtete** oder **stratifizierte** Stichprobe.
+
+XXX Abildung XXX
+
+Warum ist es ideal, eine Zufallsstichprobe zu haben? Wenn ich Ihren Kurs als Stichprobe für die Studierenden der FOM nehmen würde, könnten meine Ergebnisse verzerrt sein (z. B. wenn ich mich für das Monatseinkommen interessiere). 
+Ich erreiche so nur Bachelorstudierende und ggf. auch nur aus einem Zeitmodell. 
+Besser wäre es hier z. B. eine geschichtete Stichprobe (nach Studiengängen, Zeitmodellen und Standorten) zu ziehen.
+
+In anderen Fragestellungen mag die Gelegenheitsstichprobe **Ihr Kurs** nicht verzerrt sein, z. B. wenn ich mich für die Körpergröße interessiere. 
+Es hängt also immer auch von der Fragestellung ab, ob eine Gelegenheitsstichprobe geeignet ist.
+
+::: {.Aufgabe}
+Verzerrungen
+
+a) Was glauben Sie: Welche der nachfolgend aufgeführten Gruppen hat eine höhere Wahrscheinlichkeit, an einer freiwilligen Umfrage der Dozentin teilzunehmen? Die Gruppe der nicht besonders gewissenhaft Studierenden, die Gruppe der besonders gewissenhaft Studierenden oder beide gleich Gruppen gleich.
+
+b) Was glauben Sie: Welche Gruppe verwendet durchschnittlich mehr Zeit zur Vor- und Nacharbeit der Vorlesungsinhalte oder verwenden beide etwa gleich viel Zeit?
+:::
+
+::: margin
+:::
+
+Ein fiktives Beispiel:
+
+- Sei $𝑍$ die Gewissenhaftigkeit eines Studierenden.
+
+- Sei $𝑆$ die Teilnahme an einer Umfrage. D. h., an $𝑆$ kann erkannt werden, ob die Person Teil der Stichprobe ist oder nicht.
+
+- Sei $𝑋$ die Lernzeit eines Studierenden. Diese möchte die Dozentin analysieren.
+
+Es kann vermutet werden:
+
+- Gewissenhaftere Studierende haben eine höhere Bereitschaft zur Teilnahme an der Umfrage: $𝑍 →− 𝑆$ .
+
+- Gewissenhaftere Studierende haben eine längere Lernzeit: $𝑍 →− 𝑋$ .
+
+Insgesamt hat daher die Gelegenheitsstichprobe eine höhere Lernzeit als die Population, da die Studierenden mit einer geringeren Gewissenhaftigkeit, und daher auch Lernzeit, in der Stichprobe fehlen.
+
+Durch eine zufällige Stichprobe wird diese Selbst-Selektion vermieden.
+
+Abbildung 4.5 zeigt den datengenerierenden Prozess einer Gelegenheitsstichprobe und einer zufälligen Stichprobe. Bei letzterer wählt die Dozentin die Studierenden zufällig aus.
+
+XXX Abbildung XXX
+
+Durch die Zufallsstichprobe wird der Weg von Gewissenhaftigkeit (gewissenhaftere Menschen nehmen eher an Umfragen teil) zur Stichprobe unterbrochen, so dass es in der Umfrage zur Lernzeit keine SelbstSelektion gibt (gewissenhaftere Menschen werden auch eine höhere Lernzeit haben).
+
+::: {.Hinweis}
+Die Abbildung zeigt einen sogenannten Directed Acyclic Graph, kurz DAG. 
+Damit können kausale Zusammenhänge dargestellt werden. Mehr dazu im Kapitel 9 (Einführung in die kausale Modellierung).
+:::
+
+Der Wert in der Population, der von Interesse ist, wird als Parameter bezeichnet. Ein Parameter wird i. d. R. mit griechischen Buchstaben bezeichnet, z. B. 𝜇 für den Erwartungswert der Population (also der Mittelwert über die gesamte Population) oder 𝜋 für den Anteil in der Population. Den Wert, den ich stattdessen aus der Stichprobe messe, ist die (Stichproben-)Statistik oder der Schätzwert. Diese werden häufig mit lateinischen Buchstaben bezeichnet, z. B. ¯𝑥 für den Mittelwert der Stichprobe.
+
+Tabelle 4.2 zeigt einige griechische Buchstaben, die in der quantitativen Datenanalyse häufiger verwendet werden.
+
+::: Tabelle
+:::
+
+::: {.Tipp}
+## Tipp
+
+Schon mal merken: 
+Griechische Buchstaben werden in Hypothesen verwendet, da diese sich immer auf die Population beziehen. 
+Lateinische Buchstaben werden für Aussagen zur Stichprobe verwendet.
+:::
+
+Eine letzte wichtige Unterscheidung ist die zwischen Experiment und Beobachtungsstudie. 
+In einem Experiment werden die Werte der unabhängigen Variablen manipuliert. 
+Als Beispiel sei hier eine Untersuchung zu einem neuen Medikament gewählt: Eine Gruppe bekommt den Wirkstoff, die andere ein Placebo (sogenannte Kontrollgruppe). 
+Die Gruppen werden zufällig zugeordnet und die Teilnehmer wissen nicht, ob sie den Wirkstoff oder das Placebo bekommen. 
+Wenn deutlich mehr in der Gruppe derjenigen, die den Wirkstoff bekommen haben, eine Linderung der Symptome zeigen als in der Kontrollgruppe, zeigt das die Wirksamkeit des neuen Wirkstoffs.
+
+Ein Experiment erlaubt direkt einen Kausalschluss, was in der Beobachtungsstudie nicht so ohne weiteres möglich ist. 
+Eigentlich wollen wiraber in der Regel wissen, warum etwas passiert (also z. B. eine längere Lernzeit führt zu mehr Klausurpunkten). 
+Das Thema greifen wir im Kapitel Kausale Modellierung auf und lernen, unter welchen Bedingungen auch in Beobachtungsstudien Kausalschlüsse gezogen werden können.
+
+Auch hier kann eine Abbildung den Zusammenhang noch einmal verdeutlichen. Ein fiktives Beispiel:
+
+- Sei $Z$ das Vorwissen eines Studierenden.
+
+- Sei $X$ die Lernzeit eines Studierenden.
+
+- Sei $Y$ die Klausurpunktzahl. 
+
+Die Dozentin will den Zusammenhang $𝑋 → 𝑌 $untersuchen.
+
+Es kann vermutet werden:
+
+- Studierende mit einem hohen Vorwissen müssen weniger lernen $𝑍 →− 𝑋$ , erreichen aber mehr Punkte: $𝑍 →− 𝑌$ .
+
+- Studierende, die mehr lernen, erreichen mehr Punkte: $𝑋 →− 𝑌$ .
+
+Aufgrund des höheren Vorwissens ist es möglich, dass Studierende mit einer geringeren Lernzeit mehr Punkte erreichen -- obwohl bei gleichem Vorwissen der Zusammenhang positiv ist.
+
+In einem randomisierten Experiment würde die Dozentin die Lernzeit zufällig zuordnen -- unabhängig vom Vorwissen.
+
+Der Graf zeigt den **datengenerierenden Prozess** in einer Beobachtungsstudie und einem randomisierten Experiment. 
+Im letzteren weist die Dozentin den Studierenden **zufällig** eine Lernzeit zu.
+
+XXX Abbildung XXX
+
+Das Vorwissen würde die Lernzeit und die Klausurpunkte beeinflussen. Durch das Experiment wird der Pfad zwischen Vorwissen und Lernzeit gekappt, so dass der Einfluss der Lernzeit isoliert werden kann.
+
+Zum Abschluss dieses Kapitels sehen Sie in Abbildung 4.7 den idealisierten Ablauf eines Forschungsprozesses, den Problem-Plan-Data-AnalysisConclusion-Zyklus (PPDAC-Zyklus).
+
+Welches Problem soll untersucht werden (P), welche Variablen sind dafür notwendig und müssen diese ggf. operationalisiert werden (P), wie kommen Sie an die Daten (D). Mit der Analyse (A) und der Schlussfolgerung (Conclusion, C) befassen wir uns in den folgenden Kapiteln.
+
+::: {.Lernpfad}
+## Lernpfad 4.1 
+Grundlagen der quantitativen Datenanalyse
+
+- Bearbeiten Sie die Übungen, falls Sie diese noch nicht absolviert haben. – Die Lösungen finden Sie am Ende des Kapitels.
+
+- Klären Sie erforderlichenfalls Ihnen noch unbekannte Begriffe und Sachverhalte eigenständig.
+
+- Zur Unterstützung gibt es drei Screencasts: Messen <https://vimeo.com/459322423>, Datenerhebung <https://vimeo. com/459322742> und Grundlagen <https://vimeo.com/398512087>. Die Videos erfordern ein Passwort: FOMtest. 
+- Lesen Sie zur Vertiefung Kapitel 1 (falls noch nicht geschehen) sowie das Kapitel 2 aus dem Buch Introduction to Modern Statistics [6]. Sie können es hier herunterladen: <https://openintro-ims>. netlify.app/index.html. 
+- Zur Überprüfung Ihres Lernstands bearbeiten Sie bitte die restlichen Wiederholungsfragen unter folgenden Link: <https:// fomshinyapps.shinyapps.io/Lernfortschrittskontrolle _ 01/> sowie fongende Wiederholungsfragen: <https://fomshinyapps. shinyapps.io/Lernfortschrittskontrolle _ 02/>
+
+:::
+
+::: {.Zusammenfassung}
+## Zusammenfassung
+
+Halten wir fest, was Sie in diesem Kapitel gelernt haben:
+
+- Sie können die Skalenniveaus von Daten zuordnen.
+
+- Sie verstehen, worauf Sie bei einer Messung achten müssen.
+
+- Sie können zwischen unabhängigen und abhängigen Variablen sowie Kovariablen unterscheiden.
+
+- Sie wissen, warum Sie eine Stichprobe benötigen und was Sie bei dem Ziehen einer Stichprobe beachten müssen.
+
+- Sie haben gelernt, dass Kausalschlüsse (A verursacht B) ohne weiteres nur bei Experimenten möglich sind.
+
+- Sie können den PPDAC (zumindest PPD) z. B. auf eine Fragestellung aus Ihrer beruflichen Praxis anwenden.
+:::
+
+
+## Lösungshinweise
+
+**Aufgabe 4.1** \
+
+Sowohl bei der Messung als auch bei der Forschung gibt es Transparenz bzw. Reproduzierbarkeit (bei der Messung bezeichnen wir das als Reliabilität), Objektivität und Validität. 
+Letztere wird bei der Forschung noch unterschieden in interne und externe Validität. 
+Zusätzlich gibt es bei der Messung noch die Genauigkeit einer Messung und bei der Forschung spielen auch die ethischen Aspekte eine wichtige Rolle.
+
+**Aufgabe 4.2** \
+
+Nein, die gleichen Temperaturen entsprechen in Fahrenheit 50 Grad Fahrenheit und 68 Grad Fahrenheit – keine Verdoppelung. 0 Grad Celsius ist kein absoluter Nullpunkt, sondern willkürlich gewählt (die Temperatur, bei dem Eis schmilzt). Die angegebenen Temperatur entsprichen ca. 283 bzw. ca. 293 Kelvin, in der Kelvinskala gibt es einen absoluten Nullpunkt.
+
+Die Relation der Werte (Temperatur) entspricht nicht der Relation der Eigenschaft (Wärme). Bei 0 Grad Celsius ist uns kalt, bei 0 Kelvin ist mensch tot.
+
+**Aufgabe 4.3** \
+
+Obwohl eine Telefonnummer aus Ziffern besteht, kann damit nicht gerechnet werden, daher nicht metrisch. Auch eine Sortierung ist nicht möglich. Somit ist die Telefonnummer eine kategoriales, nominalskaliertes Merkmal.
+
+**Aufgabe 4.6** \
+
+Unterschiedliche Lernzeiten der Studierenden, unterschiedliche Verfassung am Tag der Klausur, unterschiedliche Fachkompetenz, . . .
+
+**Aufgabe 4.7** \
+
+Edward Hugh Simpson war ein britischer Statistiker, der das Phänomen 1951 beschrieb. Ihm fiel auf, dass die Bewertung verschiedener Gruppen unterschiedlich ausfällt in Abhängigkeit davon, ob die Gruppen kombiniert werden oder nicht.
+
+**Aufgabe 4.8** \
+
+a) Vermutlich die Gruppe der gewissenhaft Studierenden, da gewissenhafte Menschen evtl. durch ein höheres Pflichtbewusstsein eher (freiwillige) Aufgaben übernehmen könnten.
+
+b) Zweite Frage: Vermutlich ebenfalls die Gruppe der gewissenhaft Studierenden.
+
+Es kann also passieren, dass sich die Gruppe derjenigen, die an der Umfrage teilnehmen, in der Lernzeit von denjenigen unterscheidet, die nicht teilnehmen.
+
+*Hinweis:* In den nächsten Kapiteln lernen Sie, wie Sie solche Hypothesen empirisch überprüfen können.
 
