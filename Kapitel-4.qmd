@@ -59,7 +59,7 @@ Auch hier kehren die Gütekriterien wieder, jetzt bezogen auf die Messung. Im Ei
 Vergleichen Sie die Gütekriterien der Messung mit denen der Forschung. Wo gibt es Gemeinsamkeiten, wo Unterschiede?
 :::
 
-@gig_VarianzBias zeigt exemplarisch, was bei einer Messung *schief* gehen kann. Entweder streut das Messergebnis (Varianz) oder die Messung hat eine Abweichung (Verzerrung oder Bias), beispielsweise eine Waage, die verstellt ist.
+@fig_VarianzBias zeigt exemplarisch, was bei einer Messung *schief* gehen kann. Entweder streut das Messergebnis (Varianz) oder die Messung hat eine Abweichung (Verzerrung oder Bias), beispielsweise eine Waage, die verstellt ist.
 
 ```{r fig_VarianzBias}
 #| echo: false
@@ -253,9 +253,13 @@ Das ist ein Beispiel des sogenannten Simpson-Paradox. Das Weglassen der Kovariab
 
 Erst die Aufteilung nach der Kovariable Department (@fig_UCB2) zeigt, dass Frauen und Männer ausgeglichen zugelassen wurden, im Department A sogar relativ mehr Frauen. Die Verzerrung im Gesamtbild ergibt sich durch die Wahl der Departments: Frauen haben sich eher dort beworben, wo die Ablehnungsquote höher ist.
 
-```{r chapQDGl-figUCB2, fig = FALSE, echo = FALSE, fig.width = 6.5, fig.asp = 0.8, out.width = "10cm", out.extra = "trim = 5mm 10mm 5mm 0mm, clip"}
+```{r chapQDGl-figUCB2, fig = FALSE}
+#| echo:false
+#| fig.width: 6.5
+#| fig.asp: 0.8, 
+#| out.width: "10cm"
 #| caption: "Zulassungen an der UC Berkeley in Abhängigkeit vom Geschlecht: mit Kovariable Department"
-#| label: fig_UCB2}
+#| label: fig_UCB2
 
 opar <- par(mfrow = c(2, 3), oma = c(0, 0, 2, 0)) # b, l, t , r
 for (i in 1:6)
@@ -282,9 +286,14 @@ Idealerweise wird eine **Zufallsstichprobe** gezogen, in der alle Beobachtungen 
 
 @fig_Sample zeigt die verschiedenen Erhebungsmöglichkeiten schematisch.
 
-```{r chapQDGl-figSample, fig = TRUE, echo = FALSE, fig.width = 5, fig.asp = 0.6, out.width = "10cm"}
+```{r chapQDGl-figSample, fig = TRUE}
+#| echo: false
+#| fig.width: 5
+#| fig.asp: 0.6
+#| out.width = 10cm
 #| caption: "Verschiedene Erhebungsmethoden für Stichproben"
 #| label: fig_Sample}
+
 fa1 <- fontawesome(c("fa-user"))
 fa2 <- fontawesome(c("fa-female", "fa-male"))
 fasize <- 4
