@@ -1,4 +1,8 @@
 # Explorative Datenanalyse
+```{r}
+#| include: false
+library(mosaic)
+```
 
 ::: {.callout-tip .Lernergebnisse}
 ## Lernergebnisse dieses Kapitels
@@ -48,7 +52,9 @@ tips <- read.csv2("data/tips.csv")
 
 Ob `data/` vor dem Dateinamen steht, hängt davon ab, ob Sie die Datei in einem Unterverzeichnis gespeichert haben (z. B. bei Verwendung der Projektdatei --- siehe Kapitel 2 R und RMarkdown).
 
-::: Hinweis
+::: {.callout-tip .Hinweis}
+## Hinweis
+
 Im Code oben ist `<-` der sogenannten Zuweisungspfeil. Das, wo der Pfeil herkommt (hier: was rechts davon steht), wird in dem Objekt abspeichert, wo der Pfeil hinzeigt (hier links davon).
 :::
 
@@ -72,7 +78,8 @@ Um erste Informationen zu dem Datensatz zu erhalten, können Sie den Befehl `str
 str(tips)
 ```
 
-Eine Datentabelle (data.frame) kann aus mehreren Variablen (Spalten) mit gleicher Anzahl Beobachtungen (Zeilen) bestehen. Die Variablennamen finden Sie in der Spalte nach dem \$-Zeichen, dahinter steht der Variablentyp, gefolgt von den ersten Daten.
+Eine Datentabelle (`data.frame`) kann aus mehreren Variablen (Spalten) mit gleicher Anzahl Beobachtungen (Zeilen) bestehen. 
+Die Variablennamen finden Sie in der Spalte nach dem \$-Zeichen, dahinter steht der Variablentyp, gefolgt von den ersten Daten.
 
 ::: {.callout-note .Aufgabe}
 ## Aufgabe 5.2
@@ -83,7 +90,7 @@ Was unterscheidet die Variablentypen int und num?
 @tab-variablentypen
 
 | Typ    | Verwendung                                                       |
-|:-------------|:---------------------------------------------------------|
+|:-------|:-----------------------------------------------------------------|
 | chr    | *character*, Zeichenkette                                        |
 | factor | Faktor (Zeichenkette mit wenigen unterschiedlichen Ausprägungen) |
 | int    | *integer*, ganzzahlig                                            |
@@ -94,7 +101,7 @@ Was unterscheidet die Variablentypen int und num?
 Für diesen Datensatz sammelte ein Keller über mehrere Monate sein Trinkgeld. @tab-tipsdata zeigt die darin abgespeichertern Variablen.
 
 | Name           | Bedeutung               |
-|----------------|-------------------------|
+|:---------------|:------------------------|
 | `total_bill`   | Rechnungshöhe in Dollar |
 | `tip`   |Trinkgeld in Dollar |
 | `sex`   | Geschlecht des Rechnungszahlenden |
@@ -103,7 +110,7 @@ Für diesen Datensatz sammelte ein Keller über mehrere Monate sein Trinkgeld.
 | `time`   | Tageszeit |
 | `size`   | Anzahl Personen am Tisch |
 
-: Variablen des Datensatzes `tips.csv`
+: Variablen des Datensatzes `tips.csv` {#tab-tipsdata}
 
 ::: {.callout-note .Aufgabe}
 ## Aufgabe 5.3 
@@ -111,13 +118,11 @@ Welches Skalenniveau haben die Variablen im Datensatz `tips.csv`?
 :::
 
 ## Analyse kategorialer Daten
-I
-m ersten Schritt beschäftigen wir mit der Analyse kategorialer Daten.Wir
-werden verschiedene Grafiken wie Säulendiagramm, Balkendiagramm
-oder Mosaikplot kennenlernen. Kreis- oder Kuchendiagramme werden
-wir allerdings nicht anschauen. Die Häufigkeiten der verschiedenen
-Kategorien können absolut oder relativ (als Anteile oder Prozente)
-angegeben werden.
+
+Im ersten Schritt beschäftigen wir mit der Analyse kategorialer Daten.
+Wir werden verschiedene Grafiken wie Säulendiagramm, Balkendiagramm oder Mosaikplot kennenlernen. 
+Kreis- oder Kuchendiagramme werden wir allerdings nicht anschauen. 
+Die Häufigkeiten der verschiedenen Kategorien können absolut oder relativ (als Anteile oder Prozente) angegeben werden.
 
 ::: {.callout-note .Aufgabe}
 ## Aufgabe
@@ -152,7 +157,7 @@ Sie erkennen in @fig-bartips, dass am Samstag (`Sat`) die meisten Belege
 erfasst wurden, gefolgt von Sonntag (`Sun`) und Donnerstag (`Thur`). Freitag
 (`Fri`) liegt abgeschlagen auf dem letzten Platz.
 
-::: .Hinweis 
+::: {.callout-tip .Hinweis}
 ## Hinweis
 
 Vielleicht haben Sie es schon gemacht. Bevor `gf_bar()` ausgeführt
@@ -160,7 +165,7 @@ werden kann, muss das Paket `mosaic` mit dem Befehl `library(mosaic)`
 geladen werden.
 :::
 
-::: .Aufgabe
+::: {.callout-note .Aufgabe}
 ## Aufgabe 5.5 
 
 Warum ist die Reihenfolge der Wochentage so *komisch*?
@@ -170,12 +175,10 @@ Kategoriale Variable werden in R entweder als Zeichenkette (Variablentyp
 `chr`) oder (früher) als *sogenannter* Faktor abgespeichert (Variablentyp `factor`).
 Bei Zeichenketten werden die Kategorien alphanumerisch aufsteigend
 sortiert. 
-Wenn die Reihenfolge geändert werden soll, muss die Variable
-als Faktor gespeichert werden.
-Wenn Sie die Häufigkeiten (englisch: *count*, Symbol $h_i$) aller Kategorien $i$
-erhalten wollen, können Sie den Befehl `tally()` verwenden.
+Wenn die Reihenfolge geändert werden soll, muss die Variable als Faktor gespeichert werden.
+Wenn Sie die Häufigkeiten (englisch: *count*, Symbol $h_i$) aller Kategorien $i$ erhalten wollen, können Sie den Befehl `tally()` verwenden.
 
-::: Aufgabe
+::: {.callout-note .Aufgabe}
 ## Aufgabe 5.6 
 
 `tally` kommt aus dem Englischen.
@@ -186,40 +189,82 @@ Was ist eine passende Übersetzung dafür?
 tally( ~ day, data = tips)
 ```
 
-::: Tipp
+::: {.callout-tip .Tipp}
 ## Tipp
-Sie sehen, der Aufbau der Befehle, insbesondere bei Verwendung des
-Pakets `mosaic`, ist immer gleich: `~ Variable` -- Variable, die analysiert
-werden soll, `data = tips` -- Datentabelle, die verwendet werden soll.
+Sie sehen, der Aufbau der Befehle, insbesondere bei Verwendung des Pakets `mosaic`, ist immer gleich: `~ Variable` -- Variable, die analysiert werden soll, `data = tips` -- Datentabelle, die verwendet werden soll.
 :::
 
-Um Anteile (englisch: *proportion*) darzustellen, können Sie die Option
-`format = "proportion"` ergänzen, für Prozentwerte entsprechend
-`format = "percent"`.
+Um Anteile (englisch: *proportion*) darzustellen, können Sie die Option `format = "proportion"` ergänzen, für Prozentwerte entsprechend `format = "percent"`.
 
 ```{r}
 tally( ~ day, data = tips, format = "prop")
 ```
 
-::: Tipp
+::: {.callout-tip .Tipp}
 ## Tipp
 
-Bei den meinsten Optionswerten, die als Zeichenkette in Anführungzeichen
-eingegen werden, reicht es, weniger Buchstaben anzugeben,
-hier z. B. "prop" oder "per". Es muss nur eindeutig sein.
+Bei den meinsten Optionswerten, die als Zeichenkette in Anführungzeichen eingegen werden, reicht es, weniger Buchstaben anzugeben, hier z. B. "prop" oder "per". Es muss nur eindeutig sein.
 :::
 
-::: Tipp
+::: {.callout-tip .Tipp}
 ## Tipp
 An welcher Stelle die Option ergänzt wird, ist egal. 
 Sie können also auch `tally( ~ day, format = "prop", data = tips)` schreiben.
 Die einzelnen Abschnitte eines Funktionsaufrufs werden mit Kommata getrennt.
 :::
 
-Manchmal ist es notwendig, nur einen Wert auszugeben. Dazu können
-Sie die Funktion `prop()` verwenden.
+Manchmal ist es notwendig, nur einen Wert auszugeben.
+Dazu können Sie die Funktion `prop()` verwenden.
 
 ```{r}
 prop( ~ day, data = tips)
 ```
 
+::: {.callout-note .Aufgabe}
+## Aufgabe 5.7 
+
+Kategorien bei `prop()``
+
+a) Welche Kategorie wird angezeigt?
+b) Warum?
+c) Wie können Sie andere Kategorien anzeigen lassen?
+
+Sie können das mit `?mosaic::prop` herausfinden.
+:::
+
+::: {.callout-tip .Tipp}
+## Tipp
+
+Das Fragezeichen zeigt die Hilfe zu einem Befehl an. 
+Da diese Sequenz nicht in das R-Skript aufgenommen werden soll, geben Sie diese am
+besten in der Konsole (das eigentlich R-Fenster) ein. 
+Normalerweise finden Sie die Konsole in RStudio im Fenster unten links.
+:::
+
+::: {.callout-tip .Tipp}
+## Tipp
+`mosaic::` muss nicht unbedingt davor angegeben werden, aber so wird sichergestellt, dass nach der Hilfe für die Funktion aus dem Paket `mosaic` gesucht wird.
+Wenn Sie nicht wissen, ob die Funktion aus einem nachträglich geladenen Paket stammt, lassen Sie diesen Teil einfach weg.
+:::
+
+::: {.callout-note .Aufgabe}
+## Aufgabe 5.8 
+
+Stellen Sie Verteilung der Tageszeit (Variable `time`) als Säulendiagramm und als (relative) Häufigkeitstabelle dar.
+:::
+
+### Zusammenhang zwischen kategorialen Variablen
+
+Die Tageszeit variiert. 
+Mit welchen Variablen hängt das zusammen?
+Sie können die Analysen, die wir bisher gemacht haben, auch nach einer weiteren Variable gruppieren (bedingen). 
+Dazu wird die Formel mit einem senkrechten Strich | ergänzt.
+
+::: {.callout-tip .Tipp}
+## Tipp
+
+Außer der Tilde ~ gibt es in den Formeln noch den Strich |, der die Grafik (oder andere Funktionen) in mehrere Gruppen aufteilt. 
+Auch hier gibt es ein Tastenkürzel:
+Windows AltGr - <, Mac Alt - 7. 
+Das sind jetzt aber auch schon alle (zumindest für die Formelnsyntax).
+:::
