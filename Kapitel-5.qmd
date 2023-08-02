@@ -43,7 +43,6 @@ Der ganze Befehl sieht dann so aus:
 
 ```{r}
 #| echo: true
-#| eval: false
 tips <- read.csv2("data/tips.csv")
 ```
 
@@ -143,6 +142,84 @@ Wenn wir also die Häufigkeiten der Wochentage grafisch darstellen
 wollen, sieht der vollständige Befehl also so aus:
 
 ```{r}
+#| label: fig-bar-tips
+#| caption: "Säulendiagramm der Variable `day` in der Datentabelle `tips`"
+
 gf_bar( ~ day, data = tips)
+```
+
+Sie erkennen in @fig-bartips, dass am Samstag (`Sat`) die meisten Belege
+erfasst wurden, gefolgt von Sonntag (`Sun`) und Donnerstag (`Thur`). Freitag
+(`Fri`) liegt abgeschlagen auf dem letzten Platz.
+
+::: .Hinweis 
+## Hinweis
+
+Vielleicht haben Sie es schon gemacht. Bevor `gf_bar()` ausgeführt
+werden kann, muss das Paket `mosaic` mit dem Befehl `library(mosaic)`
+geladen werden.
+:::
+
+::: .Aufgabe
+## Aufgabe 5.5 
+
+Warum ist die Reihenfolge der Wochentage so *komisch*?
+:::
+
+Kategoriale Variable werden in R entweder als Zeichenkette (Variablentyp
+`chr`) oder (früher) als *sogenannter* Faktor abgespeichert (Variablentyp `factor`).
+Bei Zeichenketten werden die Kategorien alphanumerisch aufsteigend
+sortiert. 
+Wenn die Reihenfolge geändert werden soll, muss die Variable
+als Faktor gespeichert werden.
+Wenn Sie die Häufigkeiten (englisch: *count*, Symbol $h_i$) aller Kategorien $i$
+erhalten wollen, können Sie den Befehl `tally()` verwenden.
+
+::: Aufgabe
+## Aufgabe 5.6 
+
+`tally` kommt aus dem Englischen.
+Was ist eine passende Übersetzung dafür?
+:::
+
+```{r}
+tally( ~ day, data = tips)
+```
+
+::: Tipp
+## Tipp
+Sie sehen, der Aufbau der Befehle, insbesondere bei Verwendung des
+Pakets `mosaic`, ist immer gleich: `~ Variable` -- Variable, die analysiert
+werden soll, `data = tips` -- Datentabelle, die verwendet werden soll.
+:::
+
+Um Anteile (englisch: *proportion*) darzustellen, können Sie die Option
+`format = "proportion"` ergänzen, für Prozentwerte entsprechend
+`format = "percent"`.
+
+```{r}
+tally( ~ day, data = tips, format = "prop")
+```
+
+::: Tipp
+## Tipp
+
+Bei den meinsten Optionswerten, die als Zeichenkette in Anführungzeichen
+eingegen werden, reicht es, weniger Buchstaben anzugeben,
+hier z. B. "prop" oder "per". Es muss nur eindeutig sein.
+:::
+
+::: Tipp
+## Tipp
+An welcher Stelle die Option ergänzt wird, ist egal. 
+Sie können also auch `tally( ~ day, format = "prop", data = tips)` schreiben.
+Die einzelnen Abschnitte eines Funktionsaufrufs werden mit Kommata getrennt.
+:::
+
+Manchmal ist es notwendig, nur einen Wert auszugeben. Dazu können
+Sie die Funktion `prop()` verwenden.
+
+```{r}
+prop( ~ day, data = tips)
 ```
 
