@@ -607,9 +607,14 @@ In einem randomisierten Experiment würde die Dozentin die Lernzeit zufällig zu
 
 Der Graf zeigt den **datengenerierenden Prozess** in einer Beobachtungsstudie und einem randomisierten Experiment. Im letzteren weist die Dozentin den Studierenden **zufällig** eine Lernzeit zu.
 
-```{r fig = TRUE, echo = FALSE, fig.width = 7, fig.asp = 0.5, out.width = "10cm"}
+```{r fig = TRUE}
 #| caption: "Beobachtungsstudie vs. Experiment"
-#| fig-DAG-Experiment
+#| label: fig-DAG-Experiment
+#| echo: FALSE
+#| fig-width: 7
+#| fig-asp: 0.5
+#| out-width: 10cm
+
 layout <- rbind(c(rep(1,10), NA, rep(2, 10)))
 grid.arrange(dag_e1, dag_e2, layout_matrix = layout)
 ```
