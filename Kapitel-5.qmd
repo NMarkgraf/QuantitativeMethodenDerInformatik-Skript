@@ -1,1 +1,148 @@
 # Explorative Datenanalyse
+
+::: {.callout-tip .Lernergebnisse}
+## Lernergebnisse dieses Kapitels
+
+Nach erfolgreichem Abschluss dieses Kapitels sind Sie in der Lage,
+
+-   Daten in RStudio zu importieren, insbesondere über das CSVFormat;
+
+-   zentrale Statistiken und Grafiken für kategoriale und metrische Variablen zu nutzen und zu interpretieren;
+
+-   Verteilungsformen numerischer Daten unterscheiden zu können;
+
+-   eine empirische Verteilungsfunktion interpretieren zu können;
+
+-   den Zusammenhang zwischen Variablen darstellen und beschreiben zu können
+:::
+
+Wir beginnen mit dem Einlesen von Daten. Dazu wird der Beispielsdatensatz `tips.csv` \[\^Bryant u. a. (1995), Practical Data Analysis -- Case Studies in Business Statistics\] eingelesen. Dieser liegt im sogenannten CSV-Format (*comma separated values*) vor. Dieses Format ist sehr nützlich, um Daten auszutauschen, da es ein reines Textformat ist und auf allen Rechnern und Betriebssystemen gelesen werden kann. Wenn Sie `tips.csv` mit einem Texteditor öffnen, sieht die Datei so aus:
+
+```         
+"total_bill";"tip";"sex";"smoker";"day";"time";"size"
+16,99;1,01;"Female";"No";"Sun";"Dinner";2
+10,34;1,66;"Male";"No";"Sun";"Dinner";3
+21,01;3,5;"Male";"No";"Sun";"Dinner";3
+23,68;3,31;"Male";"No";"Sun";"Dinner";2
+24,59;3,61;"Female";"No";"Sun";"Dinner";4
+25,29;4,71;"Male";"No";"Sun";"Dinner";4
+...
+```
+
+In der ersten Zeile stehen die Namen der Variablen, danach kommen die einzelnen Beobachtungen. Die Werte sind mit Semikola getrennt, das Dezimaltrennzeichen ist das Komma. Zeichenketten stehen in doppelten Anführungszeichen.
+
+::: {.callout-tip .Tipp}
+## Tipp
+
+Variablennahmen sollten mit Buchstaben beginnen und keine Leeroder Sonderzeichen enthalten und auch Umlaute sollten vermieden werden.
+:::
+
+Die Datei kann mit `read.csv2()` eingelesen werden, diese Funktion liest ein sogenanntes deutsches CSV ein. In amerikanischen CSV-Dateien ist das Datentrennzeichen ein Komma (daher *comma separated values*) und das Dezimaltrennzeichen ein Punkt.
+
+Der ganze Befehl sieht dann so aus:
+
+```{r}
+#| echo: true
+#| eval: false
+tips <- read.csv2("data/tips.csv")
+```
+
+Ob `data/` vor dem Dateinamen steht, hängt davon ab, ob Sie die Datei in einem Unterverzeichnis gespeichert haben (z. B. bei Verwendung der Projektdatei --- siehe Kapitel 2 R und RMarkdown).
+
+::: Hinweis
+Im Code oben ist `<-` der sogenannten Zuweisungspfeil. Das, wo der Pfeil herkommt (hier: was rechts davon steht), wird in dem Objekt abspeichert, wo der Pfeil hinzeigt (hier links davon).
+:::
+
+CSV-Dateien können aus Tabellenkalkulationsprogrammen abgespeichert werden. R kann aber auch viele andere Datenformate lesen.
+
+::: {.callout-note .Aufgabe}
+## Aufgabe 5.1
+
+Öffnen Sie die Datei `tips.csv` in Excel (oder einem anderen Tabellenkalkulationsprogramm).
+:::
+
+::: {.callout-tip .Tipp}
+## Tipp
+
+Die Lösung (oder Erläuterung) finden Sie am Ende dieses Kapitels. -- Versuchen Sie stets, eine Aufgabe zunächst selbst zu lösen, bevor Sie nachschlagen. Die aktive Auseinandersetzung ist Ihr Schlüssel zum Lernerfolg!
+:::
+
+Um erste Informationen zu dem Datensatz zu erhalten, können Sie den Befehl `str(tips)` verwenden.
+
+```{r}
+str(tips)
+```
+
+Eine Datentabelle (data.frame) kann aus mehreren Variablen (Spalten) mit gleicher Anzahl Beobachtungen (Zeilen) bestehen. Die Variablennamen finden Sie in der Spalte nach dem \$-Zeichen, dahinter steht der Variablentyp, gefolgt von den ersten Daten.
+
+::: {.callout-note .Aufgabe}
+## Aufgabe 5.2
+
+Was unterscheidet die Variablentypen int und num?
+:::
+
+@tab-variablentypen
+
+| Typ    | Verwendung                                                       |
+|:-------------|:---------------------------------------------------------|
+| chr    | *character*, Zeichenkette                                        |
+| factor | Faktor (Zeichenkette mit wenigen unterschiedlichen Ausprägungen) |
+| int    | *integer*, ganzzahlig                                            |
+| num    | *numeric*, Gleitkommazahlen                                      |
+
+: Variabltypen in R {#tab-variablentypen}
+
+Für diesen Datensatz sammelte ein Keller über mehrere Monate sein Trinkgeld. @tab-tipsdata zeigt die darin abgespeichertern Variablen.
+
+| Name           | Bedeutung               |
+|----------------|-------------------------|
+| `total_bill`   | Rechnungshöhe in Dollar |
+| `tip`   |Trinkgeld in Dollar |
+| `sex`   | Geschlecht des Rechnungszahlenden |
+| `smoker`   | Gab es Raucher:innen am Tisch? |
+| `day`   | Wochentag |
+| `time`   | Tageszeit |
+| `size`   | Anzahl Personen am Tisch |
+
+: Variablen des Datensatzes `tips.csv`
+
+::: {.callout-note .Aufgabe}
+## Aufgabe 5.3 
+Welches Skalenniveau haben die Variablen im Datensatz `tips.csv`?
+:::
+
+## Analyse kategorialer Daten
+I
+m ersten Schritt beschäftigen wir mit der Analyse kategorialer Daten.Wir
+werden verschiedene Grafiken wie Säulendiagramm, Balkendiagramm
+oder Mosaikplot kennenlernen. Kreis- oder Kuchendiagramme werden
+wir allerdings nicht anschauen. Die Häufigkeiten der verschiedenen
+Kategorien können absolut oder relativ (als Anteile oder Prozente)
+angegeben werden.
+
+::: {.callout-note .Aufgabe}
+## Aufgabe
+
+Warum werden Kreisdiagramme insbesondere in der
+Wissenschaft nicht gerne gesehen?
+:::
+
+### Häufigkeiten und Anteile
+
+Säulendiagrammewerden mit `gf_bar( ~ my.x, data = my.data)` ausgeführt,
+`my.x` ist die Variable, die dargestellt werden soll (z. B. `day`),`my.data`
+die Datentabelle, die verwendet werden soll (z. B.`tips`).
+
+::: {.callout-tip .Tipp}
+## Tipp
+Zur Erinnerung: Die Tilde ~ wird auf Windows-Rechnern mit der Tastenkombination
+AltGr - + ausgewählt, auf Mac-Rechnern mit Alt - n.
+:::
+
+Wenn wir also die Häufigkeiten der Wochentage grafisch darstellen
+wollen, sieht der vollständige Befehl also so aus:
+
+```{r}
+gf_bar( ~ day, data = tips)
+```
+

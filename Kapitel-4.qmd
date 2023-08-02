@@ -281,12 +281,15 @@ Eigenschaften werden in *Kategorien* angegeben, daher *kategoriale* Daten. Wenn 
 :::
 
 ::: {.callout-note .Aufgabe}
+## Aufgabe
 Welches Skalenniveau hat die Variable Telefonvorwahl?
 :::
 
 Metrische Daten werden zusätzlich in **stetig** und **diskret** unterteilt. Stetige Daten können beliebig viele Zwischenwerte (Nachkommastellen) haben, je nach Genauigkeit des Messintruments, z. B. Länge. Diskrete Daten haben abzählbar viele Zwischenwerte, meist sind sie ganzzahlig. Ein Beispiel dafür ist die Anzahl Studierender in einer Veranstaltung. Manchmal gibt es auch Daten, die z. B. auf zwei Nachkommastellen diskret sind wie Geldbeträge in Euro. Da es dann aber sehr viele Stufen gibt, werden sie als **quasi-stetig** bezeichnet und wie stetige Werte behandelt.
 
 ::: {.callout-note .Aufgabe}
+## Aufgabe
+
 Hören Sie zur Entspannung folgenden Song: Levels of Measurement © Larry Lesser und Dominic Dousa, [www.causeweb.org](https://www.causeweb.org/cause/resources/fun/songs/levels-measurement).
 :::
 
@@ -312,6 +315,8 @@ Sie finden an vielen Stellen Verweise auf Songs und Videos. Wenn Sie Spaß daran
 Die Spalten entsprechen in der Regel einer Variablen, hier Name, Geschlecht und Alter, eine Zeile zeigt eine Beobachtung. Häufig ist die erste Zeile in einem Datensatz die Kopfzeile, gibt also die Namen der Variablen aus.
 
 ::: {.callout-note .Aufgabe}
+## Aufgabe 
+
 Lesen Sie Kapitel 1 aus dem Buch *Introduction to Modern Statistics* \[6\]. Sie können es hier herunterladen: <https://openintro-ims.netlify.app/index.html>
 :::
 
@@ -328,6 +333,7 @@ Daten = Modell + Rest
 :::
 
 ::: {.callout-note .Aufgabe}
+## Aufgabe
 Überlegen Sie sich, warum Punkte einer Klausur variieren.
 :::
 
@@ -385,6 +391,7 @@ par(opar)
 ```
 
 ::: {.callout-note .Aufgabe}
+## Aufgabe
 Recherchieren Sie, wer Simpson war und warum das Paradox nach ihm benannt wurde.
 :::
 
@@ -493,6 +500,8 @@ Warum ist es ideal, eine Zufallsstichprobe zu haben? Wenn ich Ihren Kurs als Sti
 In anderen Fragestellungen mag die Gelegenheitsstichprobe *Ihr Kurs* nicht verzerrt sein, z. B. wenn ich mich für die Körpergröße interessiere. Es hängt also immer auch von der Fragestellung ab, ob eine Gelegenheitsstichprobe geeignet ist.
 
 ::: {.callout-note .Aufgabe}
+## Aufgabe
+
 Verzerrungen
 
 a)  Was glauben Sie: Welche der nachfolgend aufgeführten Gruppen hat eine höhere Wahrscheinlichkeit, an einer freiwilligen Umfrage der Dozentin teilzunehmen? Die Gruppe der nicht besonders gewissenhaft Studierenden, die Gruppe der besonders gewissenhaft Studierenden oder beide gleich Gruppen gleich.

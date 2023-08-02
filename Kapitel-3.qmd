@@ -123,12 +123,16 @@ Alle Schwäne sind weiß. Um sie zu beweisen, müssten Sie alle Gewässer besuch
 Hypothesen werden aus Theorie oder Beobachtungen abgeleitet und stellen Vermutungen über einen bestimmten Sachverhalt an. Sie geben damit eine provisorische Antwort auf ein wissenschaftliches Problem und gehen dabei über den Einzelfall hinaus. Hypothesen sind überprüfbar und falsifizierbar, sind aber nicht beweisbar (*Falsifikationsprinzip* nach Karl Popper).
 
 ::: {.callout-note .Aufgabe}
+## Aufgabe
+
 Wie könnte die Hypothese zu unserem Einführungsbeispiel lauten?
 :::
 
 Theorien wiederum sind Sammlungen von Hypothesen und schlagen eine (vorläufige) Antwort auf eine offene Frage vor. Eine Theorie lässt sich aber kaum im vollen Umfang überprüfen.
 
 ::: {.callout-note .Aufgabe}
+## Aufgabe
+
 Welche Theorien kennen Sie?
 :::
 
@@ -153,6 +157,8 @@ In der Wissenschaft gibt es verschiedene Schlusstechniken: \[[^kapitel-3-2], Que
 -   **Abduktion:** Sie verknüpfen verschiedene einzelne Beobachtungen (nicht regelmäßig auftretend) und entwickeln daraus Vermutungen über den Sachverhalt (ebenfalls vom Speziellen zum Allgemeinen).
 
 ::: {.callout-note .Aufgabe}
+## Aufgabe
+
 Eine Dozentin hat mehrfach beobachtet, dass ihre Studierenden interessiert am Fach Statistik sind. Nun schließt sie, dass alle Studierenden interessiert am Fach Statistik sind. Welche Schlussart liegt vor: Induktion, Deduktion oder Abduktion?
 :::
 
@@ -161,6 +167,8 @@ Bezüglich der Induktion müssen Sie sich der damit verbundenen Induktionsproble
 Induktion und Abduktion werden häufig zur Bildung von Hypothesen verwendet, während Deduktion zur Überprüfung von Hypothesen eingesetzt wird.
 
 ::: {.callout-note .Aufgabe}
+## Aufgabe
+
 Karl Popper hat sich umfänglich mit diesem Thema beschäftigt. Wer war Karl Popper?
 :::
 
