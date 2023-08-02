@@ -2,17 +2,128 @@
 
 ```{r}
 #| include: false
-library(emojifont)
-library(purrr)
-library(tidyr)
 library(ggplot2)
-library(ggformula)
-library(mosaic)
-library(gridExtra)
-library(emojifont)
+library(ggdag)
 ```
 ```{r child="FarbSchema.qmd"}
 ```
+```{r DAGS}
+#| include: false
+textsize <- 5
+nodesize <- 14
+labelsize <- 5
+margins <- unit(c(0.2, -1, -2, -2), "mm") # t r b l
+
+# Experiment
+co <- data.frame(
+  x = c(0, 0, 1), 
+  y = c(1, 0, 0), 
+  name = c("Z", "X", "Y")
+) 
+
+dag_e1 <- dagify(
+  Y ~ X,
+  X ~ Z,
+  Y ~ Z, 
+  coords = co) |> 
+    ggdag(
+      node_size = nodesize, 
+      text_size = textsize, 
+      text = TRUE, 
+      text_col = bgcolGray) + 
+    theme_dag_blank() +
+    geom_dag_edges(
+      arrow_directed = grid::arrow(length = grid::unit(15, "pt"), 
+      type = "closed")
+    )  + 
+    geom_text(
+      label = "Z - Vorwissen\nX - Lernzeit\nY - Klausurpunkte", 
+      hjust = 1, 
+      vjust = 1,
+      x = 1, 
+      y = 1, 
+      size = labelsize, 
+      color = fgcolGray) +
+    labs(title = " Beobachtungsstudie") +
+    theme(plot.margin = margins)
+
+co <- data.frame(x = c(0,0,1,-1), y = c(1,0,0,0), name = c("Z", "X", "Y", "D")) 
+
+dag_e2 <- dagify(
+  Y ~ X,
+  X ~ Z,
+  X ~ D,
+  Y ~ Z, 
+  coords = co) |> 
+    ggdag(
+      node_size = nodesize, 
+      text_size = textsize, 
+      text = TRUE, 
+      text_col = bgcolGray) + 
+    theme_dag_blank() +
+    geom_dag_edges(
+      arrow_directed = grid::arrow(
+        length = grid::unit(15, "pt"), 
+        type = "closed")
+      )  + 
+    geom_segment(
+      aes(x = -.1, y = .475, xend = .1, yend = .575), 
+      color = fgcolGray) +
+    geom_segment(aes(x = -.1, y = .425, xend = .1, yend = .525), color = fgcolGray) +
+    geom_text(label = "Z - Vorwissen\nX - Lernzeit\nY - Klausurpunkte\nD - Dozentin", 
+            hjust = 0, vjust = 1,
+            x = -1.15, y = 0.85, size = labelsize, color = fgcolGray) +
+  labs(title = " Randomisiertes Experiment") +
+  theme(plot.margin = margins)
+
+# Stichprobe
+
+co <- data.frame(x = c(0.5,0,1), y = c(1,0,0), name = c("Z", "S", "X")) 
+
+dag_s1 <- dagify(S ~ Z,
+               X ~ Z,
+               coords = co) |> 
+  ggdag(node_size = nodesize, text_size = textsize, text = TRUE, text_col = bgcolGray) + 
+  theme_dag_blank() +
+  geom_dag_edges(arrow_directed = grid::arrow(length = grid::unit(15, "pt"), type = "closed"))  + 
+  geom_text(label = "Z - Gewissenhaftigkeit\nS - Stichprobe\nX - Lernzeit", 
+            hjust = 0, vjust = 0,
+            x = 0.15, y = -0.05, size = labelsize, color = fgcolGray) +
+  labs(title = " Gelegenheitsstichprobe") +
+  theme(plot.margin = margins) 
+
+co <- data.frame(x = c(0.5,0,1,-1), y = c(1,0,0,0), name = c("Z", "S", "X", "D")) 
+
+dag_s2 <- dagify(X ~ Z,
+               S ~ Z,
+               S ~ D, coords = co) |> 
+  ggdag(node_size = nodesize, text_size = textsize, text = TRUE, text_col = bgcolGray) + 
+  theme_dag_blank() +
+  geom_dag_edges(arrow_directed = grid::arrow(length = grid::unit(15, "pt"), type = "closed"))  + 
+  geom_segment(aes(x = .15, y = .475, xend = .35, yend = .575), color = fgcolGray) +
+  geom_segment(aes(x = .15, y = .425, xend = .35, yend = .525), color = fgcolGray) +
+  geom_text(label = "Z - Gewissenhaftigkeit\nS - Stichprobe\nX - Lernzeit\nD - Dozentin", 
+            hjust = 0, vjust = 1,
+            x = -1.1, y = 0.85, size = labelsize, color = fgcolGray) + 
+  labs(title = " Zufallsstichprobe") +
+  theme(plot.margin = margins)
+
+#  pkgsrm(pkgsinit)
+
+```
+```{r}
+#| include: false
+library(ggplot2)
+library(ggdag)
+
+library(emojifont)
+library(purrr)
+library(tidyr)
+library(ggformula)
+library(mosaic)
+library(gridExtra)
+```
+
 
 ::: {.callout-tip .Lernergebnisse}
 ## Lernergebnisse dieses Kapitels
@@ -59,14 +170,15 @@ Auch hier kehren die Gütekriterien wieder, jetzt bezogen auf die Messung. Im Ei
 Vergleichen Sie die Gütekriterien der Messung mit denen der Forschung. Wo gibt es Gemeinsamkeiten, wo Unterschiede?
 :::
 
-@fig_VarianzBias zeigt exemplarisch, was bei einer Messung *schief* gehen kann. Entweder streut das Messergebnis (Varianz) oder die Messung hat eine Abweichung (Verzerrung oder Bias), beispielsweise eine Waage, die verstellt ist.
+@fig-VarianzBias zeigt exemplarisch, was bei einer Messung *schief* gehen kann. Entweder streut das Messergebnis (Varianz) oder die Messung hat eine Abweichung (Verzerrung oder Bias), beispielsweise eine Waage, die verstellt ist.
 
-```{r fig_VarianzBias}
+```{r fig-VarianzBias}
 #| echo: false
-#| fig.width: 5
-#| fig.asp: 0.54
-#| out.width: 10cm
-#| label: fig_VarianzBias
+#| fig-width: 5
+#| fig-asp: 0.54
+#| out-width: 10cm
+#| label: fig-VarianzBias
+ 
   set.seed(2009)
   
   theta <- seq(0, 2 * pi, length = 360)
@@ -192,10 +304,10 @@ Sie finden an vielen Stellen Verweise auf Songs und Videos. Wenn Sie Spaß daran
 | AMax  | m          | 186   |
 | Susi  | w          | 172   |
 
-: Exemplarischer Datensatz{#tab_Data}
+: Exemplarischer Datensatz{#tbl-Data}
 :::
 
-@tab_Data zeigt einen exemplarischen Datensatz. Ein Datensatz ist meist wie ein Tabellenkalkulationsblatt aufgebaut. Daten werden häufig auch in Formaten abgespeichert, die von Tabellenkalkulationsprogrammen (wie Excel, Numbers o. ä.) gelesen werden können.
+@tbl-Data zeigt einen exemplarischen Datensatz. Ein Datensatz ist meist wie ein Tabellenkalkulationsblatt aufgebaut. Daten werden häufig auch in Formaten abgespeichert, die von Tabellenkalkulationsprogrammen (wie Excel, Numbers o. ä.) gelesen werden können.
 
 Die Spalten entsprechen in der Regel einer Variablen, hier Name, Geschlecht und Alter, eine Zeile zeigt eine Beobachtung. Häufig ist die erste Zeile in einem Datensatz die Kopfzeile, gibt also die Namen der Variablen aus.
 
@@ -233,17 +345,17 @@ Die Entscheidung darüber, was eine unabhängige Variable und was eine Kovariabl
 
 Die Modellformulierung in der Statistik lautet $𝑦 ∼ 𝑥$ . Im Unterschied zur mathematischen Funktion \$𝑦 = 𝑓 (𝑥) \$ kann es in der statistischen Formulierung für ein $𝑥$ auch mehrere $𝑦$ -Werte geben.
 
-Dass Sie bei der Auswahl der Kovariablen aufpassen müssen, zeigt @fig_UBC1, in der es um Zulassungen an der University of California Berkeley im Zusammenhang mit dem Geschlecht geht (Bickel, Hammel und O'Connell @bickel1975).
+Dass Sie bei der Auswahl der Kovariablen aufpassen müssen, zeigt @fig-UCB1, in der es um Zulassungen an der University of California Berkeley im Zusammenhang mit dem Geschlecht geht (Bickel, Hammel und O'Connell @bickel1975).
 
 
-```{r}
-#| label: fig_UCB1
+```{r fig-UCB1}
+#| label: fig-UCB1
 #| caption: "Zulassungen an der UC Berkeley in Abhängigkeit vom Geschlecht: ohne Kovariable"
 #| echo: false
-#| fig.width: 5
-#| fig.asp: 1
-#| out.width: 7cm
-#| out.extra: trim = 10mm 15mm 10mm 5mm, clip
+#| fig-width: 5
+#| fig-asp: 1
+#| out-width: 7cm
+#| out-extra: trim = 10mm 15mm 10mm 5mm, clip
 mosaicplot(apply(UCBAdmissions, c(1, 2), sum) |> t(), 
            main = "Zulassungen an der UC Berkeley",
            col = c(bgcolGray, bgcolFOMGreen), cex.axis = 1)
@@ -251,15 +363,15 @@ mosaicplot(apply(UCBAdmissions, c(1, 2), sum) |> t(),
 
 Das ist ein Beispiel des sogenannten Simpson-Paradox. Das Weglassen der Kovariable Department verzerrt das Bild. Es wirkt so, als ob Frauen benachteiligt würden.
 
-Erst die Aufteilung nach der Kovariable Department (@fig_UCB2) zeigt, dass Frauen und Männer ausgeglichen zugelassen wurden, im Department A sogar relativ mehr Frauen. Die Verzerrung im Gesamtbild ergibt sich durch die Wahl der Departments: Frauen haben sich eher dort beworben, wo die Ablehnungsquote höher ist.
+Erst die Aufteilung nach der Kovariable Department (@fig-UCB2) zeigt, dass Frauen und Männer ausgeglichen zugelassen wurden, im Department A sogar relativ mehr Frauen. Die Verzerrung im Gesamtbild ergibt sich durch die Wahl der Departments: Frauen haben sich eher dort beworben, wo die Ablehnungsquote höher ist.
 
-```{r chapQDGl-figUCB2, fig = FALSE}
-#| echo:false
-#| fig.width: 6.5
-#| fig.asp: 0.8, 
-#| out.width: "10cm"
+```{r fig-UCB2, fig = FALSE}
+#| echo: false
+#| label: fig-UCB2
+#| fig-width: 6.5
+#| fig-asp: 0.8
+#| out-width: 10cm
 #| caption: "Zulassungen an der UC Berkeley in Abhängigkeit vom Geschlecht: mit Kovariable Department"
-#| label: fig_UCB2
 
 opar <- par(mfrow = c(2, 3), oma = c(0, 0, 2, 0)) # b, l, t , r
 for (i in 1:6)
@@ -284,15 +396,15 @@ Die Datenerhebung für unsere Untersuchungen erfolgt i. d. R. als **Stichprobe**
 
 Idealerweise wird eine **Zufallsstichprobe** gezogen, in der alle Beobachtungen der Population die gleiche Wahrscheinlichkeit haben, Teil der Stichprobe zu werden. Eine nicht-zufällige Stichprobe wird als **Gelegenheitsstichprobe** bezeichnet. Die Population kann auch nach geeigneten Kriterien aufgeteilt werden und aus den einzelnen Gruppen werden wiederum Zufallsstichproben gezogen: eine **geschichtete** oder **stratifizierte** Stichprobe.
 
-@fig_Sample zeigt die verschiedenen Erhebungsmöglichkeiten schematisch.
+@fig-Sample zeigt die verschiedenen Erhebungsmöglichkeiten schematisch.
 
-```{r chapQDGl-figSample, fig = TRUE}
+```{r fig-Sample, fig = TRUE}
 #| echo: false
-#| fig.width: 5
-#| fig.asp: 0.6
-#| out.width = 10cm
+#| label: fig-Sample
+#| fig-width: 5
+#| fig-asp: 0.6
+#| out-width: 10cm
 #| caption: "Verschiedene Erhebungsmethoden für Stichproben"
-#| label: fig_Sample}
 
 fa1 <- fontawesome(c("fa-user"))
 fa2 <- fontawesome(c("fa-female", "fa-male"))
@@ -389,43 +501,80 @@ b)  Was glauben Sie: Welche Gruppe verwendet durchschnittlich mehr Zeit zur Vor-
 :::
 
 ::: column-margin
-...
+[![Gelegenheitsstichproben erreichen nur die niedrig hängenden Früchte. \copyright\xspace J.\,B. Landers, Bildunterschrift  L. Lesser](causeweb-images/cartoon0118.jpg){}](https://www.causeweb.org/cause/caption-contest/january/2018/results)
 :::
 
 Ein fiktives Beispiel:
 
--   Sei $𝑍$ die Gewissenhaftigkeit eines Studierenden.
+-   Sei $Z$ die Gewissenhaftigkeit eines Studierenden.
 
--   Sei $𝑆$ die Teilnahme an einer Umfrage. D. h., an $𝑆$ kann erkannt werden, ob die Person Teil der Stichprobe ist oder nicht.
+-   Sei $S$ die Teilnahme an einer Umfrage. D. h., an $S$ kann erkannt werden, ob die Person Teil der Stichprobe ist oder nicht.
 
--   Sei $𝑋$ die Lernzeit eines Studierenden. Diese möchte die Dozentin analysieren.
+-   Sei $X$ die Lernzeit eines Studierenden. Diese möchte die Dozentin analysieren.
 
 Es kann vermutet werden:
 
--   Gewissenhaftere Studierende haben eine höhere Bereitschaft zur Teilnahme an der Umfrage: $𝑍 →− 𝑆$ .
+-   Gewissenhaftere Studierende haben eine höhere Bereitschaft zur Teilnahme an der Umfrage: $Z \xrightarrow{+} S$ .
 
--   Gewissenhaftere Studierende haben eine längere Lernzeit: $𝑍 →− 𝑋$ .
+-   Gewissenhaftere Studierende haben eine längere Lernzeit: $Z \xrightarrow{+} X$ .
 
 Insgesamt hat daher die Gelegenheitsstichprobe eine höhere Lernzeit als die Population, da die Studierenden mit einer geringeren Gewissenhaftigkeit, und daher auch Lernzeit, in der Stichprobe fehlen.
 
-Durch eine zufällige Stichprobe wird diese Selbst-Selektion vermieden.
+Durch eine zufällige Stichprobe wird diese *Selbst-Selektion* vermieden.
 
-Abbildung 4.5 zeigt den datengenerierenden Prozess einer Gelegenheitsstichprobe und einer zufälligen Stichprobe. Bei letzterer wählt die Dozentin die Studierenden zufällig aus.
+@fig-DAG-Stichprobe zeigt den datengenerierenden Prozess einer Gelegenheitsstichprobe und einer zufälligen Stichprobe. Bei letzterer wählt die Dozentin die Studierenden zufällig aus.
 
-XXX Abbildung XXX
+```{r fig-DAG-Stichprobe}
+#| caption: "Gelegenheitsstichprobe vs. Zufallsstichprobe"
+#| label: fig-DAG-Stichprobe
+#| echo: FALSE
+#| fig-width: 7
+#| fig-asp: 0.5
+#| out-width: 10cm
 
-Durch die Zufallsstichprobe wird der Weg von Gewissenhaftigkeit (gewissenhaftere Menschen nehmen eher an Umfragen teil) zur Stichprobe unterbrochen, so dass es in der Umfrage zur Lernzeit keine SelbstSelektion gibt (gewissenhaftere Menschen werden auch eine höhere Lernzeit haben).
+layout <- rbind(c(rep(1,10), NA, rep(2, 10)))
+grid.arrange(dag_s1, dag_s2, layout_matrix = layout)
+```
 
-::: Hinweis
-Die Abbildung zeigt einen sogenannten Directed Acyclic Graph, kurz DAG. Damit können kausale Zusammenhänge dargestellt werden. Mehr dazu im Kapitel 9 (Einführung in die kausale Modellierung).
+Durch die Zufallsstichprobe wird der Weg von Gewissenhaftigkeit (gewissenhaftere Menschen nehmen eher an Umfragen teil) zur Stichprobe unterbrochen, so dass es in der Umfrage zur Lernzeit keine *Selbst-Selektion* gibt (gewissenhaftere Menschen werden auch eine höhere Lernzeit haben).
+
+::: {.callout-tip .Hinweis}
+## Hinweis
+Die Abbildung zeigt einen sogenannten *Directed Acyclic Graph*, kurz DAG. 
+Damit können kausale Zusammenhänge dargestellt werden. 
+Mehr dazu im Kapitel 9 (Einführung in die kausale Modellierung).
 :::
 
 Der Wert in der Population, der von Interesse ist, wird als Parameter bezeichnet. Ein Parameter wird i. d. R. mit griechischen Buchstaben bezeichnet, z. B. $\mu$ für den Erwartungswert der Population (also der Mittelwert über die gesamte Population) oder $\pi$ für den Anteil in der Population. Den Wert, den ich stattdessen aus der Stichprobe messe, ist die (Stichproben-)Statistik oder der Schätzwert. Diese werden häufig mit lateinischen Buchstaben bezeichnet, z. B. $\bar{x}$ für den Mittelwert der Stichprobe.
 
-Tabelle 4.2 zeigt einige griechische Buchstaben, die in der quantitativen Datenanalyse häufiger verwendet werden.
+@tbl-griBuchstaben zeigt einige griechische Buchstaben, die in der quantitativen Datenanalyse häufiger verwendet werden.
 
-::: Tabelle
-:::
+```{r}
+#| label: tbl-griBuchstaben
+#| caption: Griechische Buchstaben in der Statistik
+#| echo: false
+#| warning: false
+library(knitr)
+#library(kableExtra) ## NICHT NUTZEN!!!
+
+tribble(
+  ~grBuchstaben, ~Buchstabe, ~Bedeutung,
+  "$\\alpha$"  , "*alpha*"    , "-- Symbol für das Signifikanzniveau eines Tests<br>-- auch Zeichen für Fehler 1. Art",
+  "$\\beta$", "*beta*", "-- Symbol für Regressionskoeffizienten<br>-- Zeichen für Fehler 2. Art",
+  "$\\delta$", "*delta*", "Symbol für allgemeine zusammenfassende Statistik",
+  "$\\epsilon$",  "*epsilon*",  "Symbol für Fehler",
+  "$\\mu$", "*my*", "Symbol für den Populationsmittelwert",
+  "$\\sigma$", "*sigma*", "Symbol für die Populationsstandardabweichung",
+  "$\\pi$", "*pi*", "Symbol für den Populationsanteil",
+  "$\\rho$", "*rho*", "Symbol für den Populationskorrelation",
+  "$\\chi$",  "*chi*", "Symbol für zusammenfassende Statistik im $\\chi^2$-Test"
+) |>
+kable(
+  col.names = c("Buchstabe","", "Bedeutung in der Regel"),
+  align = "lll",
+  escape = TRUE) 
+```
+
 
 ::: {.callout-tip .Tipp}
 ## Tipp
@@ -444,14 +593,13 @@ Auch hier kann eine Abbildung den Zusammenhang noch einmal verdeutlichen. Ein fi
 -   Sei $X$ die Lernzeit eines Studierenden.
 
 -   Sei $Y$ die Klausurpunktzahl.
-
-Die Dozentin will den Zusammenhang \$𝑋 → 𝑌 \$untersuchen.
+    Die Dozentin will den Zusammenhang $X \rightarrow Y$ untersuchen.
 
 Es kann vermutet werden:
 
--   Studierende mit einem hohen Vorwissen müssen weniger lernen $𝑍 →− 𝑋$ , erreichen aber mehr Punkte: $𝑍 →− 𝑌$ .
+-   Studierende mit einem hohen Vorwissen müssen weniger lernen $Z \xrightarrow{-} X$ , erreichen aber mehr Punkte: $Z \xrightarrow{+} Y$.
 
--   Studierende, die mehr lernen, erreichen mehr Punkte: $𝑋 →− 𝑌$ .
+-   Studierende, die mehr lernen, erreichen mehr Punkte: $X \xrightarrow{+} Y$.
 
 Aufgrund des höheren Vorwissens ist es möglich, dass Studierende mit einer geringeren Lernzeit mehr Punkte erreichen -- obwohl bei gleichem Vorwissen der Zusammenhang positiv ist.
 
@@ -459,11 +607,21 @@ In einem randomisierten Experiment würde die Dozentin die Lernzeit zufällig zu
 
 Der Graf zeigt den **datengenerierenden Prozess** in einer Beobachtungsstudie und einem randomisierten Experiment. Im letzteren weist die Dozentin den Studierenden **zufällig** eine Lernzeit zu.
 
-XXX Abbildung XXX
+```{r fig = TRUE, echo = FALSE, fig.width = 7, fig.asp = 0.5, out.width = "10cm"}
+#| caption: "Beobachtungsstudie vs. Experiment"
+#| fig-DAG-Experiment
+layout <- rbind(c(rep(1,10), NA, rep(2, 10)))
+grid.arrange(dag_e1, dag_e2, layout_matrix = layout)
+```
+
 
 Das Vorwissen würde die Lernzeit und die Klausurpunkte beeinflussen. Durch das Experiment wird der Pfad zwischen Vorwissen und Lernzeit gekappt, so dass der Einfluss der Lernzeit isoliert werden kann.
 
-Zum Abschluss dieses Kapitels sehen Sie in Abbildung 4.7 den idealisierten Ablauf eines Forschungsprozesses, den Problem-Plan-Data-Analysis-Conclusion-Zyklus (PPDAC-Zyklus).
+::: column-margin
+![PPDAC: Problem -- Plan -- Data -- Analysis -- Conclusion](own-images/PPDAC.png){#fig-PPDAC}
+:::
+
+Zum Abschluss dieses Kapitels sehen Sie in @fig-PPDAC den idealisierten Ablauf eines Forschungsprozesses, den Problem-Plan-Data-Analysis-Conclusion-Zyklus (PPDAC-Zyklus).
 
 Welches Problem soll untersucht werden (P), welche Variablen sind dafür notwendig und müssen diese ggf. operationalisiert werden (P), wie kommen Sie an die Daten (D). Mit der Analyse (A) und der Schlussfolgerung (Conclusion, C) befassen wir uns in den folgenden Kapiteln.
 
