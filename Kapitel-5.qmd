@@ -9,9 +9,9 @@ library(mosaic)
 
 Nach erfolgreichem Abschluss dieses Kapitels sind Sie in der Lage,
 
--   Daten in RStudio zu importieren, insbesondere über das CSVFormat;
+-   Daten in RStudio zu importieren, insbesondere über das CSVFormat;
 
--   zentrale Statistiken und Grafiken für kategoriale und metrische Variablen zu nutzen und zu interpretieren;
+-   zentrale Statistiken und Grafiken für kategoriale und metrische Variablen zu nutzen und zu interpretieren;
 
 -   Verteilungsformen numerischer Daten unterscheiden zu können;
 
@@ -20,7 +20,7 @@ Nach erfolgreichem Abschluss dieses Kapitels sind Sie in der Lage,
 -   den Zusammenhang zwischen Variablen darstellen und beschreiben zu können
 :::
 
-Wir beginnen mit dem Einlesen von Daten. Dazu wird der Beispielsdatensatz `tips.csv` \[\^Bryant u. a. (1995), Practical Data Analysis -- Case Studies in Business Statistics\] eingelesen. Dieser liegt im sogenannten CSV-Format (*comma separated values*) vor. Dieses Format ist sehr nützlich, um Daten auszutauschen, da es ein reines Textformat ist und auf allen Rechnern und Betriebssystemen gelesen werden kann. Wenn Sie `tips.csv` mit einem Texteditor öffnen, sieht die Datei so aus:
+Wir beginnen mit dem Einlesen von Daten. Dazu wird der Beispielsdatensatz `tips.csv` \[\^Bryant u. a. (1995), Practical Data Analysis -- Case Studies in Business Statistics\] eingelesen. Dieser liegt im sogenannten CSV-Format (*comma separated values*) vor. Dieses Format ist sehr nützlich, um Daten auszutauschen, da es ein reines Textformat ist und auf allen Rechnern und Betriebssystemen gelesen werden kann. Wenn Sie `tips.csv` mit einem Texteditor öffnen, sieht die Datei so aus:
 
 ```         
 "total_bill";"tip";"sex";"smoker";"day";"time";"size"
@@ -33,7 +33,7 @@ Wir beginnen mit dem Einlesen von Daten. Dazu wird der Beispielsdatensatz `tips.
 ...
 ```
 
-In der ersten Zeile stehen die Namen der Variablen, danach kommen die einzelnen Beobachtungen. Die Werte sind mit Semikola getrennt, das Dezimaltrennzeichen ist das Komma. Zeichenketten stehen in doppelten Anführungszeichen.
+In der ersten Zeile stehen die Namen der Variablen, danach kommen die einzelnen Beobachtungen. Die Werte sind mit Semikola getrennt, das Dezimaltrennzeichen ist das Komma. Zeichenketten stehen in doppelten Anführungszeichen.
 
 ::: {.callout-tip .Tipp}
 ## Tipp
@@ -69,7 +69,7 @@ CSV-Dateien können aus Tabellenkalkulationsprogrammen abgespeichert werden. R k
 ::: {.callout-tip .Tipp}
 ## Tipp
 
-Die Lösung (oder Erläuterung) finden Sie am Ende dieses Kapitels. -- Versuchen Sie stets, eine Aufgabe zunächst selbst zu lösen, bevor Sie nachschlagen. Die aktive Auseinandersetzung ist Ihr Schlüssel zum Lernerfolg!
+Die Lösung (oder Erläuterung) finden Sie am Ende dieses Kapitels. -- Versuchen Sie stets, eine Aufgabe zunächst selbst zu lösen, bevor Sie nachschlagen. Die aktive Auseinandersetzung ist Ihr Schlüssel zum Lernerfolg!
 :::
 
 Um erste Informationen zu dem Datensatz zu erhalten, können Sie den Befehl `str(tips)` verwenden.
@@ -98,7 +98,7 @@ Was unterscheidet die Variablentypen int und num?
 
 : Variabltypen in R {#tab-variablentypen}
 
-Für diesen Datensatz sammelte ein Keller über mehrere Monate sein Trinkgeld. @tab-tipsdata zeigt die darin abgespeichertern Variablen.
+Für diesen Datensatz sammelte ein Keller über mehrere Monate sein Trinkgeld. @tab-tipsdata zeigt die darin abgespeichertern Variablen.
 
 | Name           | Bedeutung               |
 |:---------------|:------------------------|
@@ -133,7 +133,7 @@ Wissenschaft nicht gerne gesehen?
 
 ### Häufigkeiten und Anteile
 
-Säulendiagrammewerden mit `gf_bar( ~ my.x, data = my.data)` ausgeführt,
+Säulendiagrammewerden mit `gf_bar( ~ my.x, data = my.data)` ausgeführt,
 `my.x` ist die Variable, die dargestellt werden soll (z. B. `day`),`my.data`
 die Datentabelle, die verwendet werden soll (z. B.`tips`).
 
@@ -153,14 +153,14 @@ wollen, sieht der vollständige Befehl also so aus:
 gf_bar( ~ day, data = tips)
 ```
 
-Sie erkennen in @fig-bartips, dass am Samstag (`Sat`) die meisten Belege
+Sie erkennen in @fig-bar-tips, dass am Samstag (`Sat`) die meisten Belege
 erfasst wurden, gefolgt von Sonntag (`Sun`) und Donnerstag (`Thur`). Freitag
 (`Fri`) liegt abgeschlagen auf dem letzten Platz.
 
 ::: {.callout-tip .Hinweis}
 ## Hinweis
 
-Vielleicht haben Sie es schon gemacht. Bevor `gf_bar()` ausgeführt
+Vielleicht haben Sie es schon gemacht. Bevor `gf_bar()` ausgeführt
 werden kann, muss das Paket `mosaic` mit dem Befehl `library(mosaic)`
 geladen werden.
 :::
@@ -182,7 +182,7 @@ Wenn Sie die Häufigkeiten (englisch: *count*, Symbol $h_i$) aller Kategorien $i
 ## Aufgabe 5.6 
 
 `tally` kommt aus dem Englischen.
-Was ist eine passende Übersetzung dafür?
+Was ist eine passende Übersetzung dafür?
 :::
 
 ```{r}
@@ -194,7 +194,7 @@ tally( ~ day, data = tips)
 Sie sehen, der Aufbau der Befehle, insbesondere bei Verwendung des Pakets `mosaic`, ist immer gleich: `~ Variable` -- Variable, die analysiert werden soll, `data = tips` -- Datentabelle, die verwendet werden soll.
 :::
 
-Um Anteile (englisch: *proportion*) darzustellen, können Sie die Option `format = "proportion"` ergänzen, für Prozentwerte entsprechend `format = "percent"`.
+Um Anteile (englisch: *proportion*) darzustellen, können Sie die Option `format = "proportion"` ergänzen, für Prozentwerte entsprechend `format = "percent"`.
 
 ```{r}
 tally( ~ day, data = tips, format = "prop")
@@ -203,7 +203,7 @@ tally( ~ day, data = tips, format = "prop")
 ::: {.callout-tip .Tipp}
 ## Tipp
 
-Bei den meinsten Optionswerten, die als Zeichenkette in Anführungzeichen eingegen werden, reicht es, weniger Buchstaben anzugeben, hier z. B. "prop" oder "per". Es muss nur eindeutig sein.
+Bei den meinsten Optionswerten, die als Zeichenkette in Anführungzeichen eingegen werden, reicht es, weniger Buchstaben anzugeben, hier z. B. "prop" oder "per". Es muss nur eindeutig sein.
 :::
 
 ::: {.callout-tip .Tipp}
@@ -223,7 +223,7 @@ prop( ~ day, data = tips)
 ::: {.callout-note .Aufgabe}
 ## Aufgabe 5.7 
 
-Kategorien bei `prop()``
+Kategorien bei `prop()`
 
 a) Welche Kategorie wird angezeigt?
 b) Warum?
@@ -243,7 +243,7 @@ Normalerweise finden Sie die Konsole in RStudio im Fenster unten links.
 
 ::: {.callout-tip .Tipp}
 ## Tipp
-`mosaic::` muss nicht unbedingt davor angegeben werden, aber so wird sichergestellt, dass nach der Hilfe für die Funktion aus dem Paket `mosaic` gesucht wird.
+`mosaic::` muss nicht unbedingt davor angegeben werden, aber so wird sichergestellt, dass nach der Hilfe für die Funktion aus dem Paket `mosaic` gesucht wird.
 Wenn Sie nicht wissen, ob die Funktion aus einem nachträglich geladenen Paket stammt, lassen Sie diesen Teil einfach weg.
 :::
 
@@ -264,7 +264,261 @@ Dazu wird die Formel mit einem senkrechten Strich | ergänzt.
 ## Tipp
 
 Außer der Tilde ~ gibt es in den Formeln noch den Strich |, der die Grafik (oder andere Funktionen) in mehrere Gruppen aufteilt. 
-Auch hier gibt es ein Tastenkürzel:
+Auch hier gibt es ein Tastenkürzel:
 Windows AltGr - <, Mac Alt - 7. 
-Das sind jetzt aber auch schon alle (zumindest für die Formelnsyntax).
+Das sind jetzt aber auch schon alle (zumindest für die Formelnsyntax).
+:::
+
+Im Falle von time könnte beispielsweise ein Zusammenhang mit dem
+Tag vorliegen:
+
+```{r}
+gf_bar( ~ time | day, data = tips)
+```
+
+Wie Sie sehen können, sind die Verteilungen der Tageszeit an den Tagen unterschiedlich. 
+Am Samstag und Sonntag scheint es gar keine Besuche zur Mittagszeit gegeben zu haben (vielleicht hatte das Restaurant nur abends auf?), während es am Donnerstag fast nur Besuche zur Mittagszeit gab.
+
+
+Das gruppierte Verteilung können wir auch mit `tally()` darstellen, eine
+sogenannte Kreuztabelle:
+
+```{r}
+# absolut
+tally( ~ time | day, data = tips)
+
+# oder relativ als Anteil
+tally( ~ time | day, data = tips, format = "prop")
+```
+
+Alternativ können Sie bei `tally()` auch folgenden Aufruf verwenden:
+
+```{r}
+tally(time ~ day, data = tips)
+```
+
+Das ist die Variante $Abhängige\ Variable \sim Unabhängige\ Variable$, bzw. $AV \sim UV$ oder $y \sim x$.
+
+::: {.callout-note .Aufgabe}
+## Aufgabe 5.9 
+
+Geht diese Variante auch bei `gf_bar()`? 
+Probieren Sie es aus. 
+Wenn nein, warum nicht?
+:::
+
+Wir haben jetzt die Grundstruktur (die Formelsyntax) der Befehle gelernt,
+die mit Hilfe des Pakets `mosaic` in R durchgeführt werden können:
+
+$AV \sim UV | GV$ -- abhängige Variable in Abhängigkeit von der unabhängigen
+Variablen ggf. gruppiert nach einer Gruppierungsvariable.
+
+::: {.callout-note .Aufgabe}
+## Aufgabe 5.10 
+
+Führen Sie eine Kreuztabellierung der Anteile der Raucher  je Wochentag durch.
+Ist es egal, welche Variable die abhängige bzw. die unabhängige ist? 
+Vergleichen Sie absolute und relative Häufigkeiten -- *richtigherum* und *falschherum*.
+:::
+
+Bei relativen Häufigkeiten müssen Sie darauf achten, wovon der relative
+Anteil ausgegeben wird: *Confusion of the inverse*:
+
+- Der Anteil der Raucher am Freitag entspricht nicht dem Anteil des Freitags der Raucher.
+
+- Der Papst ist ein Mann, aber nur die allerwenigsten Männer sind Papst.
+
+- Die Wahrscheinlichkeit, krank zu sein, wenn das Testergebnis positiv ist, ist nicht dasselbe wie die Wahrscheinlichkeit, dass das Testergebnis positiv ist, wenn man krank ist.
+
+### Bedingte und totaleWahrscheinlichkeit
+
+Die relative Häufigkeit der Uhrzeit (Ereignis $A$) gegeben den Wochentag
+(Ereignis $B$) können Sie auch als bedingte Wahrscheinlichkeit interpretieren,
+z. B. `Pr(time = Lunch|day = Thur)`:
+
+$$
+Pr(𝐴|𝐵)
+$$
+
+Das wäre in unserer Kreuztabelle `tally( ~ time | day, ...)` der zweite Wert aus der vierten Spalte: 0.983871.
+
+```{r}
+tally( ~ time | day, data = tips, format = "prop")
+```
+
+Einzelne Werte aus einem Vektor können Sie mit $[\#]$ auslesen, $\#$ gibt die Position im Vektor an. 
+Bei einer Matrix wie oben benötigen Sie die Zeilen- und die Spaltennummer: $[\#, \#]$, getrennt durch ein Komma.
+
+::: {.callout-note .Aufgabe}
+## Aufgabe 5.11 
+
+Bestimmen Sie den Wert für $Pr(time = Lunch|day = Thur)$ mit `tally()`. 
+Statt zwei Zahlen für die Zeile und die Spalte anzugeben, können Sie auch die Bezeichnungen, hier "`Lunch`" und "`Thur`" angeben.
+:::
+
+::: {.callout-tip .Tipp}
+## Tipp
+
+Die eckigen Klammern bekommen Sie auf Windows-Rechnern mit
+AltGr-8 und auf Mac-Rechnern mit Alt-5.
+:::
+
+Um die totale Wahrscheinlichkeit für die Uhrzeit "`Lunch`" zu bestimmen,
+können Sie die einzelnen bedingten Wahrscheinlichkeiten multipliziert
+mit den jeweiligen Wahrscheinlichkeiten (Ereignisse $B_k, k=1, \dots,K$[^Formal müssen die Ereignisse $B_k$ überschneidungs frei sein und die Wahrscheinlichkeiten
+in der Summe eins ergeben.], die die Bedingungen stellen, auf addieren:
+
+$$
+\begin{align*}
+Pr(A) &= Pr(A|B_1) \cdot Pr(B_1) + Pr(A|B_2) \cdot Pr(B_2) +  \cdots \\
+      &= Pr(A|B_K) \cdot Pr(B_K)
+\end{align*}
+$$
+
+hier also:
+
+$$Pr(time = Lunch) = Pr(time = Lunch|day = Thur) · Pr(day = Thur)
++ Pr(time = Lunch|day = Fri) · Pr(day = Fri) + \dots$$
+
+```{r}
+# Totale Wahrscheinlichkeit
+( tally( ~ time | day, data = tips, format = "prop")["Lunch", ] *
+tally( ~ day, data = tips, format = "prop") ) |> sum()
+
+# Kontrolle
+prop( ~ time, success = "Lunch", data = tips)
+```
+
+
+Ok, das sieht jetzt etwas kompliziert aus.
+Was haben wir gemacht: 
+Die erste Zeile liest die bedingten Wahrscheinlichkeiten für "`Lunch`" für alle Wochentage aus. 
+Die zweite Zeile gibt die Wahrscheinlichkeiten (bzw. Anteile) für die Wochentage zurück. 
+Beide Zeilen wurden miteinander elementweise multipliziert und dann aufsummiert.
+
+::: {.callout-tip .Hinweis}
+## Hinweis
+
+Die Multiplikation von Vektoren mit `*` in R geht elementweise vor,
+anders als in der Mathematik, da wird ein Zeilenvektor mit einem
+Spaltenvektor zu einem Skalarprodukt zusammengefasst. 
+Das Skalarprodukt zweier Vektoren können Sie mit `%*%` berechnen, dann
+benötigen Sie kein `sum()` mehr. 
+Probieren Sie es aus.
+:::
+
+::: {.callout-note .Aufgabe}
+## Aufgabe 5.12 
+
+Bedingte und totale Wahrscheinlichkeit:
+
+a) Wie hoch ist die Wahrscheinlichkeit für einen Rauchertisch beim Mittagessen?
+
+b) Bestimmen Sie die totale Wahrscheinlichkeit für einen Nichtrauchertisch aus dem Zusammenhang mit der Uhrzeit.
+
+:::
+
+Mit dem **Satz von Bayes** und der totalen Wahrscheinlichlichkeit können
+wir die bedingten Wahrscheinlichkeiten umrechnen:
+
+$$
+Pr(B|A) = \frac{Pr(A|B) \cdot Pr(B)}{Pr(A)}.
+$$
+
+::: {.callout-note .Aufgabe}
+## Aufgabe 5.13 
+Bestimmen Sie Wahrscheinlichkeit für Freitag bedingt Essenszeit Dinner über den Satz von Bayes. 
+Kontrollieren Sie das Ergebnis mit `tally()`.
+:::
+
+Auf dem Satz von Bayes basiert eine eigene Richtung in der Statistik, die
+*Bayes-Statistik*. 
+Wir bleiben hier aber in der sogenannten *frequentistischen Statistik*.
+
+### Grafische Darstellung des Zusammenhangs
+
+Den Zusammenhang zwischen zwei kategorialen Variablen können Sie
+gut mit dem Mosaikplot darstellen: `mosaicplot(x ~ y, data = ...)`.
+
+::: {.callout-tip .Hinweis}
+## Hinweis
+
+Im Aufruf von `mosaicplot()` sind die Variablen vertauscht: 
+Die unabhängige Variable muss als erstes angegeben werden, die abhängige Variable als zweites.
+:::
+
+Hier der Mosaikplot zu Raucher je Wochentag:
+
+```{r}
+#| caption: "Mosaikplot Raucher in Abhängigkeit vom Wochentag. $x$ und $y$ müssen im Aufruf von `mosaicplot()` vertauscht werden."
+mosaicplot(day ~ smoker, data = tips)
+```
+
+::: {.callout-note .Aufgabe}
+## Aufgabe 5.14 
+Beschreiben Sie einen Mosaikplot! 
+Was genau wird in Richtung der $x$-Achse, was in Richtung der $y$-Achse dargestellt?
+Was entspricht dem Flächenanteil einer Kachel? 
+Stellen Sie alle diese Information mit `tally()` dar.
+:::
+
+Auch mit einem Säulendiagramm können Sie Zusammenhänge darstellen.
+Sie können die Farbe `(fill = ...)` nach einer anderen Variable auswählen,
+das ist dann die abhängige Variable.
+
+```{r}
+#| caption: "Säulendiagramm der Wochentage, farbig markiert sind die Anteile der Raucher und Nichtraucher innerhalb der Tage. Dabei wurden unterschiedlichen Varianten verwendet: links standard, mittig `position = position_dodge()` und rechts `position= \"fill\""
+gf_bar( ~ day, fill = ~ smoker, data = tips)
+gf_bar( ~ day, fill = ~ smoker, data = tips, position = position_dodge())
+gf_bar( ~ day, fill = ~ smoker, data = tips, position = "fill")
+```
+
+
+::: {.callout-note .Aufgabe}
+## Aufgabe 5.15 
+Mit welcher Grafik in Abbildung 5.4 können Sie am
+besten erkennen, an welchem Tag ...
+
+a) die Anzahl der Rauchergruppen am höchsten war?
+
+b) der Anteil der Rauchergruppen am höchsten war?
+:::
+
+Sie sehen, die Positionierung der Aufteilung der Raucher innerhalb der
+Tage gibt unterschiedliche Informationen. Häufigkeiten erkennen Sie
+mit `position = position_dodge()` am besten (vgl. die Fläche der Kachel
+im Mosaikplot) und Anteile mit `position = "fill"` (vgl. die Höhe der
+Kacheln im Mosaikplot).
+
+::: {.callout-note .Aufgabe}
+## Aufgabe 5.16 
+Nutzen Sie die Datentabelle SaratogaHouses.[^Wie kommen Sie daran? Siehe Abschnitt 2.3 (Erste Schritte in R) in Kapitel 2.]
+
+a) Führen Sie eine explorative Datenanalyse der Variable `heating` durch.
+
+b) Analysieren Sie den Zusammenhang zwischen `heating` und `newConstruction`.
+:::
+
+::: {.callout-caution .Lernpfad}
+## Lernpfad **Explorative Datenanalyse -- kategorial**
+
+- Falls Sie bisher wenig mit R gearbeitet haben, können Sie auch die
+`learnr`-App ausprobieren: <https://fomshinyapps.shinyapps.
+io/learnR-EDA-kategorial/>.
+
+- Klären Sie erforderlichenfalls Ihnen noch unbekannte Begriffe
+eigenständig.
+
+- Zur Unterstützung gibt es zwei Screencasts: EDA – Eine kategoriale
+Variable <https://vimeo.com/398513368> und EDA -- Zwei
+kategoriale Variablen <https://vimeo.com/398789025>. Die Videos
+erfordern ein Passwort: *FOMtest*.
+
+- Lesen Sie zur Vertiefung Kapitel 8.1.1 aus Sebastian Sauer Moderne
+Datenanlyse mit R [2]. Das Buch steht über die FOM-Literaturrecherche
+zur Verfügung.
+
+- Ergänzend können Sie das Kapitel 4 Exploring categorical data
+aus Introduction to Modern Statistics [6] lesen. Sie können es hier
+herunterladen: <https://openintro-ims.netlify.app/index.html>
 :::
