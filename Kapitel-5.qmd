@@ -154,16 +154,14 @@ wollen, sieht der vollständige Befehl also so aus:
 gf_bar( ~ day, data = tips)
 ```
 
-Sie erkennen in @fig-bar-tips, dass am Samstag (`Sat`) die meisten Belege
-erfasst wurden, gefolgt von Sonntag (`Sun`) und Donnerstag (`Thur`). Freitag
-(`Fri`) liegt abgeschlagen auf dem letzten Platz.
+Sie erkennen in @fig-bar-tips, dass am Samstag (`Sat`) die meisten Belege erfasst wurden, gefolgt von Sonntag (`Sun`) und Donnerstag (`Thur`). 
+Freitag (`Fri`) liegt abgeschlagen auf dem letzten Platz.
 
 ::: {.callout-tip .Hinweis}
 ## Hinweis
 
-Vielleicht haben Sie es schon gemacht. Bevor `gf_bar()` ausgeführt
-werden kann, muss das Paket `mosaic` mit dem Befehl `library(mosaic)`
-geladen werden.
+Vielleicht haben Sie es schon gemacht. 
+Bevor `gf_bar()` ausgeführt werden kann, muss das Paket `mosaic` mit dem Befehl `library(mosaic)` geladen werden.
 :::
 
 ::: {.callout-note .Aufgabe}
@@ -172,10 +170,8 @@ geladen werden.
 Warum ist die Reihenfolge der Wochentage so *komisch*?
 :::
 
-Kategoriale Variable werden in R entweder als Zeichenkette (Variablentyp
-`chr`) oder (früher) als *sogenannter* Faktor abgespeichert (Variablentyp `factor`).
-Bei Zeichenketten werden die Kategorien alphanumerisch aufsteigend
-sortiert. 
+Kategoriale Variable werden in R entweder als Zeichenkette (Variablentyp `chr`) oder (früher) als *sogenannter* Faktor abgespeichert (Variablentyp `factor`).
+Bei Zeichenketten werden die Kategorien alphanumerisch aufsteigend sortiert. 
 Wenn die Reihenfolge geändert werden soll, muss die Variable als Faktor gespeichert werden.
 Wenn Sie die Häufigkeiten (englisch: *count*, Symbol $h_i$) aller Kategorien $i$ erhalten wollen, können Sie den Befehl `tally()` verwenden.
 
@@ -192,7 +188,8 @@ tally( ~ day, data = tips)
 
 ::: {.callout-tip .Tipp}
 ## Tipp
-Sie sehen, der Aufbau der Befehle, insbesondere bei Verwendung des Pakets `mosaic`, ist immer gleich: `~ Variable` -- Variable, die analysiert werden soll, `data = tips` -- Datentabelle, die verwendet werden soll.
+Sie sehen, der Aufbau der Befehle, insbesondere bei Verwendung des Pakets `mosaic`, ist immer gleich:
+`~ Variable` -- Variable, die analysiert werden soll, `data = tips` -- Datentabelle, die verwendet werden soll.
 :::
 
 Um Anteile (englisch: *proportion*) darzustellen, können Sie die Option `format = "proportion"` ergänzen, für Prozentwerte entsprechend `format = "percent"`.
@@ -281,8 +278,7 @@ Wie Sie sehen können, sind die Verteilungen der Tageszeit an den Tagen untersch
 Am Samstag und Sonntag scheint es gar keine Besuche zur Mittagszeit gegeben zu haben (vielleicht hatte das Restaurant nur abends auf?), während es am Donnerstag fast nur Besuche zur Mittagszeit gab.
 
 
-Das gruppierte Verteilung können wir auch mit `tally()` darstellen, eine
-sogenannte Kreuztabelle:
+Das gruppierte Verteilung können wir auch mit `tally()` darstellen, eine sogenannte Kreuztabelle:
 
 ```{r}
 # absolut
@@ -364,10 +360,7 @@ Die eckigen Klammern bekommen Sie auf Windows-Rechnern mit
 AltGr-8 und auf Mac-Rechnern mit Alt-5.
 :::
 
-Um die totale Wahrscheinlichkeit für die Uhrzeit "`Lunch`" zu bestimmen,
-können Sie die einzelnen bedingten Wahrscheinlichkeiten multipliziert
-mit den jeweiligen Wahrscheinlichkeiten (Ereignisse $B_k, k=1, \dots,K$[^Formal müssen die Ereignisse $B_k$ überschneidungs frei sein und die Wahrscheinlichkeiten
-in der Summe eins ergeben.], die die Bedingungen stellen, auf addieren:
+Um die totale Wahrscheinlichkeit für die Uhrzeit "`Lunch`" zu bestimmen, können Sie die einzelnen bedingten Wahrscheinlichkeiten multipliziert mit den jeweiligen Wahrscheinlichkeiten (Ereignisse $B_k, k=1, \dots,K$[^Formal müssen die Ereignisse $B_k$ überschneidungs frei sein und die Wahrscheinlichkeiten in der Summe eins ergeben.], welche die Bedingungen stellen, auf addieren:
 
 $$
 \begin{aligned}
@@ -400,11 +393,8 @@ Beide Zeilen wurden miteinander elementweise multipliziert und dann aufsummiert.
 ::: {.callout-tip .Hinweis}
 ## Hinweis
 
-Die Multiplikation von Vektoren mit `*` in R geht elementweise vor,
-anders als in der Mathematik, da wird ein Zeilenvektor mit einem
-Spaltenvektor zu einem Skalarprodukt zusammengefasst. 
-Das Skalarprodukt zweier Vektoren können Sie mit `%*%` berechnen, dann
-benötigen Sie kein `sum()` mehr. 
+Die Multiplikation von Vektoren mit `*` in R geht elementweise vor, anders als in der Mathematik, da wird ein Zeilenvektor mit einem Spaltenvektor zu einem Skalarprodukt zusammengefasst. 
+Das Skalarprodukt zweier Vektoren können Sie mit `%*%` berechnen, dann benötigen Sie kein `sum()` mehr. 
 Probieren Sie es aus.
 :::
 
@@ -419,8 +409,7 @@ b) Bestimmen Sie die totale Wahrscheinlichkeit für einen Nichtrauchertisch aus 
 
 :::
 
-Mit dem **Satz von Bayes** und der totalen Wahrscheinlichlichkeit können
-wir die bedingten Wahrscheinlichkeiten umrechnen:
+Mit dem **Satz von Bayes** und der totalen Wahrscheinlichlichkeit können wir die bedingten Wahrscheinlichkeiten umrechnen:
 
 $$
 Pr(B\mid A) = \frac{Pr(A\mid B) \cdot Pr(B)}{Pr(A)}.
@@ -432,14 +421,12 @@ Bestimmen Sie Wahrscheinlichkeit für Freitag bedingt Essenszeit Dinner über de
 Kontrollieren Sie das Ergebnis mit `tally()`.
 :::
 
-Auf dem Satz von Bayes basiert eine eigene Richtung in der Statistik, die
-*Bayes-Statistik*. 
+Auf dem Satz von Bayes basiert eine eigene Richtung in der Statistik, die *Bayes-Statistik*. 
 Wir bleiben hier aber in der sogenannten *frequentistischen Statistik*.
 
 ### Grafische Darstellung des Zusammenhangs
 
-Den Zusammenhang zwischen zwei kategorialen Variablen können Sie
-gut mit dem Mosaikplot darstellen: `mosaicplot(x ~ y, data = ...)`.
+Den Zusammenhang zwischen zwei kategorialen Variablen können Sie gut mit dem Mosaikplot darstellen: `mosaicplot(x ~ y, data = ...)`.
 
 ::: {.callout-tip .Hinweis}
 ## Hinweis
@@ -464,11 +451,11 @@ Stellen Sie alle diese Information mit `tally()` dar.
 :::
 
 Auch mit einem Säulendiagramm können Sie Zusammenhänge darstellen.
-Sie können die Farbe `(fill = ...)` nach einer anderen Variable auswählen,
-das ist dann die abhängige Variable.
+Sie können die Farbe `(fill = ...)` nach einer anderen Variable auswählen, das ist dann die abhängige Variable.
 
 ```{r}
 #| caption: "Säulendiagramm der Wochentage, farbig markiert sind die Anteile der Raucher und Nichtraucher innerhalb der Tage. Dabei wurden unterschiedlichen Varianten verwendet: links standard, mittig `position = position_dodge()` und rechts `position= \"fill\""
+#| label: fig-drei-saeulen
 gf_bar( ~ day, fill = ~ smoker, data = tips)
 gf_bar( ~ day, fill = ~ smoker, data = tips, position = position_dodge())
 gf_bar( ~ day, fill = ~ smoker, data = tips, position = "fill")
@@ -477,22 +464,19 @@ gf_bar( ~ day, fill = ~ smoker, data = tips, position = "fill")
 
 ::: {.callout-note .Aufgabe}
 ## Aufgabe 5.15 
-Mit welcher Grafik in Abbildung 5.4 können Sie am
-besten erkennen, an welchem Tag ...
+Mit welcher Grafik in @fig-drei-saeulen können Sie am besten erkennen, an welchem Tag ...
 
 a) die Anzahl der Rauchergruppen am höchsten war?
 
 b) der Anteil der Rauchergruppen am höchsten war?
 :::
 
-Sie sehen, die Positionierung der Aufteilung der Raucher innerhalb der
-Tage gibt unterschiedliche Informationen. Häufigkeiten erkennen Sie
-mit `position = position_dodge()` am besten (vgl. die Fläche der Kachel
-im Mosaikplot) und Anteile mit `position = "fill"` (vgl. die Höhe der
-Kacheln im Mosaikplot).
+Sie sehen, die Positionierung der Aufteilung der Raucher innerhalb der Tage gibt unterschiedliche Informationen. 
+Häufigkeiten erkennen Sie mit `position = position_dodge()` am besten (vgl. die Fläche der Kachel im Mosaikplot) und Anteile mit `position = "fill"` (vgl. die Höhe der Kacheln im Mosaikplot).
 
 ::: {.callout-note .Aufgabe}
 ## Aufgabe 5.16 
+
 Nutzen Sie die Datentabelle SaratogaHouses.[^Wie kommen Sie daran? Siehe Abschnitt 2.3 (Erste Schritte in R) in Kapitel 2.]
 
 a) Führen Sie eine explorative Datenanalyse der Variable `heating` durch.
@@ -503,31 +487,20 @@ b) Analysieren Sie den Zusammenhang zwischen `heating` und `newConstruction`.
 ::: {.callout-caution .Lernpfad}
 ## Lernpfad **Explorative Datenanalyse -- kategorial**
 
-- Falls Sie bisher wenig mit R gearbeitet haben, können Sie auch die
-`learnr`-App ausprobieren: <https://fomshinyapps.shinyapps.
-io/learnR-EDA-kategorial/>.
+- Falls Sie bisher wenig mit R gearbeitet haben, können Sie auch die `learnr`-App ausprobieren: <https://fomshinyapps.shinyapps.io/learnR-EDA-kategorial/>.
 
-- Klären Sie erforderlichenfalls Ihnen noch unbekannte Begriffe
-eigenständig.
+- Klären Sie erforderlichenfalls Ihnen noch unbekannte Begriffe eigenständig.
 
-- Zur Unterstützung gibt es zwei Screencasts: EDA – Eine kategoriale
-Variable <https://vimeo.com/398513368> und EDA -- Zwei
-kategoriale Variablen <https://vimeo.com/398789025>. Die Videos
-erfordern ein Passwort: *FOMtest*.
+- Zur Unterstützung gibt es zwei Screencasts: EDA – Eine kategoriale Variable <https://vimeo.com/398513368> und EDA -- Zwei kategoriale Variablen <https://vimeo.com/398789025>. Die Videos erfordern ein Passwort: *FOMtest*.
 
-- Lesen Sie zur Vertiefung Kapitel 8.1.1 aus Sebastian Sauer Moderne
-Datenanlyse mit R [2]. Das Buch steht über die FOM-Literaturrecherche
-zur Verfügung.
+- Lesen Sie zur Vertiefung Kapitel 8.1.1 aus Sebastian Sauer *Moderne Datenanalyse mit R* [@sauer2019]. Das Buch steht über die FOM-Literaturrecherche zur Verfügung.
 
-- Ergänzend können Sie das Kapitel 4 Exploring categorical data
-aus Introduction to Modern Statistics [6] lesen. Sie können es hier
-herunterladen: <https://openintro-ims.netlify.app/index.html>
+- Ergänzend können Sie das Kapitel 4 *Exploring categorical data* aus *Introduction to Modern Statistics* [@mine2021] lesen. Sie können es hier herunterladen: <https://openintro-ims.netlify.app/index.html>
 :::
 
 ## Analyse metrischer Daten
 
-Im diesemAbschnitt geht esumdie Analyse metrischer oder numerischer
-Daten.
+Im diesem Abschnitt geht es um die Analyse metrischer oder numerischer Daten.
 
 ::: {.callout-note .Aufgabe}
 ## Aufgabe 5.17 
@@ -549,7 +522,7 @@ Eine weitere wichtige und häufig genutzte Grafik ist das Histogramm :
 gf_histogram( ~ total_bill, data = tips, binwidth = 10, center = 5)
 ```
 
-@fig-hist-total-bill  zeigt das Histogramm der Rechnungsbeträge (`total_bill`).
+@fig-hist-total-billzeigt das Histogramm der Rechnungsbeträge (`total_bill`).
 Metrische Daten (insbesondere stetige metrische Daten) werden in Gruppen
 eingeteilt (`klassifiziert`), z. B. $0 bis 10$, $> 10$ bis $20$, . . . , und die Häufigkeiten als Rechtecke (Säulen) dargestellt.
 Der Flächeninhalt der Rechtecke entspricht dabei der relativen Häufigkeit der Beobachtungen im Intervall (die sogenannte *Klasse*).
@@ -571,8 +544,7 @@ Und wenn Sie ganz bestimmte Gruppen haben wollen, dann nutzen Sie `binwidth` fü
 ::: {.callout-tip .Tipp}
 ## Tipp
 
-Mehr Informationen zu Histogrammen finden Sie hier: <http://
-tinlizzie.org/histograms/>.
+Mehr Informationen zu Histogrammen finden Sie hier: <http://tinlizzie.org/histograms/>.
 :::
 
 Ein Histogramm kann dazu genutzt werden, die Form der Verteilung zu
@@ -584,24 +556,16 @@ Die Verteilungsform ist eine wichtige Eigenschaft von Daten.
 #| caption: "Verschiedene Verteilungsformen. Bei bimodalen und multimodalen Verteilungen werden nur die ausgeprägten Schwerpunkte gezählt."
 ```
 
-Die Verteilung gibt an, wie häufig bzw. wahrscheinlich bestimmte Werte
-oder Wertebereiche sind.
-Bei metrischen Variablen können folgende typische Verteilungsformen
-unterschieden werden:
+Die Verteilung gibt an, wie häufig bzw. wahrscheinlich bestimmte Werte oder Wertebereiche sind.
+Bei metrischen Variablen können folgende typische Verteilungsformen unterschieden werden:
 
-- Bei symmetrischen Verteilungen verteilen sich die Daten symmetrisch
-um eine zentrale Lage. Häufig sind symmetrische Verteilungen
-unimodal, haben als nur einen ausgeprägten Schwerpunkt.
+- Bei symmetrischen Verteilungen verteilen sich die Daten symmetrisch um eine zentrale Lage. Häufig sind symmetrische Verteilungen unimodal, haben als nur einen ausgeprägten Schwerpunkt.
 
-- Schiefe: Bei rechtsschiefen (linkssteilen)Verteilungen sind mehr Beobachtungen
-im unteren Wertebereich, bei linksschiefen (rechtssteilen)
-mehr im oberen.
+- Schiefe: Bei rechtsschiefen (linkssteilen)Verteilungen sind mehr Beobachtungen im unteren Wertebereich, bei linksschiefen (rechtssteilen) mehr im oberen.
 
-- Bei einer Gleichverteilung sind die Ausprägungen alle etwa gleich
-häufig.
+- Bei einer Gleichverteilung sind die Ausprägungen alle etwa gleich häufig.
 
-- Bei mehrgipfligen Verteilungen (bimodal, multimodal) gibt es
-mehr als nur ein ausgeprägtes Zentrum, um das die Werte streuen.
+- Bei mehrgipfligen Verteilungen (bimodal, multimodal) gibt es mehr als nur ein ausgeprägtes Zentrum, um das die Werte streuen.
 
 ::: {.callout-note .Aufgabe}
 ## Aufgabe 5.19 

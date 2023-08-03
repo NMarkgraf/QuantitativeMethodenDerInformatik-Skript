@@ -560,11 +560,9 @@ Der Wert in der Population, der von Interesse ist, wird als Parameter bezeichnet
 
 ```{r}
 #| label: tbl-griBuchstaben
-#| caption: Griechische Buchstaben in der Statistik
+#| caption: "Griechische Buchstaben in der Statistik"
 #| echo: false
 #| warning: false
-library(knitr)
-#library(kableExtra) ## NICHT NUTZEN!!!
 
 tribble(
   ~grBuchstaben, ~Buchstabe, ~Bedeutung,
@@ -578,10 +576,13 @@ tribble(
   "$\\rho$", "*rho*", "Symbol für den Populationskorrelation",
   "$\\chi$",  "*chi*", "Symbol für zusammenfassende Statistik im $\\chi^2$-Test"
 ) |>
-kable(
-  col.names = c("Buchstabe","", "Bedeutung in der Regel"),
-  align = "lll",
-  escape = TRUE) 
+  knitr::kable(
+    # format = "latex",
+    col.names = c("Buchstabe"," ", "Bedeutung in der Regel"),
+    align = "lll",
+    escape = TRUE)
+# |> xtable() |> print(sanitize.text.function = function(x) {x})
+
 ```
 
 
