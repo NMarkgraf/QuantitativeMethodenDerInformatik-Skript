@@ -371,7 +371,7 @@ Das ist ein Beispiel des sogenannten Simpson-Paradox. Das Weglassen der Kovariab
 
 Erst die Aufteilung nach der Kovariable Department (@fig-UCB2) zeigt, dass Frauen und Männer ausgeglichen zugelassen wurden, im Department A sogar relativ mehr Frauen. Die Verzerrung im Gesamtbild ergibt sich durch die Wahl der Departments: Frauen haben sich eher dort beworben, wo die Ablehnungsquote höher ist.
 
-```{r fig-UCB2, fig = FALSE}
+```{r fig-UCB2}
 #| echo: false
 #| label: fig-UCB2
 #| fig-width: 6.5
@@ -510,7 +510,7 @@ b)  Was glauben Sie: Welche Gruppe verwendet durchschnittlich mehr Zeit zur Vor-
 :::
 
 ::: column-margin
-[![Gelegenheitsstichproben erreichen nur die niedrig hängenden Früchte. &copy;  J. B. Landers, Bildunterschrift  L. Lesser](causeweb-images/cartoon0118.jpg){}](https://www.causeweb.org/cause/caption-contest/january/2018/results)
+[![](causeweb-images/cartoon0118.jpg)](https://www.causeweb.org/cause/sites/default/files/caption_contest/2018/Caption-Contest_01-2018.jpg) Gelegenheitsstichproben erreichen nur die niedrig hängenden Früchte. [https://www.CAUSEweb.org](https://www.causeweb.org/cause/caption-contest/january/2018/results) &copy; J. B. Landers, Bildunterschrift L. Lesser
 :::
 
 Ein fiktives Beispiel:
