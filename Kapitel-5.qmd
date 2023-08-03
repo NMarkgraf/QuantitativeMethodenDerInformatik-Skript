@@ -370,16 +370,16 @@ mit den jeweiligen Wahrscheinlichkeiten (Ereignisse $B_k, k=1, \dots,K$[^Formal 
 in der Summe eins ergeben.], die die Bedingungen stellen, auf addieren:
 
 $$
-\begin{align*}
-Pr(A) &= Pr(A|B_1) \cdot Pr(B_1) + Pr(A|B_2) \cdot Pr(B_2) +  \cdots \\
-      &= Pr(A|B_K) \cdot Pr(B_K)
-\end{align*}
+\begin{aligned}
+Pr(A) &= Pr(A\mid B_1) \cdot Pr(B_1) + Pr(A\mid B_2) \cdot Pr(B_2) +  \cdots \\
+      &= Pr(A\mid B_K) \cdot Pr(B_K)
+\end{aligned}
 $$
 
 hier also:
 
-$$Pr(time = Lunch) = Pr(time = Lunch|day = Thur) · Pr(day = Thur)
-+ Pr(time = Lunch|day = Fri) · Pr(day = Fri) + \dots$$
+$$Pr(time = Lunch) = Pr(time = Lunch\mid day = Thur) · Pr(day = Thur)
++ Pr(time = Lunch\mid day = Fri) · Pr(day = Fri) + \dots$$
 
 ```{r}
 # Totale Wahrscheinlichkeit
@@ -423,7 +423,7 @@ Mit dem **Satz von Bayes** und der totalen Wahrscheinlichlichkeit können
 wir die bedingten Wahrscheinlichkeiten umrechnen:
 
 $$
-Pr(B|A) = \frac{Pr(A|B) \cdot Pr(B)}{Pr(A)}.
+Pr(B\mid A) = \frac{Pr(A\mid B) \cdot Pr(B)}{Pr(A)}.
 $$
 
 ::: {.callout-note .Aufgabe}
