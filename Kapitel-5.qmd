@@ -87,7 +87,7 @@ Die Variablennamen finden Sie in der Spalte nach dem \$-Zeichen, dahinter steht 
 Was unterscheidet die Variablentypen int und num?
 :::
 
-@tab-variablentypen
+@tbl-variablentypen
 
 | Typ    | Verwendung                                                       |
 |:-------|:-----------------------------------------------------------------|
@@ -96,9 +96,10 @@ Was unterscheidet die Variablentypen int und num?
 | int    | *integer*, ganzzahlig                                            |
 | num    | *numeric*, Gleitkommazahlen                                      |
 
-: Variabltypen in R {#tab-variablentypen}
+: Variabltypen in R {#tbl-variablentypen}
 
-Für diesen Datensatz sammelte ein Keller über mehrere Monate sein Trinkgeld. @tab-tipsdata zeigt die darin abgespeichertern Variablen.
+Für diesen Datensatz sammelte ein Keller über mehrere Monate sein Trinkgeld. 
+@tbl-tipsdata zeigt die darin abgespeichertern Variablen.
 
 | Name           | Bedeutung               |
 |:---------------|:------------------------|
@@ -110,7 +111,7 @@ Für diesen Datensatz sammelte ein Keller über mehrere Monate sein Trinkgeld. @
 | `time`   | Tageszeit |
 | `size`   | Anzahl Personen am Tisch |
 
-: Variablen des Datensatzes `tips.csv` {#tab-tipsdata}
+: Variablen des Datensatzes `tips.csv` {#tbl-tipsdata}
 
 ::: {.callout-note .Aufgabe}
 ## Aufgabe 5.3 
@@ -521,4 +522,89 @@ zur Verfügung.
 - Ergänzend können Sie das Kapitel 4 Exploring categorical data
 aus Introduction to Modern Statistics [6] lesen. Sie können es hier
 herunterladen: <https://openintro-ims.netlify.app/index.html>
+:::
+
+## Analyse metrischer Daten
+
+Im diesemAbschnitt geht esumdie Analyse metrischer oder numerischer
+Daten.
+
+::: {.callout-note .Aufgabe}
+## Aufgabe 5.17 
+
+Wissen Sie noch, wie Sie mit R herausfinden konnten, wie unser Datensatz aufgebaut ist? 
+Probieren Sie es aus. 
+Wie viele metrische Variablen gibt es in der Datentabelle tips?
+:::
+
+### Histogramm und Verteilungsform
+
+Als Grafik können auch hier Säulen- und Balkendiagramme verwendet werden. 
+Diese eignen sich insbesondere für metrisch diskrete Daten mit nicht zu vielen Ausprägungen (in der `tips`-Datentabelle z. B. die Anzahl der Personen `size`).
+Eine weitere wichtige und häufig genutzte Grafik ist das Histogramm :
+
+```{r}
+#| caption: Histogramm der Variable `total_bill`
+#| label: fig-hist-total-bill
+gf_histogram( ~ total_bill, data = tips, binwidth = 10, center = 5)
+```
+
+@fig-hist-total-bill  zeigt das Histogramm der Rechnungsbeträge (`total_bill`).
+Metrische Daten (insbesondere stetige metrische Daten) werden in Gruppen
+eingeteilt (`klassifiziert`), z. B. $0 bis 10$, $> 10$ bis $20$, . . . , und die Häufigkeiten als Rechtecke (Säulen) dargestellt.
+Der Flächeninhalt der Rechtecke entspricht dabei der relativen Häufigkeit der Beobachtungen im Intervall (die sogenannte *Klasse*).
+Im Unterschied zum Säulendiagramm stehen die einzelnen Säulen jetzt direkt nebeneinander. 
+Das soll zeigen, dass es sich um stetige und nicht um diskrete Daten handelt.
+
+::: {.callout-note .Aufgabe}
+## Aufgabe 5.18 
+
+Probieren Sie den Befehl ohne die Eingabe von `binwidth = 10, center = 5` aus.
+Was ändert sich?
+:::
+
+Richtig, jetzt werden viel mehr Säulen gezeigt. 
+`gf_histogram()` wählt automatisch eine bestimmte Breite und nimmt den kleinsten Wert als Startwert. 
+Wenn Sie weniger Säulen (englisch *bins*) haben wollen, ergänzen Sie z. B. `bins = 10` (Anzahl der Säulen).
+Und wenn Sie ganz bestimmte Gruppen haben wollen, dann nutzen Sie `binwidth` für die Breite der Säule und `center` für den Mittelpunkt einer der Säulen.
+
+::: {.callout-tip .Tipp}
+## Tipp
+
+Mehr Informationen zu Histogrammen finden Sie hier: <http://
+tinlizzie.org/histograms/>.
+:::
+
+Ein Histogramm kann dazu genutzt werden, die Form der Verteilung zu
+bestimmen. @fig- zeigt typische Formen. 
+Die Verteilungsform ist eine wichtige Eigenschaft von Daten.
+
+```{r}
+#| label: fig-
+#| caption: "Verschiedene Verteilungsformen. Bei bimodalen und multimodalen Verteilungen werden nur die ausgeprägten Schwerpunkte gezählt."
+```
+
+Die Verteilung gibt an, wie häufig bzw. wahrscheinlich bestimmte Werte
+oder Wertebereiche sind.
+Bei metrischen Variablen können folgende typische Verteilungsformen
+unterschieden werden:
+
+- Bei symmetrischen Verteilungen verteilen sich die Daten symmetrisch
+um eine zentrale Lage. Häufig sind symmetrische Verteilungen
+unimodal, haben als nur einen ausgeprägten Schwerpunkt.
+
+- Schiefe: Bei rechtsschiefen (linkssteilen)Verteilungen sind mehr Beobachtungen
+im unteren Wertebereich, bei linksschiefen (rechtssteilen)
+mehr im oberen.
+
+- Bei einer Gleichverteilung sind die Ausprägungen alle etwa gleich
+häufig.
+
+- Bei mehrgipfligen Verteilungen (bimodal, multimodal) gibt es
+mehr als nur ein ausgeprägtes Zentrum, um das die Werte streuen.
+
+::: {.callout-note .Aufgabe}
+## Aufgabe 5.19 
+
+Überlegen Sie sich ein Beispiel für gleichverteilte Daten.
 :::

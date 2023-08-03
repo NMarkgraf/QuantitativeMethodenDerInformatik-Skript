@@ -99,7 +99,7 @@ Sie finden die Antwort zu dieser Aufgabe wie zu vielen anderen auch in den Lösu
 Betrachten Sie noch einmal das Histogramm in @fig-Mednick_SimPlot. Ist der beobachtete Unterschied von drei Wörtern eher selten? Ja, denn das kommt in weniger als 5% der simulierten Fälle vor. Das spricht dafür, dass es tatsächlich einen Unterschied gibt. Diese Herangehensweise an die Ergebnisse quantitativer Untersuchungen werden wir im Laufe dieser Veranstaltung häufiger nutzen.
 
 ::: column-margin
-[![](causeweb-images/cartoon0319.jpg)](https://www.causeweb.org/cause/sites/default/files/caption_contest/2019/Caption-Contest_03-2019.jpg) Viele Generationen von Data Science. [https://www.CAUSEweb.org/](https://www.causeweb.org/cause/caption-contest/march/2019/results) © J.B. Landers, Überschrift L. Poisson
+[![](causeweb-images/cartoon0319.jpg)](https://www.causeweb.org/cause/sites/default/files/caption_contest/2019/Caption-Contest_03-2019.jpg) Viele Generationen von Data Science. [https://www.CAUSEweb.org/](https://www.causeweb.org/cause/caption-contest/march/2019/results) © J.B. Landers, Überschrift L. Poisson
 :::
 
 Wie sind Sie zu Ihrer Einschätzung gekommen? Wie ordnen Sie die Erkenntnisse der Studie ein? Liefert die Studie Erkenntnisse, die Ihre Einschätzung bestätigen oder eher dagegen sprechen? Sie merken schon, es ist wichtig, sich ein Bild über den aktuellen Stand der Forschung zu machen, um die Ergebnisse einer Analyse einordnen zu können. Daher ist Literaturrecherche ein wichtiger Schritt.
