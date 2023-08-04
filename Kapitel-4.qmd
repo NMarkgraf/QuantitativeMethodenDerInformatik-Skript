@@ -326,6 +326,7 @@ Es lockert den Ablauf auf und bewirkt eine zusätzliche Verfestigung des Lernsto
 :::
 
 ::: column-margin
+~
 
 | Name  | Geschlecht | Größe |
 |:-----:|:----------:|:-----:|
@@ -383,10 +384,10 @@ Die Entscheidung darüber, was eine unabhängige Variable und was eine Kovariabl
 
 Die Modellformulierung in der Statistik lautet $𝑦 ∼ 𝑥$ . Im Unterschied zur mathematischen Funktion \$𝑦 = 𝑓 (𝑥) \$ kann es in der statistischen Formulierung für ein $𝑥$ auch mehrere $𝑦$ -Werte geben.
 
-Dass Sie bei der Auswahl der Kovariablen aufpassen müssen, zeigt @fig-UCBEins, in der es um Zulassungen an der University of California Berkeley im Zusammenhang mit dem Geschlecht geht (Bickel, Hammel und O'Connell @bickel1975).
+Dass Sie bei der Auswahl der Kovariablen aufpassen müssen, zeigt @fig-UCBEins , in der es um Zulassungen an der University of California Berkeley im Zusammenhang mit dem Geschlecht geht (Bickel, Hammel und O'Connell @bickel1975).
 
 
-```{r fig-UCB1}
+```{r fig-UCBEins}
 #| echo: false
 #| label: fig-UCBEins
 #| fig-cap: "Zulassungen an der UC Berkeley in Abhängigkeit vom Geschlecht: ohne Kovariable"
