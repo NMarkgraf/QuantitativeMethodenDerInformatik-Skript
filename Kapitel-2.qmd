@@ -5,39 +5,42 @@
 
 Nach erfolgreichem Abschluss dieses Kapitels sind Sie in der Lage,
 
-- Gründe für den Einsatz von R zu nennen;
-- die Unterschiede zwischen R, RStudio und mosaic aufzuführen;
-- eine R- oder eine RMarkdown-Datei anzulegen;
-- die Unterschiede zwischen diesen zu beschreiben;
-- Datensätze zu laden, einfache Befehle einzugeben und manche wichtigen Grundbefehle in R auszuführen.
-- RMarkdown-Dokumente zu erstellen und zu bearbeiten;
-- die wichtigsten Formatierungen in RMarkdown durchführen und Symbole einfügen zu können;
-- R-Code in RMarkdown einfügen und ausführen zu können.
-
+-   Gründe für den Einsatz von R zu nennen;
+-   die Unterschiede zwischen R, RStudio und mosaic aufzuführen;
+-   eine R- oder eine RMarkdown-Datei anzulegen;
+-   die Unterschiede zwischen diesen zu beschreiben;
+-   Datensätze zu laden, einfache Befehle einzugeben und manche wichtigen Grundbefehle in R auszuführen.
+-   RMarkdown-Dokumente zu erstellen und zu bearbeiten;
+-   die wichtigsten Formatierungen in RMarkdown durchführen und Symbole einfügen zu können;
+-   R-Code in RMarkdown einfügen und ausführen zu können.
 :::
 
 ## Warum R
 
-*[...] she was also following a wider trend: for many academics [...] R is the data-analysis tool of choice.*^[Tippmann (2015), „Programming
-tools: Adventures with R“]
+*\[...\] she was also following a wider trend: for many academics \[...\] R is the data-analysis tool of choice.*[^kapitel-2-1]
+
+[^kapitel-2-1]: Tippmann (2015), „Programming tools: Adventures with R"
 
 **R** ist ein weitverbreitetes und frei verfügbares Statistikprogramm, was viele Vorteile bietet:
 
-- Methoden- und Anwendungsvielfalt (Finance, Marketing, HR, Psychologie, ...)^[Siehe z. B. <https://cran.r-project.org/web/views/>];
--  neue Methoden der Datenanalyse werden häufig in R entwickelt (auch Big Data, KI, etc. );
-- frei und offen, kostenlos;
-- Sie können R im Studium nutzen, zu Hause oder auch am Arbeitsplatz;
-- Schnittstellen zu sehr vielen Datenquellen/ -banken (auch Social-Media etc.);
-- Erweiterungen u.a. für Microsoft, Oracle, SAP-Produkte, aber auch SPSS, SAS;
-- unzählige Nutzer:innen weltweit in Unternehmen und Wissenschaft; ^[Verbreitung siehe z. B.: <http://r4stats.com/articles/popularity/>]
-- Möglichkeiten für Reporting, Apps, etc.;
-- numerische Stabilität und Genauigkeit;
-- große Entwickler:innen-Gemeinde mit langerG eschichte (seit 1993): R Konsortium, u. a. IBM, Microsoft, TIPCO, Google, ...
+-   Methoden- und Anwendungsvielfalt (Finance, Marketing, HR, Psychologie, ...)[^kapitel-2-2];
+-   neue Methoden der Datenanalyse werden häufig in R entwickelt (auch Big Data, KI, etc. );
+-   frei und offen, kostenlos;
+-   Sie können R im Studium nutzen, zu Hause oder auch am Arbeitsplatz;
+-   Schnittstellen zu sehr vielen Datenquellen/ -banken (auch Social-Media etc.);
+-   Erweiterungen u.a. für Microsoft, Oracle, SAP-Produkte, aber auch SPSS, SAS;
+-   unzählige Nutzer:innen weltweit in Unternehmen und Wissenschaft; [^kapitel-2-3]
+-   Möglichkeiten für Reporting, Apps, etc.;
+-   numerische Stabilität und Genauigkeit;
+-   große Entwickler:innen-Gemeinde mit langerG eschichte (seit 1993): R Konsortium, u. a. IBM, Microsoft, TIPCO, Google, ...
+
+[^kapitel-2-2]: Siehe z. B. <https://cran.r-project.org/web/views/>
+
+[^kapitel-2-3]: Verbreitung siehe z. B.: <http://r4stats.com/articles/popularity/>
 
 ::: column-margin
-[![](causeweb-images/cartoon0518.png)](https://www.causeweb.org/cause/sites/default/files/caption_contest/2018/Caption-Contest_05-2018.png)
-Auch wenn die Zeit für das „Einsetzen von Zahlen in Formeln“ und das „Abbildungen zeichnen per Hand“ gekommen ist: Die Ideen und Konzepte leben weiter -– in unseren Computerprogrammen. \
-[https://www.CAUSEweb.org](https://www.causeweb.org/cause/sites/default/files/caption_contest/may/2018/results), &copy; J. B. Landers, Bildunterschrift K. Lübke
+[![](causeweb-images/cartoon0518.png)](https://www.causeweb.org/cause/sites/default/files/caption_contest/2018/Caption-Contest_05-2018.png) Auch wenn die Zeit für das „Einsetzen von Zahlen in Formeln" und das „Abbildungen zeichnen per Hand" gekommen ist: Die Ideen und Konzepte leben weiter --- in unseren Computerprogrammen.\
+[https://www.CAUSEweb.org](https://www.causeweb.org/cause/sites/default/files/caption_contest/may/2018/results), © J. B. Landers, Bildunterschrift K. Lübke
 :::
 
 Das sind Gründe, warum wir uns für die Nutzung von **R** entschieden haben.
@@ -48,45 +51,42 @@ Welchen Vorteil hat **R** in Bezug auf die Gütekriterien für Forschung?
 
 ## Einrichtung von RStudio (posit Cloud)
 
-In Verbindung mit **R** (das eigentliche Statistikprogramm) wird **RStudio** (bzw. in der Cloud-Version **posit**), ein ebenfalls frei verfügbarer Editor/Integrierte Entwicklungsumgebung (IDE) genutzt. 
-Innerhalb **R** wird noch `mosaic` eingesetzt, ein sogenanntes Paket *package*).
+In Verbindung mit **R** (das eigentliche Statistikprogramm) wird **RStudio** (bzw. in der Cloud-Version **posit**), ein ebenfalls frei verfügbarer Editor/Integrierte Entwicklungsumgebung (IDE) genutzt. Innerhalb **R** wird noch `mosaic` eingesetzt, ein sogenanntes Paket *package*).
 
 Bildlich gesprochen können Sie sich das so vorstellen:
 
-- Statistik ist das Auto, mit dem der Weg von der Forschungsfrage zur vorläufigen Antwort bestritten werden kann.
-- **R** ist ein Motor, der das Auto antreiben kann.
-- **RStudio Desktop** bzw. **posit** (Cloud-Version) ist das Cockpit, mit dem der Motor gesteuert werden kann.
-- `mosaic` ist eine Zusatzausstattung, um die Motorsteuerung zu vereinfachen
+-   Statistik ist das Auto, mit dem der Weg von der Forschungsfrage zur vorläufigen Antwort bestritten werden kann.
+-   **R** ist ein Motor, der das Auto antreiben kann.
+-   **RStudio Desktop** bzw. **posit** (Cloud-Version) ist das Cockpit, mit dem der Motor gesteuert werden kann.
+-   `mosaic` ist eine Zusatzausstattung, um die Motorsteuerung zu vereinfachen
 
 ::: {.callout-tip .Tipp}
 ## Tipp
-Spätestens jetzt sollten Sie **R** und die Zusatzprogramme installiert haben^[Eine Installationsanleitung finden Sie hier: <https://rawgit.com/luebby/Datenanalyse-mit-R/master/Installation/Install.html>] oder den Zugang über die **posit**-Cloud  eingerichtet haben.
+
+Spätestens jetzt sollten Sie **R** und die Zusatzprogramme installiert haben[^kapitel-2-4] oder den Zugang über die **posit**-Cloud eingerichtet haben.
 :::
 
-Innerhalb von **RStudio** bzw. **posit** in der Cloud-Version arbeiten wir mit einem sogenannten Projekt. 
-Damit ist sichergestellt, dass wir alle das gleiche sehen und die gleichen Dateien etc. zur Verfügung haben. 
-Für die Übungsaufgaben in diesen Unterlagen und das Mitmachen gibt es ein eigenes Projekt: QDmR, in der Veranstaltung ist es dann ein anderes –
-Ihre Dozent:in teilt Ihnen mit, wie Sie es nutzen können.
+[^kapitel-2-4]: Eine Installationsanleitung finden Sie hier: <https://rawgit.com/luebby/Datenanalyse-mit-R/master/Installation/Install.html>
 
-Alles installiert? 
-Oder posit-Cloud-Zugang eingerichtet? 
-Dann können wir loslegen.
+Innerhalb von **RStudio** bzw. **posit** in der Cloud-Version arbeiten wir mit einem sogenannten Projekt. Damit ist sichergestellt, dass wir alle das gleiche sehen und die gleichen Dateien etc. zur Verfügung haben. Für die Übungsaufgaben in diesen Unterlagen und das Mitmachen gibt es ein eigenes Projekt: QDmR, in der Veranstaltung ist es dann ein anderes -- Ihre Dozent:in teilt Ihnen mit, wie Sie es nutzen können.
+
+Alles installiert? Oder posit-Cloud-Zugang eingerichtet? Dann können wir loslegen.
 
 Hier gibt es zwei Möglichkeiten:
 
-**Sie arbeiten lokal** \
+### Sie arbeiten lokal {.unnumbered .unlisted}
 
+Laden Sie das Projekt (hier *QDmR*[^kapitel-2-5]\>) herunter und entzippen Sie es, in dem Sie das gezippte Verzeichnis in ein Verzeichnis Ihrer Wahl ziehen (@fig-ExpZip).
 
-Laden Sie das Projekt (hier *QDmR*^[Download des Beispielprojekts:
-<https://bit.ly/QDmR-Projekt]>) herunter und entzippen Sie es, in dem Sie das gezippte Verzeichnis in ein Verzeichnis Ihrer Wahl ziehen (@fig-ExpZip).
+[^kapitel-2-5]: Download des Beispielprojekts: \<https://bit.ly/QDmR-Projekt
 
-![Zip-Datei und Zielverzeichnis \\ Rechts: Heruntergeladenes Archiv (Zip), links: Zielverzeichnis](own-images/ExplorerZip.png){#fig-ExpZip width=9cm}
+![Zip-Datei und Zielverzeichnis \\ Rechts: Heruntergeladenes Archiv (Zip), links: Zielverzeichnis](own-images/ExplorerZip.png){#fig-ExpZip width="9cm"}
 
 Wechseln Sie in das entzippte Verzeichnis, hier *QDmR* (@fig-ExpEntzippt), und doppelklicken Sie auf die gleichnamige Projektdatei (in @fig-ExpProjekt markiert).
 
-![Projektverzeichnis](own-images/ExplorerEntzippt.png){#fig-ExpEntzippt width=9cm}
+![Projektverzeichnis](own-images/ExplorerEntzippt.png){#fig-ExpEntzippt width="9cm"}
 
-![Geöffnetes Projektverzeichnis \\ Geöffnetes Projektverzeichnis, Sie können das Projekt (markiert) durch Doppelklick starten.\\$\qquad$](own-images/ExplorerProjekt.png){#fig-ExpProjekt width=7cm}
+![Geöffnetes Projektverzeichnis \\ Geöffnetes Projektverzeichnis, Sie können das Projekt (markiert) durch Doppelklick starten.\\$\qquad$](own-images/ExplorerProjekt.png){#fig-ExpProjekt width="7cm"}
 
 Wenn Sie **RStudio** schließen und das nächste Mal starten, wird das Projekt automatisch wieder geladen. Sie erkennen das in RStudio oben rechts (in @fig-RStudioProjekt markiert).
 
@@ -94,15 +94,11 @@ Wenn Sie **RStudio** schließen und das nächste Mal starten, wird das Projekt a
 ![Ausschnitt aus RStudio \\ Ausschnitt aus RStudio: Das geöffnete Projekt wird oben rechts gezeigt. Weitere Projekte können ggf. über die Dropdown-Liste ausgewählt werden.](own-images/RStudioProjekt.png){#fig-RStudioProjekt}
 :::
 
-Falls dort nicht *QDmR* stehen sollte, wählen Sie das Projekt aus der Dropdown-Liste aus, die geöffnet wird, wenn Sie auf den Pfeil rechts drücken.
-Und wenn das auch nichts hilft, dann gehen Sie zum Anfang dieses Abschnitts und starten das Projekt, wie oben erklärt.
+Falls dort nicht *QDmR* stehen sollte, wählen Sie das Projekt aus der Dropdown-Liste aus, die geöffnet wird, wenn Sie auf den Pfeil rechts drücken. Und wenn das auch nichts hilft, dann gehen Sie zum Anfang dieses Abschnitts und starten das Projekt, wie oben erklärt.
 
+### Sie arbeiten in der Cloud {.unnumbered .unlisted}
 
-**Sie arbeiten in der Cloud**
-
-In der **posit**-Cloud-Version startet das Projekt automatisch durch Aufruf auf dem Link, denn sie in der Veranstaltung bekommen haben.
-Wichtig, Sie müssen das Projekt noch als permanente Kopie in Ihrem eigenen Workspace ablegen. Klicken Sie dazu hier auf
-*Save a Permanent Copy* (@fig-positTemp)
+In der **posit**-Cloud-Version startet das Projekt automatisch durch Aufruf auf dem Link, denn sie in der Veranstaltung bekommen haben. Wichtig, Sie müssen das Projekt noch als permanente Kopie in Ihrem eigenen Workspace ablegen. Klicken Sie dazu hier auf *Save a Permanent Copy* (@fig-positTemp)
 
 ::: column-margin
 ![Ausschnitt aus posit-Cloud \\ Ausschnitt aus posit-Cloud: Das geöffnete Projekt muss noch dauerhaft abgespeichert werden.](own-images/positTemp.png){#fig-positTemp}
@@ -110,41 +106,29 @@ Wichtig, Sie müssen das Projekt noch als permanente Kopie in Ihrem eigenen Work
 
 Sonst fehlen Ihnen beim nächsten Mal die Sachen, die Sie gemacht haben.
 
-Beim nächsten Login in **posit**-Cloud wird das Projekt automatisch aufgerufen bzw. Sie bekommen eine Liste, aus der Sie das Projekt wieder
-aufrufen können (@fig-positWorkspaces).
+Beim nächsten Login in **posit**-Cloud wird das Projekt automatisch aufgerufen bzw. Sie bekommen eine Liste, aus der Sie das Projekt wieder aufrufen können (@fig-positWorkspaces).
 
-![Workspaces in posit-Cloud \\ Workspaces in posit-Cloud: Starten Sie das Projekt durch Klick.](own-images/positWorkspaces.png){#fig-positWorkspaces width=7cm}
+![Workspaces in posit-Cloud \\ Workspaces in posit-Cloud: Starten Sie das Projekt durch Klick.](own-images/positWorkspaces.png){#fig-positWorkspaces width="7cm"}
 
 ::: {.callout-tip .Hinweis}
-
 ## Hinweis
 
-Denken Sie daran, das Verzeichnis, der Projektname und der dazugehörige
-Link in posit-Cloud, auf die hier im Text verwiesen wurde,
-variieren in der Umsetzung in Ihrer Vorlesung.
+Denken Sie daran, das Verzeichnis, der Projektname und der dazugehörige Link in posit-Cloud, auf die hier im Text verwiesen wurde, variieren in der Umsetzung in Ihrer Vorlesung.
 :::
 
-**Verzweigung Ende – jetzt geht es wieder für alle gemeinsam weiter** \
+### Verzweigung Ende -- jetzt geht es wieder für alle gemeinsam weiter {.unnumbered .unlisted}
 
-Sobald Sie RStudio oder posit** gestartet haben, erscheinen drei oder vier Fenster, ähnlich wie in @fig-RStudio. 
-Hier wird der Aufbau von **RStudio** bzw. **posit** gezeigt, dem Editor, mit dem wir in der nächsten Zeit viel arbeiten werden.
+Sobald Sie RStudio oder posit\*\* gestartet haben, erscheinen drei oder vier Fenster, ähnlich wie in @fig-RStudio. Hier wird der Aufbau von **RStudio** bzw. **posit** gezeigt, dem Editor, mit dem wir in der nächsten Zeit viel arbeiten werden.
 
 ![Aufbau des RStudio- (posit-)Fensters \\ Aufbau des RStudio- (posit-)Fensters. Links oben: R- oder Rmd-Skript, rechts oben: Umgebung u. ä., links unten: Console, das eigentliche **R**, rechts unten: Dateien, Grafiken usw.](own-images/Kochen_mit_RStudio.png){#fig-RStudio}
 
-Links oben finden Sie das Fenster, in dem die **R**- oder **quarto**-Skripte geöffnet und bearbeitet werden. 
-Rechts oben werden die Umgebungsvariablen (*Environment*, dazu später mehr) und die Befehlshistorie (*History*) angezeigt. 
-Links unten ist die R-Console, dort werden die R-Befehle ausgeführt und die Ergebnisse angezeigt. 
-Rechts unten sehen Sie die Dateien (*Files*), also ähnlich wie ein Datei-Explorer. 
-Auch werden hier die Grafiken (*Plots*) angezeigt, die mit **R** erzeugt werden.
-Weiterhin finden Sie unter Packages die installierten Pakete und bei *Help* wird die Hilfe angezeigt.
+Links oben finden Sie das Fenster, in dem die **R**- oder **quarto**-Skripte geöffnet und bearbeitet werden. Rechts oben werden die Umgebungsvariablen (*Environment*, dazu später mehr) und die Befehlshistorie (*History*) angezeigt. Links unten ist die R-Console, dort werden die R-Befehle ausgeführt und die Ergebnisse angezeigt. Rechts unten sehen Sie die Dateien (*Files*), also ähnlich wie ein Datei-Explorer. Auch werden hier die Grafiken (*Plots*) angezeigt, die mit **R** erzeugt werden. Weiterhin finden Sie unter Packages die installierten Pakete und bei *Help* wird die Hilfe angezeigt.
 
-Bei den Dateien finden Sie *Beispiel.R* und *Beispiel.qmd*. 
-Öffnen Sie mit einem Klick zunächste die *R*-Datei.
+Bei den Dateien finden Sie *Beispiel.R* und *Beispiel.qmd*. Öffnen Sie mit einem Klick zunächste die *R*-Datei.
 
 ![Beispieldatei in RStudio](own-images/RStudioBeispielR.png){#fig-RStudioBeispielR}
 
-In @fig-RStudioBeispielR sehen Sie in der ersten Zeile # Das ist ein *Beispiel-R*-Skript. 
-Das ist ein Kommentar.
+In @fig-RStudioBeispielR sehen Sie in der ersten Zeile \# Das ist ein *Beispiel-R*-Skript. Das ist ein Kommentar.
 
 ::: {.callout-tip .Tipp}
 Kommentare in **R** beginnen immer mit dem Doppelkreuz #.
@@ -153,38 +137,25 @@ Kommentare in **R** beginnen immer mit dem Doppelkreuz #.
 Der erste Befehl kommt in Zeile vier `library(mosaic)`.
 
 ::: {.callout-tip .Tipp}
-Sie sehen unterschiedliche Farben. 
-Kommentare werden mit \# eingeleitet und in grün angezeigt.
-Der eigentliche Befehl wird in blau
-angezeigt.^[Sie können das Farbschema auch ändern.]
+Sie sehen unterschiedliche Farben. Kommentare werden mit \# eingeleitet und in grün angezeigt. Der eigentliche Befehl wird in blau angezeigt.^[Sie können das Farbschema auch ändern.]
 :::
 
-Sobald Sie etwas geändert haben, wird hinter dem Dateinamen ein Sternchen angezeigt und die kleine Diskette ausgegraut und in blau dargestellt (@fig-RStudioSpeichern). 
-Durch Drücken darauf können Sie Datei speichern. 
-Aber das kennen Sie ja bestimmt so oder so ähnlich aus anderen Programmen.
+
+Sobald Sie etwas geändert haben, wird hinter dem Dateinamen ein Sternchen angezeigt und die kleine Diskette ausgegraut und in blau dargestellt (@fig-RStudioSpeichern). Durch Drücken darauf können Sie Datei speichern. Aber das kennen Sie ja bestimmt so oder so ähnlich aus anderen Programmen.
 
 ![Geänderte Beispieldatei \\ Geänderte Beispieldatei, der Button zum Speichern (kleine blaue Diskette) erscheint](own-images/RStudioSpeichern.png){#fig-RStudioSpeichern}
 
-Sie können die Datei mit *File – Save As* auch unter einem anderen Namen speichern. 
-Wie Sie die Datei nennen, ist eigentlich egal. 
-Aber achten Sie darauf, keinen Punkt im Dateinamen zu haben, dann wäre es kein **R**-Skript mehr.
+Sie können die Datei mit *File -- Save As* auch unter einem anderen Namen speichern. Wie Sie die Datei nennen, ist eigentlich egal. Aber achten Sie darauf, keinen Punkt im Dateinamen zu haben, dann wäre es kein **R**-Skript mehr.
 
 Beim erstmaligen Speichern kann passieren, dass ein Dialog, wie in @fig-RStudioChooseEncoding gezeigt, erscheint.
 
 ![Encoding \\ Dialog zu *Choose Encoding* (Wähle Zeichen-Codierung)](own-images/RStudioChooseEncoding.png){#fig-RStudioChooseEncoding}
 
-Wählen Sie Ihr System *default* aus (beim Mac ist das UTF-8) und machen
-das Häkchen bei *Set as default encoding for source files* an. 
-Wenn Sie *OK* drücken, kommt später dieses Fenster nicht mehr.
+Wählen Sie Ihr System *default* aus (beim Mac ist das UTF-8) und machen das Häkchen bei *Set as default encoding for source files* an. Wenn Sie *OK* drücken, kommt später dieses Fenster nicht mehr.
 
+### Was ist Encoding? {.unnumbered .unlisted}
 
-**Was ist Encoding?** \
-
-Zeichensätze sind auf den verschiedenen Computer-Betriebssystemen unterschiedlich codiert. 
-Das betrifft insbesondere Umlaute und Sonderzeichen.
-Auf Windows-Rechnern sind die Zeichen ISO-8859-1 codiert, auf Mac UTF-8 und wie Sie sehen, gibt es noch wie viel mehr mögliche Codierungen.
-Normalerweise können Sie das einmal festlegen und dann vergessen.
-Problematisch wird das nur, wenn Sie z. B. auf einem Windows-Rechner arbeiten, Ihr Kommiliton:in auf einem Mac und Sie tauschen die R-Skripte aus.
+Zeichensätze sind auf den verschiedenen Computer-Betriebssystemen unterschiedlich codiert. Das betrifft insbesondere Umlaute und Sonderzeichen. Auf Windows-Rechnern sind die Zeichen ISO-8859-1 codiert, auf Mac UTF-8 und wie Sie sehen, gibt es noch wie viel mehr mögliche Codierungen. Normalerweise können Sie das einmal festlegen und dann vergessen. Problematisch wird das nur, wenn Sie z. B. auf einem Windows-Rechner arbeiten, Ihr Kommiliton:in auf einem Mac und Sie tauschen die R-Skripte aus.
 
 ::: column-margin
 ![R-Skript mit falschem Encoding (Zeichen-Codierung)](own-images/RStudioEncoding.png){#fig-RStudioEncoding}
@@ -192,16 +163,14 @@ Problematisch wird das nur, wenn Sie z. B. auf einem Windows-Rechner arbeiten, I
 
 Encoding (Zeichen-Codierung)
 
-Lesen Sie z. B. einen Mac-codierten R-Skript ein, dann sieht die erste Zeile so wie in @fig-RStudioEncoding aus.
-Immer wenn so etwas passiert, können Sie die Datei mit *File – Reopen with Encoding* neu öffnen, in dem Sie die Codierung auswählen, in der R-Skript abgespeichert ist.
+Lesen Sie z. B. einen Mac-codierten R-Skript ein, dann sieht die erste Zeile so wie in @fig-RStudioEncoding aus. Immer wenn so etwas passiert, können Sie die Datei mit *File -- Reopen with Encoding* neu öffnen, in dem Sie die Codierung auswählen, in der R-Skript abgespeichert ist.
 
 ::: {.callout-tip .Hinweis}
 ## Hinweis
+
 Die hier bereit gestellten Dateien sind immer UTF-8 codiert.
 :::
 
 ## Erste Schritte in R
 
-Jetzt führen Sie den ersten Befehl aus: In Zeile vier oder fünf (nach der Änderung) steht `library(mosaic)`. 
-Klicken Sie mit dem Cursor irgendwo in die Zeile, dabei aber nichts markieren. Mit Strg-Eingabe bzw.Ctrl-Enter wird der Befehl abgeschickt, d. h. nach unten in die Console geschickt und ausgeführt.
-
+Jetzt führen Sie den ersten Befehl aus: In Zeile vier oder fünf (nach der Änderung) steht `library(mosaic)`. Klicken Sie mit dem Cursor irgendwo in die Zeile, dabei aber nichts markieren. Mit Strg-Eingabe bzw.Ctrl-Enter wird der Befehl abgeschickt, d. h. nach unten in die Console geschickt und ausgeführt.

@@ -1,13 +1,12 @@
 # Explorative Datenanalyse
-```{r}
-#| include: false 
-ch <- 5
-quiz <- 0
-```
-```{r}
+```{r setup-chapter-4}
 #| include: false
 library(mosaic)
 library(latex2exp)
+
+# Aufgabenverwaltung initialisieren
+ch <- 5
+quiz <- 0
 ```
 ```{r child="FarbSchema.qmd"}
 ```
@@ -142,11 +141,9 @@ Warum werden Kreisdiagramme insbesondere in der
 Wissenschaft nicht gerne gesehen?
 :::
 
-### Häufigkeiten und Anteile
+### Häufigkeiten und Anteile {.unnumbered .unlisted}
 
-Säulendiagrammewerden mit `gf_bar( ~ my.x, data = my.data)` ausgeführt,
-`my.x` ist die Variable, die dargestellt werden soll (z. B. `day`),`my.data`
-die Datentabelle, die verwendet werden soll (z. B.`tips`).
+Säulendiagrammewerden mit `gf_bar( ~ my.x, data = my.data)` ausgeführt, `my.x` ist die Variable, die dargestellt werden soll (z. B. `day`), `my.data` die Datentabelle, die verwendet werden soll (z. B. `tips`).
 
 ::: {.callout-tip .Tipp}
 ## Tipp
@@ -154,8 +151,7 @@ Zur Erinnerung: Die Tilde ~ wird auf Windows-Rechnern mit der Tastenkombination
 AltGr - + ausgewählt, auf Mac-Rechnern mit Alt - n.
 :::
 
-Wenn wir also die Häufigkeiten der Wochentage grafisch darstellen
-wollen, sieht der vollständige Befehl also so aus:
+Wenn wir also die Häufigkeiten der Wochentage grafisch darstellen wollen, sieht der vollständige Befehl also so aus:
 
 ```{r}
 #| label: fig-bar-tips
@@ -261,7 +257,7 @@ Wenn Sie nicht wissen, ob die Funktion aus einem nachträglich geladenen Paket s
 Stellen Sie Verteilung der Tageszeit (Variable `time`) als Säulendiagramm und als (relative) Häufigkeitstabelle dar.
 :::
 
-### Zusammenhang zwischen kategorialen Variablen
+### Zusammenhang zwischen kategorialen Variablen {.unnumbered .unlisted}
 
 Die Tageszeit variiert. 
 Mit welchen Variablen hängt das zusammen?
@@ -337,7 +333,7 @@ Anteil ausgegeben wird: *Confusion of the inverse*:
 
 - Die Wahrscheinlichkeit, krank zu sein, wenn das Testergebnis positiv ist, ist nicht dasselbe wie die Wahrscheinlichkeit, dass das Testergebnis positiv ist, wenn man krank ist.
 
-### Bedingte und totaleWahrscheinlichkeit
+### Bedingte und totale Wahrscheinlichkeit {.unnumbered .unlisted}
 
 Die relative Häufigkeit der Uhrzeit (Ereignis $A$) gegeben den Wochentag
 (Ereignis $B$) können Sie auch als bedingte Wahrscheinlichkeit interpretieren,
@@ -381,8 +377,13 @@ $$
 
 hier also:
 
-$$Pr(time = Lunch) = Pr(time = Lunch\mid day = Thur) · Pr(day = Thur)
-+ Pr(time = Lunch\mid day = Fri) · Pr(day = Fri) + \dots$$
+$$
+\begin{aligned}
+Pr(time = Lunch) =&Pr(time = Lunch\mid day = Thur) · Pr(day = Thur) +\\ 
+                  &Pr(time = Lunch\mid day = Fri) · Pr(day = Fri) + \\
+                  &\dots
+\end{aligned}
+$$
 
 ```{r}
 # Totale Wahrscheinlichkeit
@@ -435,7 +436,7 @@ Kontrollieren Sie das Ergebnis mit `tally()`.
 Auf dem Satz von Bayes basiert eine eigene Richtung in der Statistik, die *Bayes-Statistik*. 
 Wir bleiben hier aber in der sogenannten *frequentistischen Statistik*.
 
-### Grafische Darstellung des Zusammenhangs
+### Grafische Darstellung des Zusammenhangs 
 
 Den Zusammenhang zwischen zwei kategorialen Variablen können Sie gut mit dem Mosaikplot darstellen: `mosaicplot(x ~ y, data = ...)`.
 
@@ -523,21 +524,21 @@ Probieren Sie es aus.
 Wie viele metrische Variablen gibt es in der Datentabelle tips?
 :::
 
-### Histogramm und Verteilungsform
+### Histogramm und Verteilungsform 
 
 Als Grafik können auch hier Säulen- und Balkendiagramme verwendet werden. 
 Diese eignen sich insbesondere für metrisch diskrete Daten mit nicht zu vielen Ausprägungen (in der `tips`-Datentabelle z. B. die Anzahl der Personen `size`).
 Eine weitere wichtige und häufig genutzte Grafik ist das Histogramm :
 
 ```{r}
-#| fig-cap: Histogramm der Variable `total_bill`
+#| fig-cap: "Histogramm der Variable `total_bill`"
 #| label: fig-hist-total-bill
 gf_histogram( ~ total_bill, data = tips, binwidth = 10, center = 5)
 ```
 
-@fig-hist-total-billzeigt das Histogramm der Rechnungsbeträge (`total_bill`).
+@fig-hist-total-bill zeigt das Histogramm der Rechnungsbeträge (`total_bill`).
 Metrische Daten (insbesondere stetige metrische Daten) werden in Gruppen
-eingeteilt (`klassifiziert`), z. B. $0 bis 10$, $> 10$ bis $20$, . . . , und die Häufigkeiten als Rechtecke (Säulen) dargestellt.
+eingeteilt (`klassifiziert`), z. B. $0 \text{ bis } 10$, $>10$ bis $\leq20$, $\dots$, und die Häufigkeiten als Rechtecke (Säulen) dargestellt.
 Der Flächeninhalt der Rechtecke entspricht dabei der relativen Häufigkeit der Beobachtungen im Intervall (die sogenannte *Klasse*).
 Im Unterschied zum Säulendiagramm stehen die einzelnen Säulen jetzt direkt nebeneinander. 
 Das soll zeigen, dass es sich um stetige und nicht um diskrete Daten handelt.
@@ -652,10 +653,10 @@ Wenn Sie das als stetige Funktion darstellen (Sie verbinden quasi die Mitten der
 ```{r}
 #| echo: false
 #| label: fig-Dens
+#| fig-cap: "Histogramm (<span style='color: darkgray'>grau</span>) und Dichtefunktion (<span style='color: #00998A'>grün</span>) von `total_bill`"
 #| fig-width: 3.5 
 #| fig-asp: 1
 #| out-width: 7cm
-
 
 gf_dhistogram( ~ total_bill, data = tips, bins = 9) |> 
   gf_dens(color = fgcolFOMGreen, size = 1, alpha = 1) |> 
@@ -713,11 +714,45 @@ Warum nicht?
 :::
 
 
-### Lagemaße
+### Lagemaße {.unnumbered .unlisted}
 
 Zunächst beschäftigen wir uns mit den Lagemaßen einer Verteilung. 
-Lagemaße beschreiben die Lage einer Verteilung, also wo ist der Schwerpunkt,
-das Minimum, das Maximum usw. 
+Lagemaße beschreiben die Lage einer Verteilung, also wo ist der Schwerpunkt, das Minimum, das Maximum usw. 
 Eine Verteilung einer metrischen Variablen können Sie gut mit einem Histogramm darstellen und damit können Sie auch ungefähr abschätzen, wo der Schwerpunkt, das Maximum usw. sind. 
-Lagemaße drücken das alsWert aus und sind somit gewissermaßen Kennzahlen.
+Lagemaße drücken das al sWert aus und sind somit gewissermaßen Kennzahlen.
+
+Welche Lagemaße gibt es? @tbl-Lagemasse zeigt eine Übersicht.
+
+
+Ein Lagemaß, das Ihnen bestimmt schon begnetet ist, ist der Durchschnitt oder in der Fachsprache der **arithmetische Mittelwert**. 
+Mit Sicherheit kennen Sie auch **Minimum** und **Maximum**.
+
+Im Folgenden sehen Sie eine Beispielrechnung mit den Daten:
+
+$$20, 18, 24, 40, 24, 22, 21, 23, 20, 28 (𝑛 = 10).$$
+- Aufsteigend sortiert: 18, 20, 20, 21, 22, 23, 24, 24, 28, 40
+
+- Minimum $x_{min} = 18$, Maximum $x_{max}= 40$, Modus $x_{mod}= \{20, 24\}$
+
+- Median^[Bei gerader Anzahl $n$ wird der Mittelwert der beiden mittleren Werte genommen.]: $x_{(0.5)} = x_{med} = \frac{20+23}{2} = 22.5$
+
+- Arithmethischer Mittelwert $\bar{x}= \frac{1}{10} \cdot (20 + 18 + . . . + 40) = \frac{240}{10} = 24$
+
+- 25%-Quantil^[$x_{(0.25)} = x_{⌈0.25·𝑛⌉} = x_3 = 20.$ $⌈...⌉$ rundet den Wert auf. Es sind aber auch andere Varianten für die Berechnung möglich und üblich. R gibt z. B. 20.25 aus. ]$x_{(0.25)}=20$.
+
+:::
+## Aufgabe 
+Eine Dozentin unterrichtet vier kleine Kurse mit je 15 Studierenden und einen großen Kurs mit 90 Studierenden.
+
+a) Wie groß ist der arithmetische Mittelwert der Kursgröße für die Dozenti -
+b) Mit wie vielen Kommiliton:innen sitzt jede(r) Studierende(r) (einschließlich sich selbst) durchschnittlich in einem Kurs?
+:::
+
+::: Tipp
+## Tipp
+
+Die Ergebnisse werden sich unterscheiden! 
+Schauen Sie nicht gleich in der Lösung nach.
+Selbst die Lösung zu suchen ist Ihr Schlüssel zum Lernerfolg!
+:::
 

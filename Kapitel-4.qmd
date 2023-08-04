@@ -1,11 +1,7 @@
 # Grundlagen der qualtitativen Datenanalyse
 ```{r}
-#| include: false 
-ch <- 4
-quiz <- 0
-```
-```{r}
 #| include: false
+
 library(ggplot2)
 library(ggdag)
 ```
@@ -13,6 +9,7 @@ library(ggdag)
 ```
 ```{r DAGS}
 #| include: false
+
 textsize <- 5
 nodesize <- 14
 labelsize <- 5
@@ -115,7 +112,7 @@ dag_s2 <- dagify(X ~ Z,
 #  pkgsrm(pkgsinit)
 
 ```
-```{r}
+```{r setup-chapter-4}
 #| include: false
 library(ggplot2)
 library(ggdag)
@@ -126,6 +123,10 @@ library(tidyr)
 library(ggformula)
 library(mosaic)
 library(gridExtra)
+
+# Aufgabenverwaltung initialisieren
+ch <- 4
+quiz <- 0
 ```
 
 ::: {.callout-tip .Lernergebnisse}
