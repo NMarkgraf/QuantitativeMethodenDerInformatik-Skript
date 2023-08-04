@@ -148,7 +148,7 @@ Säulendiagrammewerden mit `gf_bar( ~ my.x, data = my.data)` ausgeführt, `my.x`
 ::: {.callout-tip .Tipp}
 ## Tipp
 Zur Erinnerung: Die Tilde ~ wird auf Windows-Rechnern mit der Tastenkombination
-AltGr - + ausgewählt, auf Mac-Rechnern mit Alt - n.
+{{< kbd AltGr-+}} ausgewählt, auf Mac-Rechnern mit {{< kbd Option-n >}}.
 :::
 
 Wenn wir also die Häufigkeiten der Wochentage grafisch darstellen wollen, sieht der vollständige Befehl also so aus:
@@ -269,8 +269,8 @@ Dazu wird die Formel mit einem senkrechten Strich | ergänzt.
 
 Außer der Tilde ~ gibt es in den Formeln noch den Strich |, der die Grafik (oder andere Funktionen) in mehrere Gruppen aufteilt. 
 Auch hier gibt es ein Tastenkürzel:
-Windows AltGr - <, Mac Alt - 7. 
-Das sind jetzt aber auch schon alle (zumindest für die Formelnsyntax).
+Windows {{< kbd AltGr-< >}}, Mac {{< kbd Option-7 >}}. 
+Das sind jetzt aber auch schon alle (zumindest für die Formelsyntax).
 :::
 
 Im Falle von time könnte beispielsweise ein Zusammenhang mit dem
@@ -313,7 +313,7 @@ Wenn nein, warum nicht?
 Wir haben jetzt die Grundstruktur (die Formelsyntax) der Befehle gelernt,
 die mit Hilfe des Pakets `mosaic` in R durchgeführt werden können:
 
-$AV \sim UV | GV$ -- abhängige Variable in Abhängigkeit von der unabhängigen
+$AV \sim UV \mid GV$ -- abhängige Variable in Abhängigkeit von der unabhängigen
 Variablen ggf. gruppiert nach einer Gruppierungsvariable.
 
 ::: {.callout-note .Aufgabe}
@@ -340,7 +340,7 @@ Die relative Häufigkeit der Uhrzeit (Ereignis $A$) gegeben den Wochentag
 z. B. `Pr(time = Lunch|day = Thur)`:
 
 $$
-Pr(𝐴|𝐵)
+Pr(𝐴\mid𝐵)
 $$
 
 Das wäre in unserer Kreuztabelle `tally( ~ time | day, ...)` der zweite Wert aus der vierten Spalte: 0.983871.
@@ -355,7 +355,7 @@ Bei einer Matrix wie oben benötigen Sie die Zeilen- und die Spaltennummer: $[\#
 ::: {.callout-note .Aufgabe}
 ## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
-Bestimmen Sie den Wert für $Pr(time = Lunch|day = Thur)$ mit `tally()`. 
+Bestimmen Sie den Wert für $Pr(time = Lunch \mid day = Thur)$ mit `tally()`. 
 Statt zwei Zahlen für die Zeile und die Spalte anzugeben, können Sie auch die Bezeichnungen, hier "`Lunch`" und "`Thur`" angeben.
 :::
 
@@ -363,15 +363,15 @@ Statt zwei Zahlen für die Zeile und die Spalte anzugeben, können Sie auch die 
 ## Tipp
 
 Die eckigen Klammern bekommen Sie auf Windows-Rechnern mit
-AltGr-8 und auf Mac-Rechnern mit Alt-5.
+ {{< kbd AltGr-8 >}} und auf Mac-Rechnern mit {{< kbd Option-5 >}}.
 :::
 
-Um die totale Wahrscheinlichkeit für die Uhrzeit "`Lunch`" zu bestimmen, können Sie die einzelnen bedingten Wahrscheinlichkeiten multipliziert mit den jeweiligen Wahrscheinlichkeiten (Ereignisse $B_k, k=1, \dots,K$[^Formal müssen die Ereignisse $B_k$ überschneidungs frei sein und die Wahrscheinlichkeiten in der Summe eins ergeben.], welche die Bedingungen stellen, auf addieren:
+Um die totale Wahrscheinlichkeit für die Uhrzeit "`Lunch`" zu bestimmen, können Sie die einzelnen bedingten Wahrscheinlichkeiten multipliziert mit den jeweiligen Wahrscheinlichkeiten (Ereignisse $B_k, k=1, \dots,K$[^Formal müssen die Ereignisse $B_k$ überschneidungsfrei sein und die Wahrscheinlichkeiten in der Summe eins ergeben.], welche die Bedingungen stellen, auf addieren:
 
 $$
 \begin{aligned}
-Pr(A) &= Pr(A\mid B_1) \cdot Pr(B_1) + Pr(A\mid B_2) \cdot Pr(B_2) +  \cdots \\
-      &= Pr(A\mid B_K) \cdot Pr(B_K)
+Pr(A) &= Pr(A \mid B_1) \cdot Pr(B_1) + Pr(A \mid B_2) \cdot Pr(B_2) +  \cdots \\
+      &= Pr(A \mid B_K) \cdot Pr(B_K)
 \end{aligned}
 $$
 
@@ -379,8 +379,8 @@ hier also:
 
 $$
 \begin{aligned}
-Pr(time = Lunch) =&Pr(time = Lunch\mid day = Thur) · Pr(day = Thur) +\\ 
-                  &Pr(time = Lunch\mid day = Fri) · Pr(day = Fri) + \\
+Pr(time = Lunch) =&Pr(time = Lunch \mid day = Thur) · Pr(day = Thur) +\\ 
+                  &Pr(time = Lunch \mid day = Fri) · Pr(day = Fri) + \\
                   &\dots
 \end{aligned}
 $$
@@ -423,7 +423,7 @@ b) Bestimmen Sie die totale Wahrscheinlichkeit für einen Nichtrauchertisch aus 
 Mit dem **Satz von Bayes** und der totalen Wahrscheinlichlichkeit können wir die bedingten Wahrscheinlichkeiten umrechnen:
 
 $$
-Pr(B\mid A) = \frac{Pr(A\mid B) \cdot Pr(B)}{Pr(A)}.
+Pr(B \mid A) = \frac{Pr(A \mid B) \cdot Pr(B)}{Pr(A)}.
 $$
 
 ::: {.callout-note .Aufgabe}

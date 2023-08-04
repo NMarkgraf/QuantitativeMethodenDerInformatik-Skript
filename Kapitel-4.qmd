@@ -179,6 +179,7 @@ Vergleichen Sie die Gütekriterien der Messung mit denen der Forschung. Wo gibt 
 
 ```{r fig-VarianzBias}
 #| echo: false
+#| fig-cap: "Varianz (Streuung) einer Messung (links), Verzerrung einer Messung (rechts)"
 #| fig-width: 5
 #| fig-asp: 0.54
 #| out-width: 10cm
@@ -270,21 +271,32 @@ Ist es bei 20 Grad Celsius doppelt so warm wie bei 10 Grad Celsius? Begründen S
 ::: {.callout-tip .Tipp}
 ## Tipp
 
-Beantworten Sie die Frage, bevor Sie weiterlesen. Versuchen Sie erst selbst die Lösung zu finden. Das ist der Schlüssel für Ihren Lernerfolg!
+Beantworten Sie die Frage, bevor Sie weiterlesen. 
+Versuchen Sie erst selbst die Lösung zu finden. 
+Das ist der Schlüssel für Ihren Lernerfolg!
 :::
 
-Daten können auf unterschiedlichen Skalen gemessen werden. Um das Skalenniveau von Daten, d. h. um den Informationsgehalt. Zwei grundsätzliche Eigenschaften gibt es dabei: **kategorial** und **metrisch**.
+Daten können auf unterschiedlichen Skalen gemessen werden. Um das Skalenniveau von Daten, d. h. um den Informationsgehalt. 
+Zwei grundsätzliche Eigenschaften gibt es dabei: **kategorial** und **metrisch**.
 
-Die kategoriale Skale wird auch als qualitative Skala bezeichnet, es geht um Eigenschaften. Wenn Sie eine Eigenschaft nur zuordnen können, heißt die Skala **nominal**, z. B. Industriesektoren oder Länder.
+Die kategoriale Skale wird auch als qualitative Skala bezeichnet, es geht um Eigenschaften. 
+Wenn Sie eine Eigenschaft nur zuordnen können, heißt die Skala **nominal**, z. B. Industriesektoren oder Länder.
 
-Können Sie die Eigenschaften ordnen? Dann liegen sie auf einer **Ordinalskala** vor. Beispiele dafür sind Bildungsabschlüsse oder Gütesterne von Hotels.
+Können Sie die Eigenschaften ordnen? Dann liegen sie auf einer **Ordinalskala** vor. 
+Beispiele dafür sind Bildungsabschlüsse oder Gütesterne von Hotels.
 
-Die metrische Skala wird auch als quantitative Skala bezeichnet. Wenn Sie nur die die Abstände inhaltlich sinnvoll interpretiert können, liegen die Daten auf einer **Intervallskala** vor, ein Beispiel wäre die Temperatur in °C. Können auch die Quotienten sinnvoll interpretiert werden, liegen die Daten auf einer **Verhältnisskala** vor, z. B. Größe in cm, Umsatz in Euro. Beispiele: 2 m ist doppelt so lang wie 1 m, aber 20 °C ist nicht doppelt so warm wie 10 °C -- inhaltlich ist die zweite Aussage nicht sinnvoll. Im Fall der Intervallskala ist der Nullpunkt gesetzt, während es bei der Verhältnisskala einen natürlichen Nullpunkt gibt. Daten auf der Intervallskala können Sie mit Faktor und Offset umrechnen (z. B. von der Celsius- zur Fahrenheitskala), während Sie Daten auf der Verhältnisskala nur mit einem Faktor umrechnen können (z. B. Meter in Inch).
+Die metrische Skala wird auch als quantitative Skala bezeichnet. 
+Wenn Sie nur die die Abstände inhaltlich sinnvoll interpretiert können, liegen die Daten auf einer **Intervallskala** vor, ein Beispiel wäre die Temperatur in °C. 
+Können auch die Quotienten sinnvoll interpretiert werden, liegen die Daten auf einer **Verhältnisskala** vor, z. B. Größe in cm, Umsatz in Euro. 
+Beispiele: 2 m ist doppelt so lang wie 1 m, aber 20 °C ist nicht doppelt so warm wie 10 °C -- inhaltlich ist die zweite Aussage nicht sinnvoll. 
+Im Fall der Intervallskala ist der Nullpunkt gesetzt, während es bei der Verhältnisskala einen natürlichen Nullpunkt gibt. 
+Daten auf der Intervallskala können Sie mit Faktor und Offset umrechnen (z. B. von der Celsius- zur Fahrenheitskala), während Sie Daten auf der Verhältnisskala nur mit einem Faktor umrechnen können (z. B. Meter in Inch).
 
 ::: {.callout-tip .Tipp}
 ## Tipp
 
-Eigenschaften werden in *Kategorien* angegeben, daher *kategoriale* Daten. Wenn Sie etwas *messen* können (quasi mit dem Maßband oder dem Zollstock), sind es *metrische* Daten.
+Eigenschaften werden in *Kategorien* angegeben, daher *kategoriale* Daten. 
+Wenn Sie etwas *messen* können (quasi mit dem Maßband oder dem Zollstock), sind es *metrische* Daten.
 :::
 
 ::: {.callout-note .Aufgabe}
@@ -293,34 +305,45 @@ Eigenschaften werden in *Kategorien* angegeben, daher *kategoriale* Daten. Wenn 
 Welches Skalenniveau hat die Variable Telefonvorwahl?
 :::
 
-Metrische Daten werden zusätzlich in **stetig** und **diskret** unterteilt. Stetige Daten können beliebig viele Zwischenwerte (Nachkommastellen) haben, je nach Genauigkeit des Messintruments, z. B. Länge. Diskrete Daten haben abzählbar viele Zwischenwerte, meist sind sie ganzzahlig. Ein Beispiel dafür ist die Anzahl Studierender in einer Veranstaltung. Manchmal gibt es auch Daten, die z. B. auf zwei Nachkommastellen diskret sind wie Geldbeträge in Euro. Da es dann aber sehr viele Stufen gibt, werden sie als **quasi-stetig** bezeichnet und wie stetige Werte behandelt.
+Metrische Daten werden zusätzlich in **stetig** und **diskret** unterteilt. 
+Stetige Daten können beliebig viele Zwischenwerte (Nachkommastellen) haben, je nach Genauigkeit des Messintruments, z. B. Länge. 
+Diskrete Daten haben abzählbar viele Zwischenwerte, meist sind sie ganzzahlig. 
+Ein Beispiel dafür ist die Anzahl Studierender in einer Veranstaltung. 
+Manchmal gibt es auch Daten, die z. B. auf zwei Nachkommastellen diskret sind wie Geldbeträge in Euro.
+Da es dann aber sehr viele Stufen gibt, werden sie als **quasi-stetig** bezeichnet und wie stetige Werte behandelt.
 
 ::: {.callout-note .Aufgabe}
 ## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
-Hören Sie zur Entspannung folgenden Song: Levels of Measurement © Larry Lesser und Dominic Dousa, [www.causeweb.org](https://www.causeweb.org/cause/resources/fun/songs/levels-measurement).
+Hören Sie zur Entspannung folgenden Song: Levels of Measurement &copy; Larry Lesser und Dominic Dousa, [www.causeweb.org](https://www.causeweb.org/cause/resources/fun/songs/levels-measurement).
 :::
 
 ::: {.callout-tip .Tipp}
 ## Tipp
 
-Sie finden an vielen Stellen Verweise auf Songs und Videos. Wenn Sie Spaß daran haben, hören oder schauen Sie sich diese an. Es lockert den Ablauf auf und bewirkt eine zusätzliche Verfestigung des Lernstoffes.
+Sie finden an vielen Stellen Verweise auf Songs und Videos. Wenn Sie Spaß daran haben, hören oder schauen Sie sich diese an. 
+Es lockert den Ablauf auf und bewirkt eine zusätzliche Verfestigung des Lernstoffes.
 :::
 
 ::: column-margin
+
 | Name  | Geschlecht | Größe |
 |:-----:|:----------:|:-----:|
 | Ahmet | m          | 180   |
 | Gabi  | w          | 170   |
-| AMax  | m          | 186   |
+| Max   | m          | 186   |
 | Susi  | w          | 172   |
 
 : Exemplarischer Datensatz {#tbl-Data}
+
 :::
 
-@tbl-Data zeigt einen exemplarischen Datensatz. Ein Datensatz ist meist wie ein Tabellenkalkulationsblatt aufgebaut. Daten werden häufig auch in Formaten abgespeichert, die von Tabellenkalkulationsprogrammen (wie Excel, Numbers o. ä.) gelesen werden können.
+@tbl-Data zeigt einen exemplarischen Datensatz. 
+Ein Datensatz ist meist wie ein Tabellenkalkulationsblatt aufgebaut. 
+Daten werden häufig auch in Formaten abgespeichert, die von Tabellenkalkulationsprogrammen (wie Excel, Numbers o. ä.) gelesen werden können.
 
-Die Spalten entsprechen in der Regel einer Variablen, hier Name, Geschlecht und Alter, eine Zeile zeigt eine Beobachtung. Häufig ist die erste Zeile in einem Datensatz die Kopfzeile, gibt also die Namen der Variablen aus.
+Die Spalten entsprechen in der Regel einer Variablen, hier Name, Geschlecht und Alter, eine Zeile zeigt eine Beobachtung. 
+Häufig ist die erste Zeile in einem Datensatz die Kopfzeile, gibt also die Namen der Variablen aus.
 
 ::: {.callout-note .Aufgabe}
 ## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)` 
