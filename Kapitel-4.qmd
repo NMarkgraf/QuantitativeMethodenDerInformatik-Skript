@@ -1,5 +1,9 @@
 # Grundlagen der qualtitativen Datenanalyse
-
+```{r}
+#| include: false 
+ch <- 4
+quiz <- 0
+```
 ```{r}
 #| include: false
 library(ggplot2)
@@ -124,7 +128,6 @@ library(mosaic)
 library(gridExtra)
 ```
 
-
 ::: {.callout-tip .Lernergebnisse}
 ## Lernergebnisse dieses Kapitels
 
@@ -160,13 +163,14 @@ Leichtigkeit beim Verständnis von Statistik Bewertung der Aussagen auf einer Sk
 -   Die meisten Menschen müssen lernen anders zu denken, um Statistik anwenden zu können.\*
 :::
 
-Ein Beispiel für eine solche Multi-Item-Likert-Skala ist die Operationalisierung des Verständnisses von Statistik \[[^kapitel-4-1]\]. Manche der Items sind sogenannte inverse Items (im Beispiel mit \* markiert), die Zustimmung geht also in die umgekehrte Richtung. Aus allen Werten wird dann der Mittelwert gebildet, dazu müssen die inversen Items zunächst umgedreht werden (auf einer siebenstufigen Skala wird so z. B. aus einer zwei eine sechs). Der sich ergebende Mittelwert ist dann der Wert, der der betreffenden Variablen für diese Beobachtung zugewiesen wird.
+Ein Beispiel für eine solche Multi-Item-Likert-Skala ist die Operationalisierung des Verständnisses von Statistik ^[@schau]. Manche der Items sind sogenannte inverse Items (im Beispiel mit \* markiert), die Zustimmung geht also in die umgekehrte Richtung. Aus allen Werten wird dann der Mittelwert gebildet, dazu müssen die inversen Items zunächst umgedreht werden (auf einer siebenstufigen Skala wird so z. B. aus einer zwei eine sechs). Der sich ergebende Mittelwert ist dann der Wert, der der betreffenden Variablen für diese Beobachtung zugewiesen wird.
 
-[^kapitel-4-1]: Schau (), Survey of Attitudes Toward Statistics, SATS-36
 
 Auch hier kehren die Gütekriterien wieder, jetzt bezogen auf die Messung. Im Einzelnen sind dies **Genauigkeit**, **Objektivität**, **Reliabilität** (Zuverlässigkeit einer Messung, wiederholte Messungen ergeben ein vergleichbares Ergebnis) und **Validität** (es wird das gemessen,was gemessen werden soll).
 
 ::: {.callout-note .Aufgabe}
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
 Vergleichen Sie die Gütekriterien der Messung mit denen der Forschung. Wo gibt es Gemeinsamkeiten, wo Unterschiede?
 :::
 
@@ -257,6 +261,8 @@ Vergleichen Sie die Gütekriterien der Messung mit denen der Forschung. Wo gibt 
 Eine hohe Varianz bedeutet eine geringe Reliabilität, eine große Verzerrung führt zu einer geringen Validität. Das Thema wird uns auch in späteren Kapiteln beschäftigen -- wirwerden lernen,was wir beeinflussen, was wir kontrollieren können.
 
 ::: {.callout-note .Aufgabe}
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
 Ist es bei 20 Grad Celsius doppelt so warm wie bei 10 Grad Celsius? Begründen Sie Ihre Antwort.
 :::
 
@@ -281,14 +287,15 @@ Eigenschaften werden in *Kategorien* angegeben, daher *kategoriale* Daten. Wenn 
 :::
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
 Welches Skalenniveau hat die Variable Telefonvorwahl?
 :::
 
 Metrische Daten werden zusätzlich in **stetig** und **diskret** unterteilt. Stetige Daten können beliebig viele Zwischenwerte (Nachkommastellen) haben, je nach Genauigkeit des Messintruments, z. B. Länge. Diskrete Daten haben abzählbar viele Zwischenwerte, meist sind sie ganzzahlig. Ein Beispiel dafür ist die Anzahl Studierender in einer Veranstaltung. Manchmal gibt es auch Daten, die z. B. auf zwei Nachkommastellen diskret sind wie Geldbeträge in Euro. Da es dann aber sehr viele Stufen gibt, werden sie als **quasi-stetig** bezeichnet und wie stetige Werte behandelt.
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
 Hören Sie zur Entspannung folgenden Song: Levels of Measurement © Larry Lesser und Dominic Dousa, [www.causeweb.org](https://www.causeweb.org/cause/resources/fun/songs/levels-measurement).
 :::
@@ -307,7 +314,7 @@ Sie finden an vielen Stellen Verweise auf Songs und Videos. Wenn Sie Spaß daran
 | AMax  | m          | 186   |
 | Susi  | w          | 172   |
 
-: Exemplarischer Datensatz{#tbl-Data}
+: Exemplarischer Datensatz {#tbl-Data}
 :::
 
 @tbl-Data zeigt einen exemplarischen Datensatz. Ein Datensatz ist meist wie ein Tabellenkalkulationsblatt aufgebaut. Daten werden häufig auch in Formaten abgespeichert, die von Tabellenkalkulationsprogrammen (wie Excel, Numbers o. ä.) gelesen werden können.
@@ -315,7 +322,7 @@ Sie finden an vielen Stellen Verweise auf Songs und Videos. Wenn Sie Spaß daran
 Die Spalten entsprechen in der Regel einer Variablen, hier Name, Geschlecht und Alter, eine Zeile zeigt eine Beobachtung. Häufig ist die erste Zeile in einem Datensatz die Kopfzeile, gibt also die Namen der Variablen aus.
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe 
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)` 
 
 Lesen Sie Kapitel 1 aus dem Buch *Introduction to Modern Statistics* \[6\]. Sie können es hier herunterladen: <https://openintro-ims.netlify.app/index.html>
 :::
@@ -333,7 +340,8 @@ Daten = Modell + Rest
 :::
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
 Überlegen Sie sich, warum Punkte einer Klausur variieren.
 :::
 
@@ -357,7 +365,7 @@ Dass Sie bei der Auswahl der Kovariablen aufpassen müssen, zeigt @fig-UCBEins, 
 ```{r fig-UCB1}
 #| echo: false
 #| label: fig-UCBEins
-#| caption: "Zulassungen an der UC Berkeley in Abhängigkeit vom Geschlecht: ohne Kovariable"
+#| fig-cap: "Zulassungen an der UC Berkeley in Abhängigkeit vom Geschlecht: ohne Kovariable"
 #| fig-width: 5
 #| fig-asp: 1
 #| out-width: 7cm
@@ -377,7 +385,7 @@ Erst die Aufteilung nach der Kovariable Department (@fig-UCB2) zeigt, dass Fraue
 #| fig-width: 6.5
 #| fig-asp: 0.8
 #| out-width: 10cm
-#| caption: "Zulassungen an der UC Berkeley in Abhängigkeit vom Geschlecht: mit Kovariable Department"
+#| fig-cap: "Zulassungen an der UC Berkeley in Abhängigkeit vom Geschlecht: mit Kovariable Department"
 
 opar <- par(mfrow = c(2, 3), oma = c(0, 0, 2, 0)) # b, l, t , r
 for (i in 1:6)
@@ -391,7 +399,8 @@ par(opar)
 ```
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
 Recherchieren Sie, wer Simpson war und warum das Paradox nach ihm benannt wurde.
 :::
 
@@ -411,7 +420,7 @@ Idealerweise wird eine **Zufallsstichprobe** gezogen, in der alle Beobachtungen 
 #| fig-width: 5
 #| fig-asp: 0.6
 #| out-width: 10cm
-#| caption: "Verschiedene Erhebungsmethoden für Stichproben"
+#| fig-cap: "Verschiedene Erhebungsmethoden für Stichproben"
 
 fa1 <- fontawesome(c("fa-user"))
 fa2 <- fontawesome(c("fa-female", "fa-male"))
@@ -500,7 +509,7 @@ Warum ist es ideal, eine Zufallsstichprobe zu haben? Wenn ich Ihren Kurs als Sti
 In anderen Fragestellungen mag die Gelegenheitsstichprobe *Ihr Kurs* nicht verzerrt sein, z. B. wenn ich mich für die Körpergröße interessiere. Es hängt also immer auch von der Fragestellung ab, ob eine Gelegenheitsstichprobe geeignet ist.
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
 Verzerrungen
 
@@ -534,7 +543,7 @@ Durch eine zufällige Stichprobe wird diese *Selbst-Selektion* vermieden.
 @fig-DAG-Stichprobe zeigt den datengenerierenden Prozess einer Gelegenheitsstichprobe und einer zufälligen Stichprobe. Bei letzterer wählt die Dozentin die Studierenden zufällig aus.
 
 ```{r fig-DAG-Stichprobe}
-#| caption: "Gelegenheitsstichprobe vs. Zufallsstichprobe"
+#| fig-cap: "Gelegenheitsstichprobe vs. Zufallsstichprobe"
 #| label: fig-DAG-Stichprobe
 #| echo: FALSE
 #| fig-width: 7
@@ -560,7 +569,7 @@ Der Wert in der Population, der von Interesse ist, wird als Parameter bezeichnet
 
 ```{r}
 #| label: tbl-griBuchstaben
-#| caption: "Griechische Buchstaben in der Statistik"
+#| tbl-cap: "Griechische Buchstaben in der Statistik"
 #| echo: false
 #| warning: false
 
@@ -615,12 +624,13 @@ Aufgrund des höheren Vorwissens ist es möglich, dass Studierende mit einer ger
 
 In einem randomisierten Experiment würde die Dozentin die Lernzeit zufällig zuordnen -- unabhängig vom Vorwissen.
 
-Der Graf zeigt den **datengenerierenden Prozess** in einer Beobachtungsstudie und einem randomisierten Experiment. Im letzteren weist die Dozentin den Studierenden **zufällig** eine Lernzeit zu.
+Der Graph zeigt den **datengenerierenden Prozess** in einer Beobachtungsstudie und einem randomisierten Experiment. 
+Im letzteren weist die Dozentin den Studierenden **zufällig** eine Lernzeit zu.
 
-```{r fig = TRUE}
-#| caption: "Beobachtungsstudie vs. Experiment"
+```{r}
+#| fig-cap: "Beobachtungsstudie vs. Experiment"
 #| label: fig-DAG-Experiment
-#| echo: FALSE
+#| echo: false
 #| fig-width: 7
 #| fig-asp: 0.5
 #| out-width: 10cm
@@ -630,7 +640,8 @@ grid.arrange(dag_e1, dag_e2, layout_matrix = layout)
 ```
 
 
-Das Vorwissen würde die Lernzeit und die Klausurpunkte beeinflussen. Durch das Experiment wird der Pfad zwischen Vorwissen und Lernzeit gekappt, so dass der Einfluss der Lernzeit isoliert werden kann.
+Das Vorwissen würde die Lernzeit und die Klausurpunkte beeinflussen. 
+Durch das Experiment wird der Pfad zwischen Vorwissen und Lernzeit gekappt, so dass der Einfluss der Lernzeit isoliert werden kann.
 
 ::: column-margin
 ![PPDAC: Problem -- Plan -- Data -- Analysis -- Conclusion](own-images/PPDAC.png){#fig-PPDAC}
@@ -638,7 +649,8 @@ Das Vorwissen würde die Lernzeit und die Klausurpunkte beeinflussen. Durch das 
 
 Zum Abschluss dieses Kapitels sehen Sie in @fig-PPDAC den idealisierten Ablauf eines Forschungsprozesses, den Problem-Plan-Data-Analysis-Conclusion-Zyklus (PPDAC-Zyklus).
 
-Welches Problem soll untersucht werden (P), welche Variablen sind dafür notwendig und müssen diese ggf. operationalisiert werden (P), wie kommen Sie an die Daten (D). Mit der Analyse (A) und der Schlussfolgerung (Conclusion, C) befassen wir uns in den folgenden Kapiteln.
+Welches Problem soll untersucht werden (P), welche Variablen sind dafür notwendig und müssen diese ggf. operationalisiert werden (P), wie kommen Sie an die Daten (D). 
+Mit der Analyse (A) und der Schlussfolgerung (Conclusion, C) befassen wir uns in den folgenden Kapiteln.
 
 ::: {.callout-caution .Lernpfad}
 ## Lernpfad **Grundlagen der quantitativen Datenanalyse**

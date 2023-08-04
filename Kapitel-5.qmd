@@ -1,9 +1,18 @@
 # Explorative Datenanalyse
 ```{r}
+#| include: false 
+ch <- 5
+quiz <- 0
+```
+```{r}
 #| include: false
 library(mosaic)
+library(latex2exp)
 ```
-
+```{r child="FarbSchema.qmd"}
+```
+```{r child="gg-margins.qmd"}
+```
 ::: {.callout-tip .Lernergebnisse}
 ## Lernergebnisse dieses Kapitels
 
@@ -20,7 +29,7 @@ Nach erfolgreichem Abschluss dieses Kapitels sind Sie in der Lage,
 -   den Zusammenhang zwischen Variablen darstellen und beschreiben zu können
 :::
 
-Wir beginnen mit dem Einlesen von Daten. Dazu wird der Beispielsdatensatz `tips.csv` \[\^Bryant u. a. (1995), Practical Data Analysis -- Case Studies in Business Statistics\] eingelesen. Dieser liegt im sogenannten CSV-Format (*comma separated values*) vor. Dieses Format ist sehr nützlich, um Daten auszutauschen, da es ein reines Textformat ist und auf allen Rechnern und Betriebssystemen gelesen werden kann. Wenn Sie `tips.csv` mit einem Texteditor öffnen, sieht die Datei so aus:
+Wir beginnen mit dem Einlesen von Daten. Dazu wird der Beispielsdatensatz `tips.csv` ^[Bryant u. a. (1995), Practical Data Analysis -- Case Studies in Business Statistics] eingelesen. Dieser liegt im sogenannten CSV-Format (*comma separated values*) vor. Dieses Format ist sehr nützlich, um Daten auszutauschen, da es ein reines Textformat ist und auf allen Rechnern und Betriebssystemen gelesen werden kann. Wenn Sie `tips.csv` mit einem Texteditor öffnen, sieht die Datei so aus:
 
 ```         
 "total_bill";"tip";"sex";"smoker";"day";"time";"size"
@@ -61,7 +70,7 @@ Im Code oben ist `<-` der sogenannten Zuweisungspfeil. Das, wo der Pfeil herkomm
 CSV-Dateien können aus Tabellenkalkulationsprogrammen abgespeichert werden. R kann aber auch viele andere Datenformate lesen.
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe 5.1
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
 Öffnen Sie die Datei `tips.csv` in Excel (oder einem anderen Tabellenkalkulationsprogramm).
 :::
@@ -82,9 +91,9 @@ Eine Datentabelle (`data.frame`) kann aus mehreren Variablen (Spalten) mit gleic
 Die Variablennamen finden Sie in der Spalte nach dem \$-Zeichen, dahinter steht der Variablentyp, gefolgt von den ersten Daten.
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe 5.2
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
-Was unterscheidet die Variablentypen int und num?
+Was unterscheidet die Variablentypen `int` und `num`?
 :::
 
 @tbl-variablentypen
@@ -114,7 +123,8 @@ Für diesen Datensatz sammelte ein Keller über mehrere Monate sein Trinkgeld.
 : Variablen des Datensatzes `tips.csv` {#tbl-tipsdata}
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe 5.3 
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
 Welches Skalenniveau haben die Variablen im Datensatz `tips.csv`?
 :::
 
@@ -126,7 +136,7 @@ Kreis- oder Kuchendiagramme werden wir allerdings nicht anschauen.
 Die Häufigkeiten der verschiedenen Kategorien können absolut oder relativ (als Anteile oder Prozente) angegeben werden.
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
 Warum werden Kreisdiagramme insbesondere in der
 Wissenschaft nicht gerne gesehen?
@@ -149,7 +159,7 @@ wollen, sieht der vollständige Befehl also so aus:
 
 ```{r}
 #| label: fig-bar-tips
-#| caption: "Säulendiagramm der Variable `day` in der Datentabelle `tips`"
+#| fig-cap: "Säulendiagramm der Variable `day` in der Datentabelle `tips`"
 
 gf_bar( ~ day, data = tips)
 ```
@@ -165,7 +175,7 @@ Bevor `gf_bar()` ausgeführt werden kann, muss das Paket `mosaic` mit dem Befehl
 :::
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe 5.5 
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
 Warum ist die Reihenfolge der Wochentage so *komisch*?
 :::
@@ -176,7 +186,7 @@ Wenn die Reihenfolge geändert werden soll, muss die Variable als Faktor gespeic
 Wenn Sie die Häufigkeiten (englisch: *count*, Symbol $h_i$) aller Kategorien $i$ erhalten wollen, können Sie den Befehl `tally()` verwenden.
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe 5.6 
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
 `tally` kommt aus dem Englischen.
 Was ist eine passende Übersetzung dafür?
@@ -219,7 +229,7 @@ prop( ~ day, data = tips)
 ```
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe 5.7 
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
 Kategorien bei `prop()`
 
@@ -246,7 +256,7 @@ Wenn Sie nicht wissen, ob die Funktion aus einem nachträglich geladenen Paket s
 :::
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe 5.8 
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
 Stellen Sie Verteilung der Tageszeit (Variable `time`) als Säulendiagramm und als (relative) Häufigkeitstabelle dar.
 :::
@@ -297,7 +307,7 @@ tally(time ~ day, data = tips)
 Das ist die Variante $Abhängige\ Variable \sim Unabhängige\ Variable$, bzw. $AV \sim UV$ oder $y \sim x$.
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe 5.9 
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
 Geht diese Variante auch bei `gf_bar()`? 
 Probieren Sie es aus. 
@@ -311,7 +321,7 @@ $AV \sim UV | GV$ -- abhängige Variable in Abhängigkeit von der unabhängigen
 Variablen ggf. gruppiert nach einer Gruppierungsvariable.
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe 5.10 
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
 Führen Sie eine Kreuztabellierung der Anteile der Raucher  je Wochentag durch.
 Ist es egal, welche Variable die abhängige bzw. die unabhängige ist? 
@@ -347,7 +357,7 @@ Einzelne Werte aus einem Vektor können Sie mit $[\#]$ auslesen, $\#$ gibt die P
 Bei einer Matrix wie oben benötigen Sie die Zeilen- und die Spaltennummer: $[\#, \#]$, getrennt durch ein Komma.
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe 5.11 
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
 Bestimmen Sie den Wert für $Pr(time = Lunch|day = Thur)$ mit `tally()`. 
 Statt zwei Zahlen für die Zeile und die Spalte anzugeben, können Sie auch die Bezeichnungen, hier "`Lunch`" und "`Thur`" angeben.
@@ -399,7 +409,7 @@ Probieren Sie es aus.
 :::
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe 5.12 
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
 Bedingte und totale Wahrscheinlichkeit:
 
@@ -416,7 +426,8 @@ Pr(B\mid A) = \frac{Pr(A\mid B) \cdot Pr(B)}{Pr(A)}.
 $$
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe 5.13 
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
 Bestimmen Sie Wahrscheinlichkeit für Freitag bedingt Essenszeit Dinner über den Satz von Bayes. 
 Kontrollieren Sie das Ergebnis mit `tally()`.
 :::
@@ -438,12 +449,13 @@ Die unabhängige Variable muss als erstes angegeben werden, die abhängige Varia
 Hier der Mosaikplot zu Raucher je Wochentag:
 
 ```{r}
-#| caption: "Mosaikplot Raucher in Abhängigkeit vom Wochentag. $x$ und $y$ müssen im Aufruf von `mosaicplot()` vertauscht werden."
+#| fig-cap: "Mosaikplot Raucher in Abhängigkeit vom Wochentag. $x$ und $y$ müssen im Aufruf von `mosaicplot()` vertauscht werden."
 mosaicplot(day ~ smoker, data = tips)
 ```
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe 5.14 
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
 Beschreiben Sie einen Mosaikplot! 
 Was genau wird in Richtung der $x$-Achse, was in Richtung der $y$-Achse dargestellt?
 Was entspricht dem Flächenanteil einer Kachel? 
@@ -454,7 +466,7 @@ Auch mit einem Säulendiagramm können Sie Zusammenhänge darstellen.
 Sie können die Farbe `(fill = ...)` nach einer anderen Variable auswählen, das ist dann die abhängige Variable.
 
 ```{r}
-#| caption: "Säulendiagramm der Wochentage, farbig markiert sind die Anteile der Raucher und Nichtraucher innerhalb der Tage. Dabei wurden unterschiedlichen Varianten verwendet: links standard, mittig `position = position_dodge()` und rechts `position= \"fill\""
+#| fig-cap: "Säulendiagramm der Wochentage, farbig markiert sind die Anteile der Raucher und Nichtraucher innerhalb der Tage. Dabei wurden unterschiedlichen Varianten verwendet: links standard, mittig `position = position_dodge()` und rechts `position= \"fill\""
 #| label: fig-drei-saeulen
 gf_bar( ~ day, fill = ~ smoker, data = tips)
 gf_bar( ~ day, fill = ~ smoker, data = tips, position = position_dodge())
@@ -463,7 +475,8 @@ gf_bar( ~ day, fill = ~ smoker, data = tips, position = "fill")
 
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe 5.15 
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
 Mit welcher Grafik in @fig-drei-saeulen können Sie am besten erkennen, an welchem Tag ...
 
 a) die Anzahl der Rauchergruppen am höchsten war?
@@ -475,9 +488,9 @@ Sie sehen, die Positionierung der Aufteilung der Raucher innerhalb der Tage gibt
 Häufigkeiten erkennen Sie mit `position = position_dodge()` am besten (vgl. die Fläche der Kachel im Mosaikplot) und Anteile mit `position = "fill"` (vgl. die Höhe der Kacheln im Mosaikplot).
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe 5.16 
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
-Nutzen Sie die Datentabelle SaratogaHouses.[^Wie kommen Sie daran? Siehe Abschnitt 2.3 (Erste Schritte in R) in Kapitel 2.]
+Nutzen Sie die Datentabelle SaratogaHouses.^[Wie kommen Sie daran? Siehe Abschnitt 2.3 (Erste Schritte in R) in Kapitel 2.]
 
 a) Führen Sie eine explorative Datenanalyse der Variable `heating` durch.
 
@@ -503,7 +516,7 @@ b) Analysieren Sie den Zusammenhang zwischen `heating` und `newConstruction`.
 Im diesem Abschnitt geht es um die Analyse metrischer oder numerischer Daten.
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe 5.17 
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
 Wissen Sie noch, wie Sie mit R herausfinden konnten, wie unser Datensatz aufgebaut ist? 
 Probieren Sie es aus. 
@@ -517,7 +530,7 @@ Diese eignen sich insbesondere für metrisch diskrete Daten mit nicht zu vielen 
 Eine weitere wichtige und häufig genutzte Grafik ist das Histogramm :
 
 ```{r}
-#| caption: Histogramm der Variable `total_bill`
+#| fig-cap: Histogramm der Variable `total_bill`
 #| label: fig-hist-total-bill
 gf_histogram( ~ total_bill, data = tips, binwidth = 10, center = 5)
 ```
@@ -530,7 +543,7 @@ Im Unterschied zum Säulendiagramm stehen die einzelnen Säulen jetzt direkt neb
 Das soll zeigen, dass es sich um stetige und nicht um diskrete Daten handelt.
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe 5.18 
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
 Probieren Sie den Befehl ohne die Eingabe von `binwidth = 10, center = 5` aus.
 Was ändert sich?
@@ -548,12 +561,57 @@ Mehr Informationen zu Histogrammen finden Sie hier: <http://tinlizzie.org/histog
 :::
 
 Ein Histogramm kann dazu genutzt werden, die Form der Verteilung zu
-bestimmen. @fig- zeigt typische Formen. 
+bestimmen. @fig-Distributions zeigt typische Formen. 
 Die Verteilungsform ist eine wichtige Eigenschaft von Daten.
 
 ```{r}
-#| label: fig-
-#| caption: "Verschiedene Verteilungsformen. Bei bimodalen und multimodalen Verteilungen werden nur die ausgeprägten Schwerpunkte gezählt."
+#| label: fig-Distributions
+#| fig-cap: "Verschiedene Verteilungsformen. Bei bimodalen und multimodalen Verteilungen werden nur die ausgeprägten Schwerpunkte gezählt."
+#| echo: false
+#| fig-width: 4.5
+#| fig-asp: 0.7
+#| out-width: 10.5cm
+
+source("./misc/Fleishman.R")
+
+n <- 10000
+
+xn <- rnorm(n = n)
+nor <- data.frame(Verteilung = "Symmetrisch (Normal)", x = xn)
+
+xls <- rfleish(n = n, skew = -0.65)
+xrs <- rfleish(n = n, skew = 0.65)
+st <- c(rep("Linksschief", n), rep("Rechtsschief", n))
+x <- c(xls, xrs)
+schiefe <- data.frame(Verteilung = st, x = x)
+
+xl <- rnorm(0.65*n, mean = -1,sd = 0.5)
+xr <- rnorm(0.35*n, mean = 1, sd = 0.5)
+xmm <- c(xl,xr)
+xmm <- (xmm - mean(xmm))/sd(xmm)
+bimod <- data.frame(Verteilung = "Bimodal", x = xmm)
+
+x1 <- rnorm(0.35*n, mean = -1,sd = 0.5)
+x2 <- rnorm(0.25*n, mean = 3, sd = 1)
+x3 <- rnorm(0.40*n, mean = -5, sd = 0.5)
+xmm <- c(x1,x2,x3)
+xmm <- (xmm - mean(xmm))/sd(xmm)
+multimod <- data.frame(Verteilung = "Multimodal", x = xmm)
+
+xg <- runif(n)
+xg <- (xg - mean(xg))/sd(xg)
+gleich <- data.frame(Verteilung = "Gleichverteilung", x = xg)
+
+dat <- rbind(nor, schiefe,  bimod, multimod, gleich)
+dat <- dat |> mutate(Verteilung = factor(Verteilung, levels = c("Symmetrisch (Normal)", "Linksschief", "Rechtsschief", "Gleichverteilung", "Bimodal", "Multimodal")))
+
+gf_histogram( ~ x | Verteilung, data = dat) |> 
+  gf_theme(axis.text = element_blank(), 
+           axis.text.y = element_blank(), 
+           axis.title.x = element_blank(), 
+           axis.title.y = element_blank(), 
+           axis.ticks = element_blank(),
+           plot.margin = gg0margins)
 ```
 
 Die Verteilung gibt an, wie häufig bzw. wahrscheinlich bestimmte Werte oder Wertebereiche sind.
@@ -568,7 +626,98 @@ Bei metrischen Variablen können folgende typische Verteilungsformen unterschied
 - Bei mehrgipfligen Verteilungen (bimodal, multimodal) gibt es mehr als nur ein ausgeprägtes Zentrum, um das die Werte streuen.
 
 ::: {.callout-note .Aufgabe}
-## Aufgabe 5.19 
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
 Überlegen Sie sich ein Beispiel für gleichverteilte Daten.
 :::
+
+::: {.callout-note .Aufgabe}
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
+Wie wird wohl das Einkommen in Deutschland verteilt
+sein?
+:::
+
+::: {.callout-note .Aufgabe}
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
+Betrachten Sie noch einmal @fig-hist-total-bill. 
+Beschreiben Sie die Verteilung von `total_bill`.
+:::
+
+Ein Histogramm zeigt die Verteilung von metrischen Daten.
+Wenn Sie das als stetige Funktion darstellen (Sie verbinden quasi die Mitten der Oberkanten der Rechtecke), erhalten Sie die Dichtefunktion. 
+@fig-Dens zeigt beide Grafen übereinander.^[Das Histogramm hat als Skalierung auf der $y$-Achse jetzt die Dichte (Häufigkeitsanteil der Klasse geteilt durch Klassenbreite). Die verwendeten Funktionen sind `gf_dhistogram()` und `gf_dens()`.]
+
+```{r}
+#| echo: false
+#| label: fig-Dens
+#| fig-width: 3.5 
+#| fig-asp: 1
+#| out-width: 7cm
+
+
+gf_dhistogram( ~ total_bill, data = tips, bins = 9) |> 
+  gf_dens(color = fgcolFOMGreen, size = 1, alpha = 1) |> 
+  gf_theme(plot.margin = gg0margins)
+```
+
+Häufig verwendet wird die Verteilungsfunktion, die das Integral der Dichtfunktion ist. 
+Die **empirische Verteilungsfunktion**^[Neben der *empirischen* Verteilungsfunktion gibt es auch eine *theoretische* Verteilungsfunktion $F(x)$] $F_n(x)$ gibt an, wie hoch der Anteil unter den $n$ Beobachtungen ist, die kleiner oder gleich $x$ sind. 
+@fig-EmpDist zeigt als Beispiel die empirische Verteilungsfunktion der Rechnungshöhe.
+
+$$
+F_n(x) = \frac{\text{Anzahl Beobachtungen} \leq x}{x}
+$$
+
+Sie sehen, die Verteilungsfunktion gibt auf der $y$-Achse den Anteil der Beobachtungen aus, der kleiner oder gleich dem Wert auf der $x$-Achse ist.
+Für einen konkreten Wert $x$ können Sie den Wert der Verteilungsfunktion mit `pdata()` ermitteln:
+
+```{r}
+pdata( ~ total_bill, q = 10, data = tips)
+```
+
+Der Parameter $q$ ist das Quantil (dazu gleich mehr), also der Wert für $x$ in der Formel.
+
+```{r}
+#| fig-cap: "Empirische Verteilungsfunktion von `total_bill`"
+#| label: fig-EmpDist
+#| echo: FALSE
+#| fig-width: 3.5
+#| fig-asp: 1
+#| out-width: 7cm
+gf_ecdf( ~ total_bill, data = tips, color = fgcolFOMGreen, size = 1) |> 
+  gf_labs(x = TeX("x", italic = TRUE), y = TeX("$F_n(x)$", italic = TRUE)) |> 
+  gf_theme(plot.margin = gg0margins)
+
+```
+
+::: {.callout-note .Aufgabe}
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
+Gerundet hat sich für $F_n(10)$ der Wert $0.07$ ergeben. 
+Welche Aussage stimmt in diesem Zusammenhang?
+
+a) Der Anteil einer Rechnungshöhe von 10 $ liegt bei $0.07$.
+
+b) Der Anteil einer Rechnungshöhe von mindestens 10 $ liegt bei $0.07$.
+
+c) Der Anteil einer Rechnungshöhe von höchstens 10 $ liegt bei $0.07$.
+:::
+
+::: {.callout-note .Aufgabe}
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
+Es gibt keine Verteilungsfunktion für nominalskalierte Daten. 
+Warum nicht?
+:::
+
+
+### Lagemaße
+
+Zunächst beschäftigen wir uns mit den Lagemaßen einer Verteilung. 
+Lagemaße beschreiben die Lage einer Verteilung, also wo ist der Schwerpunkt,
+das Minimum, das Maximum usw. 
+Eine Verteilung einer metrischen Variablen können Sie gut mit einem Histogramm darstellen und damit können Sie auch ungefähr abschätzen, wo der Schwerpunkt, das Maximum usw. sind. 
+Lagemaße drücken das alsWert aus und sind somit gewissermaßen Kennzahlen.
+

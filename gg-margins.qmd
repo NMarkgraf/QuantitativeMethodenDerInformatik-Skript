@@ -1,0 +1,22 @@
+```{r}
+#| include: false
+#| 
+# Null-Margin für Plots t, r, b, l
+gg0margins <- grid::unit(c(0, 0, 0, 0), "mm")
+# etwas Platz links
+gg0lmargins <- grid::unit(c(0, 0, 0, 0.5), "mm")
+# etwas Platz rechts
+gg0rmargins <- grid::unit(c(0, 0.5, 0, 0), "mm")
+# etwas Platz links und rechts
+gg0lrmargins <- grid::unit(c(0, 0.5, 0, 0.5), "mm")
+# etwas Platz links und unten
+gg0lbmargins <- grid::unit(c(0, 0.5, 0.5, 0), "mm")
+# etwas extra Platz oben
+gg0tmargins <- grid::unit(c(0.5, 0, 0, 0), "mm")
+# etwas extra Platz oben und links
+gg0tlmargins <- grid::unit(c(0.5, 0, 0, 0.5), "mm")
+# etwas extra Platz unten
+gg0bmargins <- grid::unit(c(0, 0, 0.5, 0), "mm")
+# etwas extra Platz oben und unten
+gg0tbmargins <- grid::unit(c(0.5, 0, 0.5, 0), "mm")
+```
