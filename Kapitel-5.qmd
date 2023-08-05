@@ -420,7 +420,7 @@ Bestimmen Sie Wahrscheinlichkeit für Freitag bedingt Essenszeit Dinner über de
 
 Auf dem Satz von Bayes basiert eine eigene Richtung in der Statistik, die *Bayes-Statistik*. Wir bleiben hier aber in der sogenannten *frequentistischen Statistik*.
 
-### Grafische Darstellung des Zusammenhangs
+### Grafische Darstellung des Zusammenhangs {.unnumbered .unlisted}
 
 Den Zusammenhang zwischen zwei kategorialen Variablen können Sie gut mit dem Mosaikplot darstellen: `mosaicplot(x ~ y, data = ...)`.
 
@@ -545,7 +545,7 @@ Im diesem Abschnitt geht es um die Analyse metrischer oder numerischer Daten.
 Wissen Sie noch, wie Sie mit R herausfinden konnten, wie unser Datensatz aufgebaut ist? Probieren Sie es aus. Wie viele metrische Variablen gibt es in der Datentabelle tips?
 :::
 
-### Histogramm und Verteilungsform
+### Histogramm und Verteilungsform {.unnumbered .unlisted}
 
 Als Grafik können auch hier Säulen- und Balkendiagramme verwendet werden. Diese eignen sich insbesondere für metrisch diskrete Daten mit nicht zu vielen Ausprägungen (in der `tips`-Datentabelle z. B. die Anzahl der Personen `size`). Eine weitere wichtige und häufig genutzte Grafik ist das Histogramm :
 
