@@ -22,7 +22,7 @@ quiz <- 0
 
 Nach erfolgreichem Abschluss dieses Kapitels sind Sie in der Lage,
 
--   Daten in RStudio zu importieren, insbesondere über das CSVFormat;
+-   Daten in RStudio zu importieren, insbesondere über das CSV Format;
 
 -   zentrale Statistiken und Grafiken für kategoriale und metrische Variablen zu nutzen und zu interpretieren;
 
@@ -33,7 +33,10 @@ Nach erfolgreichem Abschluss dieses Kapitels sind Sie in der Lage,
 -   den Zusammenhang zwischen Variablen darstellen und beschreiben zu können
 :::
 
-Wir beginnen mit dem Einlesen von Daten. Dazu wird der Beispielsdatensatz `tips.csv` [^kapitel-5-1] eingelesen. Dieser liegt im sogenannten CSV-Format (*comma separated values*) vor. Dieses Format ist sehr nützlich, um Daten auszutauschen, da es ein reines Textformat ist und auf allen Rechnern und Betriebssystemen gelesen werden kann. Wenn Sie `tips.csv` mit einem Texteditor öffnen, sieht die Datei so aus:
+Wir beginnen mit dem Einlesen von Daten. Dazu wird der Beispielsdatensatz `tips.csv` [^kapitel-5-1] eingelesen.
+Dieser liegt im sogenannten CSV-Format (*comma separated values*) vor. 
+Dieses Format ist sehr nützlich, um Daten auszutauschen, da es ein reines Textformat ist und auf allen Rechnern und Betriebssystemen gelesen werden kann. 
+Wenn Sie `tips.csv` mit einem Texteditor öffnen, sieht die Datei so aus:
 
 [^kapitel-5-1]: Bryant u. a. (1995), Practical Data Analysis -- Case Studies in Business Statistics
 
@@ -112,7 +115,8 @@ Was unterscheidet die Variablentypen `int` und `num`?
 
 : Variabltypen in R {#tbl-variablentypen}
 
-Für diesen Datensatz sammelte ein Keller über mehrere Monate sein Trinkgeld. @tbl-tipsdata zeigt die darin abgespeichertern Variablen.
+Für diesen Datensatz sammelte ein Keller über mehrere Monate sein Trinkgeld. 
+@tbl-tipsdata zeigt die darin abgespeichertern Variablen.
 
 | Name         | Bedeutung                         |
 |:-------------|:----------------------------------|
@@ -134,7 +138,10 @@ Welches Skalenniveau haben die Variablen im Datensatz `tips.csv`?
 
 ## Analyse kategorialer Daten
 
-Im ersten Schritt beschäftigen wir mit der Analyse kategorialer Daten. Wir werden verschiedene Grafiken wie Säulendiagramm, Balkendiagramm oder Mosaikplot kennenlernen. Kreis- oder Kuchendiagramme werden wir allerdings nicht anschauen. Die Häufigkeiten der verschiedenen Kategorien können absolut oder relativ (als Anteile oder Prozente) angegeben werden.
+Im ersten Schritt beschäftigen wir mit der Analyse kategorialer Daten. 
+Wir werden verschiedene Grafiken wie Säulendiagramm, Balkendiagramm oder Mosaikplot kennenlernen. 
+Kreis- oder Kuchendiagramme werden wir allerdings nicht anschauen. 
+Die Häufigkeiten der verschiedenen Kategorien können absolut oder relativ (als Anteile oder Prozente) angegeben werden.
 
 ::: {.callout-note .Aufgabe}
 ## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
@@ -161,7 +168,8 @@ Wenn wir also die Häufigkeiten der Wochentage grafisch darstellen wollen, sieht
 gf_bar( ~ day, data = tips)
 ```
 
-Sie erkennen in @fig-bar-tips, dass am Samstag (`Sat`) die meisten Belege erfasst wurden, gefolgt von Sonntag (`Sun`) und Donnerstag (`Thur`). Freitag (`Fri`) liegt abgeschlagen auf dem letzten Platz.
+Sie erkennen in @fig-bar-tips, dass am Samstag (`Sat`) die meisten Belege erfasst wurden, gefolgt von Sonntag (`Sun`) und Donnerstag (`Thur`). 
+Freitag (`Fri`) liegt abgeschlagen auf dem letzten Platz.
 
 ::: {.callout-tip .Hinweis}
 ## Hinweis
@@ -175,12 +183,15 @@ Vielleicht haben Sie es schon gemacht. Bevor `gf_bar()` ausgeführt werden kann,
 Warum ist die Reihenfolge der Wochentage so *komisch*?
 :::
 
-Kategoriale Variable werden in R entweder als Zeichenkette (Variablentyp `chr`) oder (früher) als *sogenannter* Faktor abgespeichert (Variablentyp `factor`). Bei Zeichenketten werden die Kategorien alphanumerisch aufsteigend sortiert. Wenn die Reihenfolge geändert werden soll, muss die Variable als Faktor gespeichert werden. Wenn Sie die Häufigkeiten (englisch: *count*, Symbol $h_i$) aller Kategorien $i$ erhalten wollen, können Sie den Befehl `tally()` verwenden.
+Kategoriale Variable werden in R entweder als Zeichenkette (Variablentyp `chr`) oder (früher) als *sogenannter* Faktor abgespeichert (Variablentyp `factor`). 
+Bei Zeichenketten werden die Kategorien alphanumerisch aufsteigend sortiert. Wenn die Reihenfolge geändert werden soll, muss die Variable als Faktor gespeichert werden. 
+Wenn Sie die Häufigkeiten (englisch: *count*, Symbol $h_i$) aller Kategorien $i$ erhalten wollen, können Sie den Befehl `tally()` verwenden.
 
 ::: {.callout-note .Aufgabe}
 ## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
-`tally` kommt aus dem Englischen. Was ist eine passende Übersetzung dafür?
+`tally` kommt aus dem Englischen. 
+Was ist eine passende Übersetzung dafür?
 :::
 
 ```{r}
@@ -208,10 +219,12 @@ Bei den meinsten Optionswerten, die als Zeichenkette in Anführungzeichen eingeg
 ::: {.callout-tip .Tipp}
 ## Tipp
 
-An welcher Stelle die Option ergänzt wird, ist egal. Sie können also auch `tally( ~ day, format = "prop", data = tips)` schreiben. Die einzelnen Abschnitte eines Funktionsaufrufs werden mit Kommata getrennt.
+An welcher Stelle die Option ergänzt wird, ist egal. Sie können also auch `tally( ~ day, format = "prop", data = tips)` schreiben. 
+Die einzelnen Abschnitte eines Funktionsaufrufs werden mit Kommata getrennt.
 :::
 
-Manchmal ist es notwendig, nur einen Wert auszugeben. Dazu können Sie die Funktion `prop()` verwenden.
+Manchmal ist es notwendig, nur einen Wert auszugeben. 
+Dazu können Sie die Funktion `prop()` verwenden.
 
 ```{r}
 prop( ~ day, data = tips)
@@ -232,13 +245,16 @@ Sie können das mit `?mosaic::prop` herausfinden.
 ::: {.callout-tip .Tipp}
 ## Tipp
 
-Das Fragezeichen zeigt die Hilfe zu einem Befehl an. Da diese Sequenz nicht in das R-Skript aufgenommen werden soll, geben Sie diese am besten in der Konsole (das eigentlich R-Fenster) ein. Normalerweise finden Sie die Konsole in RStudio im Fenster unten links.
+Das Fragezeichen zeigt die Hilfe zu einem Befehl an. 
+Da diese Sequenz nicht in das R-Skript aufgenommen werden soll, geben Sie diese am besten in der Konsole (das eigentlich R-Fenster) ein. 
+Normalerweise finden Sie die Konsole in RStudio im Fenster unten links.
 :::
 
 ::: {.callout-tip .Tipp}
 ## Tipp
 
-`mosaic::` muss nicht unbedingt davor angegeben werden, aber so wird sichergestellt, dass nach der Hilfe für die Funktion aus dem Paket `mosaic` gesucht wird. Wenn Sie nicht wissen, ob die Funktion aus einem nachträglich geladenen Paket stammt, lassen Sie diesen Teil einfach weg.
+`mosaic::` muss nicht unbedingt davor angegeben werden, aber so wird sichergestellt, dass nach der Hilfe für die Funktion aus dem Paket `mosaic` gesucht wird. 
+Wenn Sie nicht wissen, ob die Funktion aus einem nachträglich geladenen Paket stammt, lassen Sie diesen Teil einfach weg.
 :::
 
 ::: {.callout-note .Aufgabe}
@@ -249,7 +265,10 @@ Stellen Sie Verteilung der Tageszeit (Variable `time`) als Säulendiagramm und a
 
 ### Zusammenhang zwischen kategorialen Variablen {.unnumbered .unlisted}
 
-Die Tageszeit variiert. Mit welchen Variablen hängt das zusammen? Sie können die Analysen, die wir bisher gemacht haben, auch nach einer weiteren Variable gruppieren (bedingen). Dazu wird die Formel mit einem senkrechten Strich \| ergänzt.
+Die Tageszeit variiert. 
+Mit welchen Variablen hängt das zusammen? 
+Sie können die Analysen, die wir bisher gemacht haben, auch nach einer weiteren Variable gruppieren (bedingen).
+Dazu wird die Formel mit einem senkrechten Strich \| ergänzt.
 
 ::: {.callout-tip .Tipp}
 ## Tipp
@@ -301,7 +320,8 @@ $AV \sim UV \mid GV$ -- abhängige Variable in Abhängigkeit von der unabhängig
 ::: {.callout-note .Aufgabe}
 ## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
-Führen Sie eine Kreuztabellierung der Anteile der Raucher je Wochentag durch. Ist es egal, welche Variable die abhängige bzw. die unabhängige ist? Vergleichen Sie absolute und relative Häufigkeiten -- *richtigherum* und *falschherum*.
+Führen Sie eine Kreuztabellierung der Anteile der Raucher je Wochentag durch. 
+Ist es egal, welche Variable die abhängige bzw. die unabhängige ist? Vergleichen Sie absolute und relative Häufigkeiten -- *richtigherum* und *falschherum*.
 :::
 
 Bei relativen Häufigkeiten müssen Sie darauf achten, wovon der relative Anteil ausgegeben wird: *Confusion of the inverse*:
