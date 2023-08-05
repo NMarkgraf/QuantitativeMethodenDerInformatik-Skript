@@ -329,18 +329,18 @@ Wenn Sie Spaß daran haben, hören oder schauen Sie sich diese an.
 Es lockert den Ablauf auf und bewirkt eine zusätzliche Verfestigung des Lernstoffes.
 :::
 
-::: column-margin
+<!--  ::: column-margin -->
 
-| Name  | Geschlecht | Größe|
-|:-----:|:----------:|:-----:|
-| Ahmet | m          | 180   |
-| Gabi  | w          | 170   |
-| Max   | m          | 186   |
-| Susi  | w          | 172   |
+| Name   | Geschlecht | Größe |
+|:------:|:----------:|:-----:|
+| Ahmet  | m          | 180   |
+| Gabi   | w          | 170   |
+| Max    | m          | 186   |
+| Susi   | w          | 172   |
 
 : Exemplarischer Datensatz {#tbl-Data .striped}
 
-:::
+<!-- ::: -->
 
 @tbl-Data zeigt einen exemplarischen Datensatz. 
 Ein Datensatz ist meist wie ein Tabellenkalkulationsblatt aufgebaut. 
@@ -367,6 +367,7 @@ Ziel in der quantitativen Datenanalyse ist häufig, beobachtete Daten zu modelli
 $$
 \text{Daten} = \text{Modell} + \text{Rest}
 $$
+
 ::: {.callout-note .Aufgabe}
 ## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
