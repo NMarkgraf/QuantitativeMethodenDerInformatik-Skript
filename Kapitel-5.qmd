@@ -317,7 +317,7 @@ Bei relativen Häufigkeiten müssen Sie darauf achten, wovon der relative Anteil
 Die relative Häufigkeit der Uhrzeit (Ereignis $A$) gegeben den Wochentag (Ereignis $B$) können Sie auch als bedingte Wahrscheinlichkeit interpretieren, z. B. `Pr(time = Lunch|day = Thur)`:
 
 $$
-Pr(𝐴\mid𝐵)
+Pr(A \mid B)
 $$
 
 Das wäre in unserer Kreuztabelle `tally( ~ time | day, ...)` der zweite Wert aus der vierten Spalte: 0.983871.
@@ -705,7 +705,7 @@ Ein Lagemaß, das Ihnen bestimmt schon begnetet ist, ist der Durchschnitt oder i
 
 Im Folgenden sehen Sie eine Beispielrechnung mit den Daten:
 
-$$20, 18, 24, 40, 24, 22, 21, 23, 20, 28 (𝑛 = 10).$$ - Aufsteigend sortiert: 18, 20, 20, 21, 22, 23, 24, 24, 28, 40
+$$20, 18, 24, 40, 24, 22, 21, 23, 20, 28 (n = 10).$$ - Aufsteigend sortiert: 18, 20, 20, 21, 22, 23, 24, 24, 28, 40
 
 -   Minimum $x_{min} = 18$, Maximum $x_{max}= 40$, Modus $x_{mod}= \{20, 24\}$
 
@@ -717,14 +717,14 @@ $$20, 18, 24, 40, 24, 22, 21, 23, 20, 28 (𝑛 = 10).$$ - Aufsteigend sortiert: 
 
 [^kapitel-5-5]: Bei gerader Anzahl $n$ wird der Mittelwert der beiden mittleren Werte genommen.
 
-[^kapitel-5-6]: $x_{(0.25)} = x_{⌈0.25·𝑛⌉} = x_3 = 20.$ $⌈...⌉$ rundet den Wert auf. Es sind aber auch andere Varianten für die Berechnung möglich und üblich. R gibt z. B. $20.25$ aus.
+[^kapitel-5-6]: $x_{(0.25)} = x_{\lceil 0.25·n\rceil} = x_3 = 20.$ $\lceil\dots\rceil$ rundet den Wert auf. Es sind aber auch andere Varianten für die Berechnung möglich und üblich. R gibt z. B. $20.25$ aus.
 
 ::: {.callout-note .Aufgabe}
 ## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
 Eine Dozentin unterrichtet vier kleine Kurse mit je 15 Studierenden und einen großen Kurs mit 90 Studierenden.
 
-a)  Wie groß ist der arithmetische Mittelwert der Kursgröße für die Dozenti -
+a)  Wie groß ist der arithmetische Mittelwert der Kursgröße f[r die Dozenti -
 b)  Mit wie vielen Kommiliton:innen sitzt jede(r) Studierende(r) (einschließlich sich selbst) durchschnittlich in einem Kurs? 
 :::
 
@@ -732,5 +732,5 @@ b)  Mit wie vielen Kommiliton:innen sitzt jede(r) Studierende(r) (einschließlic
 ## Tipp
 
 Die Ergebnisse werden sich unterscheiden! Schauen Sie nicht gleich in der Lösung nach. 
-Selbst die Lösung zu suchen ist Ihr Schlüssel zum Lernerfolg!
+Selbst die Lösung zu suchen ist Ihr Schl[ssel zum Lernerfolg!
 :::

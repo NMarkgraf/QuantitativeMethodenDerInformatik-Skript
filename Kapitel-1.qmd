@@ -4,39 +4,25 @@ Willkommen bei der quantitiven Datenanalyse, die wir hier mit der Statistiksprac
 
 @fig-WordCloud gibt Ihnen schon mal einen kleinen Einblick in die Themen, mit denen wir uns in den nächsten Wochen beschäftigen werden.
 
-![Themen der Veranstaltung in einer Wort-Wolke](own-images/WordCloud.png){#fig-WordCloud width=9cm}
+![Themen der Veranstaltung in einer Wort-Wolke](own-images/WordCloud.png){#fig-WordCloud width="9cm"}
 
 Neben dem vorliegenden Dokument, das Ihnen die Tonspur (und natürlich auch visuelle Materialien) liefert, gibt es noch eine Reihe weiterer Lernmaterialien. Hier finden Sie eine Übersicht und Hinweise dazu, wann und wie die Materialien anzuwenden sind.
 
-
 ## Dieses Dokument
 
-Begleitend zu den einzelnen Abschnitten der Veranstaltung finden Sie hier die passenden Kapitel. 
-Diese können Sie von vorne nach hinten durcharbeiten. 
-Es finden sich Erklärungen und Ergänzungen, erweitert um kurze Verständnisfragen oder Arbeitsaufträge. 
-Am Ende eines Abschnitts gibt es einen Lernpfad, in dem auf weiteres Zusatzmaterial verwiesen wird, mit dem Sie die Inhalte zusätzlich vertiefen können. 
-Dazu gibt es Lehrvideos (Screencasts), ergänzende Kurz- oder Langtutorials, Lernfortschrittskontrollen sowie interaktive Übungs-Apps.
-
+Begleitend zu den einzelnen Abschnitten der Veranstaltung finden Sie hier die passenden Kapitel. Diese können Sie von vorne nach hinten durcharbeiten. Es finden sich Erklärungen und Ergänzungen, erweitert um kurze Verständnisfragen oder Arbeitsaufträge. Am Ende eines Abschnitts gibt es einen Lernpfad, in dem auf weiteres Zusatzmaterial verwiesen wird, mit dem Sie die Inhalte zusätzlich vertiefen können. Dazu gibt es Lehrvideos (Screencasts), ergänzende Kurz- oder Langtutorials, Lernfortschrittskontrollen sowie interaktive Übungs-Apps.
 
 ## Screencasts
 
 Sie lernen lieber mit Videos? Zu verschiedenen Themen finden Sie Lehrvideos, in denen Sie die Inhalte auf einem anderen Weg vermittelt bekommen.
 
-
 ## Kurz- oder Langtutorials
 
-Zu einigen Themenbereichen gibt es Learnr-Tutorials. 
-Kurze Einheiten zeigen die Kernpunkte des Themas auf und stellen anhand von Multiple-Choice-Fragen oder kurzen Coding-Aufgaben den Zusammenhang her.
-In längeren und ausführlicheren Tutorials können Sie die Inhalte nochmals durchgehen und sich erklären lassen.
-
+Zu einigen Themenbereichen gibt es Learnr-Tutorials. Kurze Einheiten zeigen die Kernpunkte des Themas auf und stellen anhand von Multiple-Choice-Fragen oder kurzen Coding-Aufgaben den Zusammenhang her. In längeren und ausführlicheren Tutorials können Sie die Inhalte nochmals durchgehen und sich erklären lassen.
 
 ## Lernfortschrittskontrolle
 
-Das sind kleine Learnr-Einheiten mit Wiederholungsfragen zu den Inhalten der Veranstaltung bzw. dieses Dokuments. 
-Hiermit können Sie überprüfen, inwieweit Sie sich die Inhalte der Veranstaltung gemerkt haben (oder im Eigenstudium vorgearbeitet oder nachgeholt haben). 
-Sie können damit identifizieren, wo eventuell noch Verständnisfragen offen sind. 
-So können Sie an den entsprechenden Stellen in diesem Dokument noch einmal nachschauen, Zusatzinformationen aus der angegebenen Literatur hinzuziehen oder den Screencast anschauen.
-
+Das sind kleine Learnr-Einheiten mit Wiederholungsfragen zu den Inhalten der Veranstaltung bzw. dieses Dokuments. Hiermit können Sie überprüfen, inwieweit Sie sich die Inhalte der Veranstaltung gemerkt haben (oder im Eigenstudium vorgearbeitet oder nachgeholt haben). Sie können damit identifizieren, wo eventuell noch Verständnisfragen offen sind. So können Sie an den entsprechenden Stellen in diesem Dokument noch einmal nachschauen, Zusatzinformationen aus der angegebenen Literatur hinzuziehen oder den Screencast anschauen.
 
 ## Übungs-Apps
 
@@ -48,11 +34,7 @@ In einem Code-Fenster können Sie Ihren R-Code eingeben. Manchmal sind Teile des
 
 ![Code-Fenster in den Shiny-Übungs-Apps](own-images/ShinyCode.png){#fig-figShinyCode}
 
-
-Wenn Sie auf Ausführen klicken, schicken Sie den R-Code ab (analog zum Abschicken des R-Codes in RStudio über Run Code -- Details folgen im nächsten Kapitel) und es wird das Ergebnis ausgegeben. 
-Sollten Sie nicht weiterkommen, können Sie sich über den Hinweise- Button Tipps holen, manchmal enthält dieser auch direkt die Lösung, dann heißt der Button auch entsprechend Lösung. 
-Wenn Sie die Übung nochmal neu beginnen möchten, klicken Sie auf Neustart. 
-Aktuell ist es (noch) nicht möglich in den Hinweisen zurückzugehen. Sollten Sie also einen vorigen Tipp nochmals nachschauen wollen, müssten Sie die Übung über den Neustart- Button neu beginnen.
+Wenn Sie auf Ausführen klicken, schicken Sie den R-Code ab (analog zum Abschicken des R-Codes in RStudio über Run Code -- Details folgen im nächsten Kapitel) und es wird das Ergebnis ausgegeben. Sollten Sie nicht weiterkommen, können Sie sich über den Hinweise- Button Tipps holen, manchmal enthält dieser auch direkt die Lösung, dann heißt der Button auch entsprechend Lösung. Wenn Sie die Übung nochmal neu beginnen möchten, klicken Sie auf Neustart. Aktuell ist es (noch) nicht möglich in den Hinweisen zurückzugehen. Sollten Sie also einen vorigen Tipp nochmals nachschauen wollen, müssten Sie die Übung über den Neustart- Button neu beginnen.
 
 Meist finden Sie unter den Übungen noch einen Button Interpretation oder Lösung. Wenn Sie diesen anklicken, bekommen Sie weitere Informationen oder die Lösung mit Erklärungen angezeigt.
 

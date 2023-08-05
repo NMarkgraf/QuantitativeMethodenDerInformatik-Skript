@@ -192,7 +192,8 @@ Empirische Forschungsprojekte können mit quantitativen und qualitativen Methode
 
 -   Der Untersuchungsgegenstand soll möglichst in seinem natürlichen Umfeld detailliert, ganzheitlich und umfassend erfasst werden.
 
-Wir beschränken uns in diesen Unterlagen auf die quantitativen Methoden. Dazu werden Sie im folgenden Kapitel die Grundlagen kennenlernen.
+Wir beschränken uns in diesen Unterlagen auf die quantitativen Methoden. 
+Dazu werden Sie im folgenden Kapitel die Grundlagen kennenlernen.
 
 :::  {.callout-caution .Lernpfad}
 ## Lernpfad **Wissenschaftliche Grundlagen**
@@ -201,7 +202,7 @@ Wir beschränken uns in diesen Unterlagen auf die quantitativen Methoden. Dazu w
 
 -   Klären Sie erforderlichenfalls Ihnen noch unbekannte Begriffe und Sachverhalte eigenständig.
 
--   Schauen Sie sich noch folgenden Screencast zu den wissenschaftlichen Schlusstechniken (<https://vimeo.com/459321513>) und den wissenschaftlichen Gütekriterien (<https://vimeo.com/459322250>) an. Das Passwort ist jeweils *FOMtest*.
+-   Schauen Sie sich noch folgenden Screencast zu den wissenschaftlichen Schlusstechniken (<https://vimeo.com/459321513>) und den wissenschaftlichen Gütekriterien (<https://vimeo.com/459322250>) an. Das Passwort ist jeweils *FOMtest*.
 
 -   Zur Überprüfung Ihres Lernstands bearbeiten Sie bitte die ersten drei Wiederholungsfragen unter folgenden Link: <https://fomshinyapps.shinyapps.io/Lernfortschrittskontrolle_01/>
 :::
@@ -211,7 +212,7 @@ Wir beschränken uns in diesen Unterlagen auf die quantitativen Methoden. Dazu w
 
 Halten wir fest, was Sie in diesem Kapitel gelernt haben:
 
--   Sie können die Gütekriterien der Forschung benennen.
+-   Sie können die Gütekriterien der Forschung benennen.
 
 -   Sie haben gelernt, dass die Literaturrecherche in wissenschaftlichen Fragestellungen sehr wichtig ist.
 
@@ -219,6 +220,7 @@ Halten wir fest, was Sie in diesem Kapitel gelernt haben:
 
 -   Sie können zwischen Induktion, Deduktion und Abduktion unterscheiden.
 :::
+
 
 ## Lösungshinweise
 
