@@ -331,14 +331,14 @@ Es lockert den Ablauf auf und bewirkt eine zusätzliche Verfestigung des Lernsto
 
 ::: column-margin
 
-| Name  | Geschlecht | Größe   |
-|:-----:|:----------:|:-------:|
-| Ahmet | m          | $180$   |
-| Gabi  | w          | $170$   |
-| Max   | m          | $186$   |
-| Susi  | w          | $172$   |
+| Name  | Geschlecht | Größe|
+|:-----:|:----------:|:-----:|
+| Ahmet | m          | 180   |
+| Gabi  | w          | 170   |
+| Max   | m          | 186   |
+| Susi  | w          | 172   |
 
-: Exemplarischer Datensatz {#tbl-Data}
+: Exemplarischer Datensatz {#tbl-Data .striped}
 
 :::
 
@@ -352,7 +352,8 @@ Häufig ist die erste Zeile in einem Datensatz die Kopfzeile, gibt also die Name
 ::: {.callout-note .Aufgabe}
 ## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)` 
 
-Lesen Sie Kapitel 1 aus dem Buch *Introduction to Modern Statistics* \[6\]. Sie können es hier herunterladen: <https://openintro-ims.netlify.app/index.html>
+Lesen Sie Kapitel 1 aus dem Buch *Introduction to Modern Statistics* [@mine2021]. 
+Sie können es hier herunterladen: <https://openintro-ims.netlify.app/index.html>
 :::
 
 Puh, das ist ja auf Englisch! Ja, Sie haben Recht, aber es liest sich gut (viele englischsprachige Bücher lassen sich eigentlich besser lesen als vergleichbare deutschsprachige) und passt inhaltlich sehr gut zu unserem Thema.
@@ -363,10 +364,9 @@ Messwerte einer Variablen können streuen (das hatten wir schon bei der Messung 
 
 Ziel in der quantitativen Datenanalyse ist häufig, beobachtete Daten zu modellieren, d. h., ein Modell zu finden, was einen Teil der systematischen Variation erklärt.
 
-::: center
-Daten = Modell + Rest
-:::
-
+$$
+\text{Daten} = \text{Modell} + \text{Rest}
+$$
 ::: {.callout-note .Aufgabe}
 ## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
@@ -387,17 +387,17 @@ Die Entscheidung darüber, was eine unabhängige Variable und was eine Kovariabl
 
 Die Modellformulierung in der Statistik lautet $y \sim x$ . Im Unterschied zur mathematischen Funktion $y = f(x)$ kann es in der statistischen Formulierung für ein $x$ auch mehrere $y$ -Werte geben.
 
-Dass Sie bei der Auswahl der Kovariablen aufpassen müssen, zeigt @fig-UCBEins , in der es um Zulassungen an der University of California Berkeley im Zusammenhang mit dem Geschlecht geht (Bickel, Hammel und O'Connell @bickel1975).
+Dass Sie bei der Auswahl der Kovariablen aufpassen müssen, zeigt @fig-UCB1 , in der es um Zulassungen an der University of California Berkeley im Zusammenhang mit dem Geschlecht geht (Bickel, Hammel und O'Connell @bickel1975).
 
 
-```{r fig-UCBEins}
+```{r fig-UCB1}
 #| echo: false
-#| label: fig-UCBEins
+#| label: fig-UCB1
 #| fig-cap: "Zulassungen an der UC Berkeley in Abhängigkeit vom Geschlecht: ohne Kovariable"
 #| fig-width: 5
 #| fig-asp: 1
 #| out-width: 7cm
-# out-extra: trim = 10mm 15mm 10mm 5mm, clip
+
 mosaicplot(apply(UCBAdmissions, c(1, 2), sum) |> t(), 
            main = "Zulassungen an der UC Berkeley",
            col = c(bgcolGray, bgcolFOMGreen), cex.axis = 1)

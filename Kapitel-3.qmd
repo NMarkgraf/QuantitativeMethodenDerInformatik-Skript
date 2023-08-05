@@ -230,9 +230,11 @@ Vergleich von drei Gruppen (Koffeinaufnahme, Kurzschlaf, Placebo) im Erinnern vo
 
 ### Aufgabe XXX
 
-Die Anzahl der Wörter, die nach Einnahme einer Koffeintabelle oder nach einem Nickerchen erinnert werden können, unterscheidet sich. Oder: Nach einem Nickerchen können mehr Wörter erinnert werden als nach Einnahme einer Koffeintablette. Oder:Wenn ein Nickerchen gemacht wurde, können mehrWörter erinnert werden als nach Einnahme einer Koffeintablette.
+Die Anzahl der Wörter, die nach Einnahme einer Koffeintabelle oder nach einem Nickerchen erinnert werden können, unterscheidet sich. 
+Oder: Nach einem Nickerchen können mehr Wörter erinnert werden als nach Einnahme einer Koffeintablette. 
+Oder: Wenn ein Nickerchen gemacht wurde, können mehr Wörter erinnert werden als nach Einnahme einer Koffeintablette.
 
-::: {.callout.tip .Tipp}
+::: {.callout-tip .Tipp}
 **Tipp**
 
 Vielleicht ist Ihnen aufgefallen, dass die erste Hypothese nur einen Unterschied postuliert, während die beiden anderen eine Richtung („mehr") vorgeben. Im ersten Fall ist es eine ungerichtete oder zweiseitige Hypothese, die beiden anderen sind gerichtete bzw. einseitige Hypothesen. Mehr dazu erfahren Sie in Kapitel XXX (*Inferenzstatistik*).

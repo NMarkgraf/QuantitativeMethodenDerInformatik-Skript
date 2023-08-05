@@ -286,7 +286,7 @@ Alternativ können Sie bei `tally()` auch folgenden Aufruf verwenden:
 tally(time ~ day, data = tips)
 ```
 
-Das ist die Variante $Abhängige\ Variable \sim Unabhängige\ Variable$, bzw. $AV \sim UV$ oder $y \sim x$.
+Das ist die Variante $\text{\textit{Abhängige Variable}} \sim \text{\textit{Unabhängige Variable}}$, bzw. $AV \sim UV$ oder $y \sim x$.
 
 ::: {.callout-note .Aufgabe}
 ## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
