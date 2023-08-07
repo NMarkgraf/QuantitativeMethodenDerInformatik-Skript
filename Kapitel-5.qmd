@@ -739,18 +739,156 @@ $$20, 18, 24, 40, 24, 22, 21, 23, 20, 28 (n = 10).$$ - Aufsteigend sortiert: 18,
 
 [^kapitel-5-6]: $x_{(0.25)} = x_{\lceil 0.25·n\rceil} = x_3 = 20.$ $\lceil\dots\rceil$ rundet den Wert auf. Es sind aber auch andere Varianten für die Berechnung möglich und üblich. R gibt z. B. $20.25$ aus.
 
+| Lagemaß | Erläuterung |
+|:--------|:------------|
+| Minimum, Maximum | kleinste bzw. größte Merkmalsausprägung |
+| Modus (Modalwert) | häufigste Merkmalsausprägung |
+| Median (Zentralwert) | Merkmalsausprägung, die bei aufsteigend sortierten Daten in der Mitte liegt |
+| Arithmetischer Mittelwert^[Englisch: mean. Daneben gibt es noch geometrisches und harmonisches Mittel.] | Summe aller Beobachtungswerte $x_i$ geteilt durch die Anzahl der Beobachtungen $n$: $\bar{x} = frac{1}{n} \sum_{i=1}{n} x_i$ |
+| Quantil | $p$-Quantil: Wert, der von $p$ Prozent der Beobachtungen nicht überschritten wird Quartile Q1: 25%-Quantil, Q2: 50%-Quantil, Q3: 75%-Quantil |
+
+: Übersicht über die Lagemaße {#tbl-Lagemasse}
+
+
 ::: {.callout-note .Aufgabe}
 ## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
 
 Eine Dozentin unterrichtet vier kleine Kurse mit je 15 Studierenden und einen großen Kurs mit 90 Studierenden.
 
-a)  Wie groß ist der arithmetische Mittelwert der Kursgröße f[r die Dozenti -
+a)  Wie groß ist der arithmetische Mittelwert der Kursgröße für die Dozenti -
 b)  Mit wie vielen Kommiliton:innen sitzt jede(r) Studierende(r) (einschließlich sich selbst) durchschnittlich in einem Kurs? 
 :::
 
 ::: {.callout-tip .Tipp}
 ## Tipp
 
-Die Ergebnisse werden sich unterscheiden! Schauen Sie nicht gleich in der Lösung nach. 
-Selbst die Lösung zu suchen ist Ihr Schl[ssel zum Lernerfolg!
+Die Ergebnisse werden sich unterscheiden! 
+Schauen Sie nicht gleich in der Lösung nach. 
+Selbst die Lösung zu suchen ist Ihr Schlüssel zum Lernerfolg!
 :::
+
+
+Im Alltag etwas weniger gebräuchlich ist der Median oder Zentralwert.
+Um ihn herzuleiten, brauchen wir wieder die Verteilungsfunktion (in
+@fig-Median sehen Sie das Beispiel aus dem vorherigen Abschnitt).
+
+```{r}
+#| echo: false
+#| fig-width: 3.5
+#| fig-asp: 1
+#| out-width: 7cm
+#| fig-cap: "Empirische Verteilungsfunktion von `total_bill`, eingezeichnet ist der Median, das 50%-Quantil"
+#| label: fig-Median
+xqz <- median( ~ total_bill, data = tips)
+# wegen gf_line mit anderen Daten muss die Variable direkt aufgerufen werden
+gf_ecdf( ~ tips$total_bill, color = fgcolFOMGreen, size = 1) |> 
+  gf_labs(x = TeX("x", italic = TRUE), y = TeX("$F_n(x)$", italic = TRUE)) |> 
+  gf_theme(plot.margin = gg0margins) |> 
+  gf_line( c(0.5, 0.5) ~ c(0, xqz), arrow = arrow(length = unit(0.7, "char")),
+           size = 1, color = fgcolBlue) |> 
+  gf_line( c(0.5, 0) ~ c(xqz, xqz), arrow = arrow(length = unit(0.7, "char")),
+           size = 1, color = fgcolBlue)
+```
+
+Der **Median** ist in der Mitte der aufsteigend sortierten Daten. 
+An der Verteilungsfunktion (@fig-Median) können Sie ihn ablesen: 
+Sie gehen von der 0.5 auf der $y$-Achse und lesen den Wert auf der $x$-Achse ab: ungefähr 18 \$. 
+Daher haben 50% der Rechnungen einen Wert von 18 \$ oder weniger, der Rest ist höher.
+
+::: {.callout-note .Aufgabe}
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
+Berechnen Sie in R den Mittelwert und den Median der Rechnungshöhe. 
+Die Funktionen sind `mean(~ x, data = my.data)` und `median(...)`.
+Sie sehen, der Mittelwert ist größer als der Median. 
+Das ist bei rechtsschiefen Verteilungen häufig so (erinnern Sie sich an das Histogramm
+von `total_bill`?). 
+Bei rechtsschiefen Verteilungen sind einige Werte weit entfernt im Bereich hoher Werte, das zieht den Mittelwert nach rechts.
+Das arithmetische Mittel ist also empfindlich gegenüber Ausreißern.
+Der Median hingegen ist robust.
+
+**Modellierung I**
+In der quantitativen Datenanalyse wollen wir häufig modellieren.
+Das einfachste Modell ist der arithmetische Mittelwert (Modellierung ohne
+unabhängige Variable, hier z. B. `total_bill ~ 1`):
+
+$$
+\begin{aligned}
+  \text{Daten} &= \text{Modell} + \text{Rest}, \\
+  x_i &= \bar x + e_i, \\
+  x_i &= \bar x + (x_i - \bar x).
+\end{aligned}
+$$
+
+Der Rest $e_i$ ist dann für jede Beobachtung die Abweichung^[
+Zur Einschätzung, ob die Abweichung groß oder klein ist, wird die Streuung (siehe Abschnitt **Streumaße**) der Daten herangezogen.] zum Mittelwert.
+
+```{r}
+#| echo: false
+#| include: false
+yq = mean( ~ total_bill, data = tips)
+f1txt <- sprintf("%.2f", sum((tips$total_bill - yq )^2))
+```
+
+Im Allgemeinen suchen wir (mathematisch gesprochen) nach einer Funktion $f(x)$, die eine Beziehung zwischen den Daten $x$ und $y$ bis auf einen Fehlerterm $\epsilon$ darstellt:
+
+$$
+y = f(x) + \epsilon
+$$
+
+Unsere aktuelle Schätzung für $f$ ist der Mittelwert der $y_i$-Wert und lautet daher:
+$$
+\hat f(x) = `r yq`
+$$
+Damit können wir auch für jedes $x$ eine Schätzung für $y$ abgeben: 
+$\hat y = \hat f(x) = `r yq`$.
+Für alle bekannten Datenpunktpaare $(x_i, y_i)$ können wir jeweils auch den Rest als Fehlerterm bestimmen: 
+$e_i = y_i -\hat y_i = y_i - `r yq`$.
+
+Der gesamte Rest kann daher über die Summe der quadrierten Abweichungen der einzelnen Beobachtungen zum Mittelwert dargestellt werden:
+
+$$
+  \sum_{i=1}^n e_i^2 = \sum_{i=1}^n (x_i - \bar x)^2.
+$$
+
+Hier ergibt sich als Quadratesumme: $\sum e_i^2 = `r f1txt`$.
+
+::: {.callout-note .Aufgabe}
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
+Warum wird bei der Aufsummierung quadriert?
+:::
+
+Der Median ist das 50%-Quantil einer Verteilung.
+Allgemein ist das **p-Quantil* der Wert, bei dem $p\,\%$ (in der Verteilungsfunktion in @fig-Median der Wert auf der $y$-Achse) der Werte kleiner oder gleich dem p%-Quantil (in \@fig-Median der Wert auf der $x$-Achse) sind.
+Das Minimum kann auch als 0%-Quantil und das Maximum als 100%-Quantil betrachtet werden.
+
+::: {.callout-tip .Hinweis}
+## Hinweis
+
+Wichtige Quantile sind das 25%-Quantil oder **1. Quartil**, das 50%-Quantil oder **2. Quartil** (bzw. *Median*) und das 75%-Quantil oder **3. Quartil**. 
+Der Median teilt eine Reihe von Daten in zwei Teile, die Quartile entsprechend in vier Teile.
+:::
+
+Um Quantile zu bestimmen, können wir in R die Funktion `qdata()` verwenden.
+Als Beispiel sei hier das 10%-Quantil der Rechnungshöhe gezeigt:
+
+```{r}
+#| echo: true
+#| eval: true
+qdata( ~ total_bill, p = 0.1, data = tips)
+```
+
+10% der Werte der Rechnungshöhe sind kleiner oder gleich `r qdata( ~ total_bill, p = 0.1, data = tips)` \$.
+Umgekehrt heißt das, $1-10=90$ % sind größer.
+
+::: {.callout-note .Aufgabe}
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
+Bestimmen Sie die Quartile der Rechnungshöhe.
+Mehrere Werte für die Angabe bei `p =` können Sie mit `c(#1, #2, ...)`^[`c()` steht für englisch *concatenate* -- verketten.] kombinieren.
+:::
+
+### Streumaße {.unnumbered .unlisted}
+
+

@@ -226,7 +226,9 @@ Halten wir fest, was Sie in diesem Kapitel gelernt haben:
 
 ### Aufgabe XXX
 
-Vergleich von drei Gruppen (Koffeinaufnahme, Kurzschlaf, Placebo) im Erinnern von Wörtern, motorischen Fähigkeiten, Wahrnehmungen. Kurzschlaf verbesserte die Worterinnerung; Koffein beeinträchtigte das motorische Erinnern;Kurzschlaf und Koffein verbesserten die Erinnerung von Wahrnehmungen. Insgesamt zeigt sich der eingeschränkte Nutzen von Koffein deutlich.
+Vergleich von drei Gruppen (Koffeinaufnahme, Kurzschlaf, Placebo) im Erinnern von Wörtern, motorischen Fähigkeiten, Wahrnehmungen. 
+Kurzschlaf verbesserte die Worterinnerung; Koffein beeinträchtigte das motorische Erinnern;Kurzschlaf und Koffein verbesserten die Erinnerung von Wahrnehmungen. 
+Insgesamt zeigt sich der eingeschränkte Nutzen von Koffein deutlich.
 
 ### Aufgabe XXX
 
@@ -237,12 +239,15 @@ Oder: Wenn ein Nickerchen gemacht wurde, können mehr Wörter erinnert werden al
 ::: {.callout-tip .Tipp}
 **Tipp**
 
-Vielleicht ist Ihnen aufgefallen, dass die erste Hypothese nur einen Unterschied postuliert, während die beiden anderen eine Richtung („mehr") vorgeben. Im ersten Fall ist es eine ungerichtete oder zweiseitige Hypothese, die beiden anderen sind gerichtete bzw. einseitige Hypothesen. Mehr dazu erfahren Sie in Kapitel XXX (*Inferenzstatistik*).
+Vielleicht ist Ihnen aufgefallen, dass die erste Hypothese nur einen Unterschied postuliert, während die beiden anderen eine Richtung („mehr") vorgeben. 
+Im ersten Fall ist es eine ungerichtete oder zweiseitige Hypothese, die beiden anderen sind gerichtete bzw. einseitige Hypothesen. 
+Mehr dazu erfahren Sie in Kapitel XXX (*Inferenzstatistik*).
 :::
 
 ### Aufgabe XXX
 
-Aus Ihren Studium kennen Sie vielleicht die Prinzipal-Agenten-Theorie. Oder aus dem Allgemeinen die Relativitätstheorie. Und und und ...
+Aus Ihren Studium kennen Sie vielleicht die Prinzipal-Agenten-Theorie. 
+Oder aus dem Allgemeinen die Relativitätstheorie. Und und und ...
 
 ### Aufgabe XXX
 
@@ -250,4 +255,5 @@ Wiederholte Beboachtung desselben Phänomens und Schluss auf das Allgemeine: Ind
 
 ### Aufgabe XXX
 
-Sir Karl Raimund Popper, 1902--1994, war ein österreichisch-britischer Philosoph. Er hat im Rahmen seiner wissenschaftstheoretischen Arbeiten das empirische Falsifikationsprinzip aufgestellt.
+Sir Karl Raimund Popper, 1902--1994, war ein österreichisch-britischer Philosoph. 
+Er hat im Rahmen seiner wissenschaftstheoretischen Arbeiten das empirische Falsifikationsprinzip aufgestellt.

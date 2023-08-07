@@ -587,6 +587,7 @@ Durch die Zufallsstichprobe wird der Weg von Gewissenhaftigkeit (gewissenhaftere
 
 ::: {.callout-tip .Hinweis}
 ## Hinweis
+
 Die Abbildung zeigt einen sogenannten *Directed Acyclic Graph*, kurz DAG. 
 Damit können kausale Zusammenhänge dargestellt werden. 
 Mehr dazu im Kapitel 9 (Einführung in die kausale Modellierung).
