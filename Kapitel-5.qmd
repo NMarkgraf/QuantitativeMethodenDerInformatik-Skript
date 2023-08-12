@@ -909,7 +909,7 @@ Daher müssen wir das Vorzeichen loswerden. Eine Möglichkeit ist es, den Betrag
 
 Die Betragsfunktion ist an der Stelle 0 nicht differenzierbar.
 
-Eine andere Möglichkeit ist es, die Abweichungen zu quadrieren (das hatten Sie sich vielleicht schon bei Lösung der @exQuadrierung überlegt). Das ergibt nach Aufsummierung und Teilung durch die Anzahl $n$ (oder in der Statistik meist $n - 1$ ^\[$s^2$ ist die Varianz der Stichprobe als Schätzer für die Varianz der Population. Die Varianz mit Teiler $\frac{1}{n}$ hat $\sigma^2$ als Symbol. Der Unterschied zwischen beiden ist bei großem Stichprobenumfang $n$ klein.]) die **Varianz** $s^2$:
+Eine andere Möglichkeit ist es, die Abweichungen zu quadrieren (das hatten Sie sich vielleicht schon bei Lösung der @exQuadrierung überlegt). Das ergibt nach Aufsummierung und Teilung durch die Anzahl $n$ (oder in der Statistik meist $n - 1$ ^[$s^2$ ist die Varianz der Stichprobe als Schätzer für die Varianz der Population. Die Varianz mit Teiler $\frac{1}{n}$ hat $\sigma^2$ als Symbol. Der Unterschied zwischen beiden ist bei großem Stichprobenumfang $n$ klein.]) die **Varianz** $s^2$:
 
 $$
 s^2 = \frac{1}{n-1}\sum_{i=1}^n(x_i - \bar x)^2.
@@ -1009,7 +1009,7 @@ Einen ganzen Datensatz können Sie dies mit `inspect(my.data)` *inspizieren*. Es
   inspect(tips)
 ```
 
-Sie erkennen die Unterscheidung in kategoriale (`categorical`) und metrische (`quantitative`) Variablen. Es wird der Variablentyp (`class`) angegeben (siehe @tlb-RTypes ) Bei kategorialen Variablen die Anzahl der unterschiedlichen Kategorien (`levels`) sowie Anteile der häufigsten Kategorien ausgegeben. Bei den metrischen Variablen wird zusätzlich die Information von`favstats()` angezeigt.
+Sie erkennen die Unterscheidung in kategoriale (`categorical`) und metrische (`quantitative`) Variablen. Es wird der Variablentyp (`class`) angegeben (siehe @tbl-RTypes ) Bei kategorialen Variablen die Anzahl der unterschiedlichen Kategorien (`levels`) sowie Anteile der häufigsten Kategorien ausgegeben. Bei den metrischen Variablen wird zusätzlich die Information von`favstats()` angezeigt.
 
 ::: {.callout-tip .Tipp}
 ## Tipp
@@ -1131,7 +1131,7 @@ grid.arrange(p1, p2, nrow = 1)
 
 Bei einer Modellierung nach der Gruppengröße (@fig-Error} rechts) zeigt sich im Vergleich zu einer Modellierung ohne unabhängige Variable (Reffig{chapEDA:figError links) eine deutliche Reduzierung des Fehlers, also der Abweichungen vom jeweiligen Gruppenmittelwert
 
-Eine weitere wichtige Grafik insbesondere für metrischen Daten ist der **Boxplot} oder, wie er vollständig heißt, \\emph{Box-and-Whisker-Plot.**\
+Eine weitere wichtige Grafik insbesondere für metrischen Daten ist der **Boxplot** oder, wie er vollständig heißt, *Box-and-Whisker-Plot.* \
 Sie können ihn mit `gf_boxplot()` erzeugen.
 
 ::: {.callout-tip .Hinweis}
@@ -1154,3 +1154,299 @@ Der zentrale Strich in der Box ist der Median, die Grenzen der Box sind das erst
 
 ### Zusammenhangsmaße {.unnumbered .unlisted}
 
+Als letztes Thema der explorativen Datenanalyse wenden wir uns dem Zusammenhang zwischen zwei metrischen Variablen zu.
+Grafisch kann dies gut durch ein Streudiagramm (englisch *scatterplot*) dargestellt werden (Funktion `gf_point()`). 
+
+
+```{r fig-Streu, echo = FALSE, fig.width = 5, fig.asp = 0.49, out.width = "10cm"}
+#| fig-cap: "Streudiagramm zwischen Trinkgeld und Rechnungshöhe (links) und zwischen Rechnungshöhe und Anzahl der Personen am Tisch (rechts). Die diskrete Variable `size` wurde dabei verwackelt (`jitter()`)."
+#|label: fig-Streu
+
+  p1 <- gf_point(tip ~ total_bill, data = tips, size = 0.8) |> 
+  gf_theme(plot.margin = gg0margins)
+p2 <- gf_point(total_bill ~ jitter(size), data = tips, size = 0.8) |> 
+  gf_theme(plot.margin = grid::unit(c(0, 0, 0, 2), "mm"))
+grid.arrange(p1, p2, nrow = 1)
+```
+
+::: {.column-margin}
+```{r}
+#| fig-cap: "Streudiagramme in @fig-Streu"
+
+gf_point(tip ~ total_bill, data = tips)
+gf_point(total_bill ~ jitter(size), data = tips)
+```
+:::
+  
+Ein (linearer) Zusammenhang ist deutlich zu erkennen. 
+Mit steigender Rechnungshöhe steigt im Mittel auch das Trinkgeld (@fig-Streu links) bzw. mit steigender Personenzahl steigt im Mittel auch die Rechnungshöhe.
+Da Personenzahl (`size`) eine diskrete Variable ist wurden die Daten zur besseren Visualisierung verwackelt (`jitter(size)`).
+
+Als Statistiken werden Kovarianz und Korrelation verwendet. Diese beschreiben die gemeinsame Streuung zweier numerischer Variablen.
+
+
+
+```{r EDA-figCorr, fig = TRUE, echo = FALSE, fig.width = 3.5, fig.asp = 1, out.width = "7cm"}
+#| fig-cap: "Streudiagramm Trinkgeld und Rechnungshöhe (`tip ~ total_bill`). Der 24. Punkt ist hervorgehoben und die Abstände zu den Mittelwerten auf den beiden Achsen sind eingezeichnet."
+#| label: fig-Corr
+xq <-  mean(~ total_bill, data = tips)
+yq <-  mean(~ tip, data = tips)
+x24 <- tips$total_bill[24]
+y24 <- tips$tip[24]
+gf_point(tip ~ total_bill, data = tips) |> 
+  gf_vline(xintercept = xq, color = fgcolFOMGreen, linetype = "dashed") |>
+  gf_hline(yintercept = yq, color = fgcolFOMGreen, linetype = "dashed") |>
+  gf_segment(yq + y24 ~ x24 + x24, color = fgcolFOMGreen) |>
+  gf_text(y24 ~ (xq + (x24 - xq)/2),
+          #          fontface = "plain",
+          family = "serif",
+          label = TeX("$x_{24} - \\bar{x}$", italic = TRUE),
+          hjust = 0.5, vjust = -0.5,
+          size = rel(3.5)) |> 
+  gf_segment(y24 + y24 ~ xq + x24, color = fgcolFOMGreen) |>
+  gf_text((yq + (y24 - yq)/2) ~ x24,
+          family = "serif",
+          label = TeX("$y_{24} - \\bar{y}$", italic = TRUE),
+          hjust = -0.2, vjust = -1,
+          size = rel(3.5)) |> 
+  gf_point(tip ~ total_bill, data = tips) |> 
+  gf_point(y24 ~ x24, color = fgcolFOMGreen, size = 3) |>
+  gf_theme(plot.margin = gg0margins)
+```
+
+
+Wie funktioniert das mit der Kovarianz? 
+In @fig-Corr  ist als Beispiel der Punkt markiert, der sich aus der 24. Beobachtung ergibt. 
+Die grünen durchgezogenen Linien sind jeweils der Abstand zum Mittelwert (gestrichelte Linien). 
+Daraus wird das Produkt berechnet (also die Fläche des Rechtecks): $(x_{24}-\bar x)(y_{24}-\bar y)$. 
+Das wird wiederholt für alle Punkte und daraus die Summe gebildet. 
+Anschließend wird durch die Anzahl der Punkte $n-1$ (bzw. $n$) geteilt und so ergibt sich die Kovarianz $s_{xy}$.
+
+$$
+s_{xy} = \frac{1}{n-1}\sum_{i=1}^n (x_i-\bar x)(y_i-\bar y)
+$$
+
+::: {.callout-note .Aufgabe}
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
+Welche Punkte liefern einen positiven Beitrag zur Summe, welche einen negativen? 
+  Als Grenzen können Sie jeweils die gestrichelten Linien für die Mittelwerte nehmen.
+:::
+
+Das Problem mit der Kovarianz ist, dass sie eine nicht direkt interpretierbare Einheit hat (hier wäre es $\$^2$) und außerdem von der Einheit abhängt.
+
+::: {.callout-note .Aufgabe}
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
+Die Kovarianz können Sie in R mit `cov()` berechnen. 
+Sie beträgt im Fall von `tip` und `total_bill` ungefähr `r cov(tip ~ total_bill, data = tips) |> round(2)`. 
+Wie groß wäre sie, wenn Sie nicht in \$, sondern in Cent rechneten?
+:::
+
+Um die Probleme mit den Einheiten und der Interpretierbarkeit zu vermeiden, wird durch das Produkt der Standardabweichungen geteilt. 
+Das ergibt den Korrelationskoeffizienten $r_{xy}$ (nach Pearson), der keine Einheit hat und im Bereich von $-1$ bis $+1$ liegt:
+
+$$
+r_{xy} = \frac{s_{xy}}{s_x \cdot s_y}
+$$
+
+::: Hinweis
+## Hinweis
+Korrelation ist ein Maß für den linearen Zusammenhang zweier Variablen.
+:::
+
+Beispielsweise stehen Haushaltseinkommen und -ausgaben in einem positiven Zusammenhang oder Preis und Absatz in einem negativen Zusammenhang. 
+
+Korrelationskoeffizienten $> 0$ zeigen einen positiven linearen Zusammenhang an, d. h., wird der $x$-Wert größer, wird im Mittel auch der $y$-Wert größer. 
+Korrelationskoeffizienten $< 0$ zeigen entsprechend einen negativen linearen Zusammenhang an. 
+Je höher der Betrag ist, desto ausgeprägter ist der lineare Zusammenhang.
+@fig-CorrVis  zeigt Beispiele dafür.
+
+
+```{r EDA-figCorrVis, echo = FALSE, fig.width = 3.5, fig.asp = 1, out.width = "7cm"}
+#| fig-cap: "Visualisierung verschiedener Korrelationskoeffizienten"
+#| label: fig-CorrVis
+
+library(mvtnorm) 
+set.seed(2009)
+correlation <- c(-0.999999, -0.90, -0.75, -0.30, 0.00, 0.30, 0.75, 0.90, 0.999999)
+eps <- 0.00001
+n_sim <- 100
+values <- NULL
+for (i in 1:length(correlation)) {
+  rho <- correlation[i]
+  rs <- rho * sqrt(50)
+  sigma <- matrix(c(5, rs, rs, 10), 2, 2) 
+  sim <- rmvnorm(
+    n = n_sim,
+    mean = c(20,40),
+    sigma = sigma
+  )
+  r <- cor(sim[,1],sim[,2])
+  new_err <- NULL
+  new_r <- NULL
+  err <- abs(rho - r)
+  for (j in 1:1000) {
+    sim_t <- rmvnorm(
+      n = n_sim,
+      mean = c(20,40),
+      sigma = sigma
+    )
+    new_r <- cor(sim_t[,1], sim_t[,2])
+    new_err <- abs(rho - new_r)
+    if (new_err < err) {
+      # cat(paste("want:",rho,"- got:",r,"- err:",err,"- new:",new_r,"new-err:",new_err,"\n"))
+      sim <- sim_t
+      r <- new_r
+      err <- new_err
+    }
+    if (new_err < eps) {
+      break
+    }
+  }
+  sim |>   
+    as.data.frame() |> 
+    mutate(correlation = round(rho,2)) |>
+    mutate(reel_correlation = round(cor(V1,V2),2)) |>
+    mutate(reel_correlation_2 = round(r,2)) |>
+    mutate(cor_err = err) -> sim
+  
+  values <- bind_rows(values, sim)
+}
+ggplot(data = values, mapping = aes(V1, V2)) +
+  geom_point(size = 0.5) + 
+  facet_wrap(~ correlation, ncol = 3)  +
+  labs(x = "", y = "") + 
+  coord_fixed(ratio = 25/40) + # (30-5)/(60-20)
+  theme(
+    axis.text.x = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks = element_blank(),
+    plot.margin = gg0margins
+  )
+
+detach("package:mvtnorm", unload = TRUE)
+
+```
+
+
+
+Je näher der Betrag an eins liegt, desto ausgeprägter ist der Zusammenhang.
+Das Vorzeichen zeigt die Richtung des Zusammenhangs an.
+
+Eine Beispielrechnung für die Zusammenhangsmaße sehen Sie in @tbl-Corr .
+
+| $i$ | $x_i$ | $y_i$ | $x_i-\bar{x}$ |  $y_i-\bar{y}$ | $(x_i-\bar{x})^2$ |  $(y_i-\bar{y})^2$ | $(x_i-\bar{x}) \cdot (y_i-\bar{y})$ |
+|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+|
+\begin{table}[!ht]
+: Beispielrechnung für Kovarianz und Korrelationskoeffizient} {#tbl-Corr}
+1&20&6&-4&-1&16&1&4 \\
+2&24&7&0&0&0&0&0 \\
+3&30&10&6&3&36&9&18 \\
+4&25&7&1&0&1&0&0 \\
+5&21&5&-3&-2&9&4&6 \\
+$\sum$&120&35&0&0&62&14&28 \\
+\midrule
+\multicolumn{3}{l}{Lagemaße}&
+  \multicolumn{5}{l}{$\bar{x}=\frac{120}{5}=24\quad \bar{y}=\frac{35}{5}=7$}
+\\
+\multicolumn{3}{l}{Streumaße}&
+  \multicolumn{5}{l}{$s_x^2=\frac{62}{4}=15.5\quad s_y^2=\frac{14}{4}=3.5$}
+Rule{0pt}{14pt}\\
+\multicolumn{3}{l}{}&
+  \multicolumn{5}{l}{$s_x=\sqrt{15.5}=3.94\quad s_y=\sqrt{3.5}=1.87$} \\
+\multicolumn{3}{l}{Kovarianz}&
+  \multicolumn{5}{l}{$s_{xy}=\frac{28}{4}=7$}
+Rule{0pt}{14pt}\\
+\multicolumn{3}{l}{Korrelation}&
+  \multicolumn{5}{l}{$r=\frac{7}{3.94 \cdot 1.87}=0.95$}
+Rule{0pt}{14pt}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+::: {.callout-note .Aufgabe}
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
+Ist der Korrelationskoeffizient robust gegenüber Ausreißern?
+:::
+
+Um den Korrelationskoeffizienten beurteilen zu können, benötigen Sie immer ein Streudiagramm.
+Der Wert sagt nicht aus, ob der Zusammenhang tatsächlich linear ist oder ob einflussreiche Ausreißer vorliegen.
+
+Das *Anscombe-Quartett* in @fig-Anscombe  zeigt dies deutlich.
+
+```{r fig-Anscombe, echo = FALSE, fig.width = 3.5, fig.asp = 1, out.width = "7cm"}
+#| fig-cap: "Anscombe-Quartett: Alle Grafiken haben gleich hohe Korrelationskoeffizienten (`r ansCor}), aber nur ein in der Grafik oben links passt er auch zu Datenpunkten"
+#| label: fig-Anscombe
+
+data(anscombe)
+x <- c(anscombe$x1, anscombe$x2, anscombe$x3, anscombe$x4)
+y <- c(anscombe$y1, anscombe$y2, anscombe$y3, anscombe$y4)
+z <- factor(rep(c("A", "B", "C", "D"), each = 11))
+ans <- data.frame(x = x, y = y, z = z)
+gf_point(y ~ x | z, data = ans) |>
+  gf_labs(x = TeX("x", italic = TRUE), y = TeX("y", italic = TRUE)) |> 
+  gf_theme(plot.margin = gg0margins)
+# Korrelationskoeffizient abspeichern
+ansCor <- cor(y1 ~ x1, data = anscombe) |> round(2)
+```
+
+Alle vier Grafiken in @fig-Anscombe  zeigen etwa dieselben Lage- und Streumaße, aber die gemeinsamen Verteilungen von $x$ und $y$ unterscheiden sich deutlich.^[Sie wollen es ausprobieren? Die Anscombe-Daten können Sie mit `data(anscombe)` laden und dann können Sie alle Lage- und Streumaße dazu berechnen.]
+
+Der Korrelationskoeffizient liegt in allen vier Teilgrafiken bei `r ansCor`, aber nur die Grafik oben links (A) passt tatsächlich dazu.
+
+::: {.callout-note .Aufgabe}
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
+Recherchieren Sie: Wer war Anscombe?
+:::
+
+::: {.callout-note .Aufgabe}
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
+Warum ist der Korrelationskoeffizient in den Teilgrafiken B bis D der @fig-Anscombe  nicht sinnvoll anzuwenden?
+:::
+
+::: {.column-margin}
+Song: *{Correlation Does Not Imply Causation* &copy; Monty Harper, <https://www.causeweb.org/cause/resources/fun/songs/correlation-does-not-imply-causation>
+:::
+
+::: {.callout-tip .Hinweis}
+## Hinweis
+
+Wichtig ist auch noch: Korrelation bedeutet nicht automatisch Kausalität. 
+Und keine Korrelation bedeutet nicht automatisch, dass es keinen (kausalen) Zusammenhang gibt.
+:::
+
+::: {.callout-note .Aufgabe}
+## Aufgabe `r quiz <- quiz + 1; paste0(ch, ".", quiz)`
+
+Nutzen Sie die Datentabelle `SaratogaHouses`.^[Und, wissen Sie noch, wie sie sie aktivieren können? Siehe \nrefsec{chapRmd:Erste} in Refch{chapRmd}.]
+
+1. Führen Sie eine explorative Datenanalyse der Variable `price` durch.
+2. Analysieren Sie den Zusammenhang zwischen `price` und `ivingArea`.
+:::
+
+::: {.callout-caution .Lernpfad}
+## Lernpfad **Explorative Datenanalyse -- metrisch**
+
+- Zur Festigung der Arbeit mit R in der explorativen Datenanalyse gibt es ein ausführliches Tutorial: <https://fomshinyapps.shinyapps.io/TutoR-EDA/>.
+
+- Klären Sie erforderlichenfalls Ihnen noch unbekannte Begriffe eigenständig.
+
+- Bearbeiten Sie die Übungen diesem Kapitel (falls Sie das nicht schon beim Lesen gemacht haben).
+
+-	Schauen Sie zur Selbstkontrolle in die Lösungen.
+
+- Zur Unterstützung gibt es ein Screencast: EDA – Vergleich numerischer Variablen <https://vimeo.com/398789624>. Das Video erfordert ein Passwort: *FOMtest*.
+
+- Bearbeiten Sie die Wiederholungsfragen unter folgenden Link: <https://fomshinyapps.shinyapps.io/Lernfortschrittskontrolle_04/>.
+
+- Zur Ergänzung bearbeiten Sie bitte die Shiny-Übungs-App, die Sie unter folgendem Link finden: <https://fomshinyapps.shinyapps.io/EinfuehrungDaten/>.
+
+- Ergänzend können Sie das Kapitel 5 *Exploring numerical data* aus *Introduction to Modern Statistics* @mine2021 lesen. Sie können es hier herunterladen: \
+<https://openintro-ims.netlify.app/index.html>
+
+:::
